@@ -1,0 +1,71 @@
+.renderframe {/*444*/
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -ms-flex-flow: column;
+    flex-flow: column;
+}
+.layout-default, .renderframe {/*451*/
+    display: -ms-flexbox;
+    display: flex;
+}
+.layout-default {/*456*/
+    margin: 0;
+    padding: 0;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -ms-flex-flow: row;
+    flex-flow: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+}
+@media only screen and (min-width: 760px){ /*522*/
+    .layout-default .contentarea {
+        overflow: hidden;
+    }
+    .layout-default .maincontent {/*533*/
+        overflow: hidden;
+    }
+}
+@media only screen and (min-width: 1090px){
+    /*485*/
+    .layout-default {
+        position: relative;
+    }
+    .layout-default:before {/*493*/
+        content: "";
+        background: #1f262f;
+        position: absolute;
+        right: 100%;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    .layout-default .maincontent {/*540*/
+        overflow: hidden;
+    }
+}
+.layout-default .contentarea {/*513*/
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 60px;
+}
+@media only screen and (min-width: 760px){
+    .layout-default .contentarea {/*522*/
+        overflow: hidden;
+    }
+}
+/*668*/
+.wrapper1, .wrapper2, .wrapper3, .wrapper4 {
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column;
+    flex-flow: column;
+}

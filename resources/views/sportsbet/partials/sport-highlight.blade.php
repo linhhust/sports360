@@ -1,0 +1,27 @@
+<div class="sports-highlights">
+	<div>
+		<div class="carousel carousel-slider" style="width: 100%;">
+			<button type="button" class="control-arrow control-prev control-disabled"></button>
+			<div class="slider-wrapper axis-horizontal">
+				<ul class="slider animated" style="transform: translate3d(-100%, 0px, 0px); transition-duration: 400ms;">
+					<li class="slide">
+						<div class="sports-highlight"><div class="row">
+							<div class="text" style="min-height: 60px; padding: 24px 24px 32px; width: 40%;">
+								<h3>
+									<a to="/promotions/sportsbet-birthday-btc-drop" href="/promotions/sportsbet-birthday-btc-drop">Bitcoin drops &amp; Behind the Bet - Join a birthday bash to remember!</a>
+								</h3>
+								<p>Make sure you’re in the running for HUGE prizes this Thursday, June 10 - We’re giving away 1 BTC to random users as part of our 5th birthday celebrations &amp; tune in for the latest Behind The Bet! </p>
+								<a to="/promotions/sportsbet-birthday-btc-drop" class="pt-button pt-intent-primary" href="/promotions/sportsbet-birthday-btc-drop" style="margin-top: 25px;">Show more</a>
+							</div>
+							<a to="/promotions/sportsbet-birthday-btc-drop" href="/promotions/sportsbet-birthday-btc-drop">
+								<picture>
+									<source media="(min-width: 1090px)" srcset="https://sportsbet.imgix.net/2021/May/Sb_5years_1800x800.jpg?auto=compress,format&amp;w=648">
+									<source media="(min-width: 1024px)" srcset="https://sportsbet.imgix.net/2021/May/Sb_5years_1800x800.jpg?auto=compress,format&amp;w=548">
+									<source media="(min-width: 768px)" srcset="https://sportsbet.imgix.net/2021/May/Sb_5years_1800x800.jpg?auto=compress,format&amp;w=704">
+									<source media="(min-width: 10px)" srcset="https://sportsbet.imgix.net/2021/May/Sb_5years_1800x800.jpg?auto=compress,format&amp;w=384">
+									<img src="https://sportsbet.imgix.net/2021/May/Sb_5years_1800x800.jpg?w=1200&amp;auto=compress,enhance,format" tabindex="0" style="padding-top: 0px;">
+								</picture>
+							</a>
+						</div>
+					</div>
+				</li><li class="slide selected"><div class="sports-highlight"><div class="row"><div class="text" style="min-height: 60px; padding: 24px 24px 32px; width: 40%;"><h3><a to="https://sportsbet.io/promotions/euro-free-to-play" href="https://sportsbet.io/promotions/euro-free-to-play">Win for FREE with Road to Clubhouse Glory!</a></h3><p>Now you can play more often &amp; win more prizes than ever before with our special European Championship Free To Play games</p><a to="https://sportsbet.io/promotions/euro-free-to-play" class="pt-button pt-intent-primary" href="https://sportsbet.io/promotions/euro-free-to-play" style="margin-top: 25px;">Show more</a></div><a to="https://sportsbet.io/promotions/euro-free-to-play" href="https://sportsbet.io/promotions/euro-free-to-play"><picture><source media="(min-width: 1090px)" srcset="https://sportsbet.imgix.net/2021/June/Sb_ClubhouseGlory-%20Daily43Free_1800x800.jpg?auto=compress,enhance,format?auto=compress,format&amp;w=648"><source media="(min-width: 1024px)" srcset="https://sportsbet.imgix.net/2021/June/Sb_ClubhouseGlory-%20Daily43Free_1800x800.jpg?auto=compress,enhance,format?auto=compress,format&amp;w=548"><source media="(min-width: 768px)" srcset="https://sportsbet.imgix.net/2021/June/Sb_ClubhouseGlory-%20Daily43Free_1800x800.jpg?auto=compress,enhance,format?auto=compress,format&amp;w=704"><source media="(min-width: 10px)" srcset="https://sportsbet.imgix.net/2021/June/Sb_ClubhouseGlory-%20Daily43Free_1800x800.jpg?auto=compress,enhance,format?auto=compress,format&amp;w=384"><img src="https://sportsbet.imgix.net/2021/June/Sb_ClubhouseGlory-%20Daily43Free_1800x800.jpg?auto=compress,enhance,format" tabindex="0" style="padding-top: 0px;"></picture></a></div></div></li><li class="slide"><div class="sports-highlight"><div class="row"><div class="text" style="min-height: 60px; padding: 24px 24px 32px; width: 40%;"><h3><a to="/casino/tournaments" href="/casino/tournaments">Casino Tournaments</a></h3><p>Check out the upcoming and live tournaments from our tournaments lobby, compete with other players for a chance to win amazing cash prizes!</p><a to="/casino/tournaments" class="pt-button pt-intent-primary" href="/casino/tournaments" style="margin-top: 25px;">Show more</a></div><a to="/casino/tournaments" href="/casino/tournaments"><picture><source media="(min-width: 1090px)" srcset="https://sportsbet.imgix.net/2020/October/tournament-main.jpg?=compress,enhance,format?auto=compress,format&amp;w=648"><source media="(min-width: 1024px)" srcset="https://sportsbet.imgix.net/2020/October/tournament-main.jpg?=compress,enhance,format?auto=compress,format&amp;w=548"><source media="(min-width: 768px)" srcset="https://sportsbet.imgix.net/2020/October/tournament-main.jpg?=compress,enhance,format?auto=compress,format&amp;w=704"><source media="(min-width: 10px)" srcset="https://sportsbet.imgix.net/2020/October/tournament-main.jpg?=compress,enhance,format?auto=compress,format&amp;w=384"><img src="https://sportsbet.imgix.net/2020/October/tournament-main.jpg?=compress,enhance,format" tabindex="0" style="padding-top: 0px;"></picture></a></div></div></li></ul></div><button type="button" class="control-arrow control-next control-disabled"></button><ul class="control-dots"><li class="dot" value="0"></li><li class="dot selected" value="1"></li><li class="dot" value="2"></li></ul></div></div></div>
