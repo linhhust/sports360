@@ -407,6 +407,7 @@
                             </div>
                         </div>
                         <div class="body__IdBodyItem-sc-1kb3j31-1 jBPoYd">
+                            <h1 size="32" data-test-id="loginPage-heading" color="bulma.100" class="Heading-sc-1fj2bsx-0 typography__IdHeading-sy3hob-0 hDOeka">Sign in</h1>
                             <form class="Form___StyledForm-sc-11bajar-1 bwvtHp Login__CustomForm-sc-1msby7y-0 eUJYKP" method='POST'>
                                 @csrf
                                 <fieldset class="Form__Fieldset-sc-11bajar-0 jVBjCW">
@@ -464,5 +465,3 @@
 </body>
 
 </html>
-{{-- <script src="{{asset('public/js/sportsbet/sportsbet.js')}}"></script> --}}
-@yield('js')

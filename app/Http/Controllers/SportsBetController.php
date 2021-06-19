@@ -9,6 +9,8 @@ use Auth;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use View;
+use DB;
+use Log;
 
 class SportsBetController extends Controller
 {
@@ -134,6 +136,8 @@ class SportsBetController extends Controller
     public function betSports(Request $request)
     {
         if (Auth::check()) {
+            DB::beginTransaction();
+            $total = 0;
             $bets = $request->bets ?? [];
             // return $bets;
             foreach ($bets as $bet) {
@@ -147,8 +151,19 @@ class SportsBetController extends Controller
                     'ratio'          => $bet['odds'],
                     'match_id'       => $data->match->id,
                 ]);
+                $total += $bet['amount'];
             }
-            return null;
+            Log::info($total . "   " . Auth::user()->balance);
+            if ($total <= Auth::user()->balance){
+                Auth::user()->balance -= $total;
+                Auth::user()->save();
+                DB::commit();
+                return null;    
+            }else{
+                return response()->json([
+                    'error' => 'Your balance is too low to place this bet'
+                ]);
+            }
         } else {
             return redirect()->route('login');
         }

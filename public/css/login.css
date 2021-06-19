@@ -18,7 +18,7 @@
 }
 .iwdBQt {
     display: grid;
-    gap: 2rem;
+    gap: 1rem 2rem;
     grid-template-areas:
         "nav logo"
         "sponsors sponsors"
@@ -363,6 +363,7 @@
 .dmytFS {
     display: block;
     text-align: center;
+    margin-top: 0px;
 }
 .ePMdHW {
     display: inline-block;
