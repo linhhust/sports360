@@ -8,6 +8,8 @@ use App\UserLogin;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 class LoginController extends Controller
 {
     /*
@@ -70,7 +72,32 @@ class LoginController extends Controller
         return $res;
     }
 
+    public function sendLogin(Request $request){
+        $rules = array(
+            'username'    => 'required',
+            'password' => 'required',
+        );
 
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            // $validator->errors()->add('serverError', 'メールアドレスとパスワードは必須です。');
+            return Redirect::back()->withErrors($validator->errors())->withInput($request->except('password'));
+        }
+
+        $infoLogin = array(
+            'username'    => $request->username,
+            'password' => $request->password,
+        );
+
+        // have record hit email and password
+        if (Auth::attempt($infoLogin)) {
+            return redirect()->route('site');
+        }
+        // no record hit email and password
+        $errors = array('error' => 'Wrong username or password');
+        return Redirect::back()->withErrors($errors)->withInput($request->except('password'));
+    }
 
     protected function authenticated(Request $request, $user)
     {
@@ -92,7 +119,7 @@ class LoginController extends Controller
         $ul['country'] =  @implode(',', $info['country']);
         UserLogin::create($ul);
 
-        return redirect()->intended(route('home'));
+        return redirect()->intended(route('site'));
     }
 
 

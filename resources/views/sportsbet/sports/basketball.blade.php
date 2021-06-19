@@ -40,7 +40,6 @@
 	                            foreach($event['data'] as $question){
 	                                $option1 = isset($question['options'][0])?$question['options'][0]:'';
 	                                $option2 = isset($question['options'][1])?$question['options'][1]:'';
-	                                $option3 = 'Draw';
 	                        @endphp
 					<ul itemscope="" itemtype="https://schema.org/SportsEvent" variant="asian-desktop" class="grid__EventListBodyWrapper-ljbzft-0 bfDTRZ">
 						<li itemprop="location" itemscope="" itemtype="https://schema.org/Place" style="display: none;">
@@ -78,8 +77,8 @@
 						</li>
 						<li class="grid__HomeWinner-jq9sb4-6 bIUEeK">
 							@if(isset($question['data']['winner'][$option1]))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['winner'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="Winner (incl. overtime)" data-id="{{$question['data']['winner'][$option1]['id']}}">
-									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['winner'][$option1]['ratio2']}}</p>
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['winner'][$option1]['question_id']}}_{{$question['data']['winner'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="Winner (incl. overtime)" data-id="{{$question['data']['winner'][$option1]['id']}}" data-question="{{$question['data']['winner'][$option1]['question_id']}}">
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($question['data']['winner'][$option1]['ratio2'],2)}}</p>
 								</div>
 	                        @else
 	                            <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -93,8 +92,8 @@
 						</li>
 						<li class="grid__AwayWinner-jq9sb4-7 bxcQYe">
 							@if(isset($question['data']['winner'][$option2]))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['winner'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="Winner (incl. overtime)" data-id="{{$question['data']['winner'][$option2]['id']}}">
-									<p class="Selection__Odds-sc-1tx8nkd-0 ireQWm">{{$question['data']['winner'][$option2]['ratio2']}}</p>
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['winner'][$option2]['question_id']}}_{{$question['data']['winner'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="Winner (incl. overtime)" data-id="{{$question['data']['winner'][$option2]['id']}}" data-question="{{$question['data']['winner'][$option2]['question_id']}}">
+									<p class="Selection__Odds-sc-1tx8nkd-0 ireQWm">{{number_format($question['data']['winner'][$option2]['ratio2'],2)}}</p>
 								</div>
 							@else
 	                            <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -108,9 +107,9 @@
 						</li>
 						<li class="grid__HomeHCP-jq9sb4-8 dHMwDp">
 							@if(isset($question['data']['hcp'][$option1]))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['hcp'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="Handicap (incl. overtime)" data-id="{{$question['data']['hcp'][$option1]['id']}}">
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['hcp'][$option1]['question_id']}}_{{$question['data']['hcp'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="Handicap (incl. overtime)" data-id="{{$question['data']['hcp'][$option1]['id']}}" data-question="{{$question['data']['hcp'][$option1]['question_id']}}">
 									<p class="Selection__Name-sc-1tx8nkd-1 eieSeJ">{{$question['data']['hcp'][$option1]['ratio1']}}</p>
-									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['hcp'][$option1]['ratio2']}}</p>
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($question['data']['hcp'][$option1]['ratio2'],2)}}</p>
 								</div>
 							@else
 	                            <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -124,9 +123,9 @@
 						</li>
 						<li class="grid__AwayHCP-jq9sb4-9 geniht">
 							@if(isset($question['data']['hcp'][$option2]))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['hcp'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="Handicap (incl. overtime)" data-id="{{$question['data']['hcp'][$option2]['id']}}">
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['hcp'][$option2]['question_id']}}_{{$question['data']['hcp'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="Handicap (incl. overtime)" data-id="{{$question['data']['hcp'][$option2]['id']}}" data-question="{{$question['data']['hcp'][$option2]['question_id']}}">
 									<p class="Selection__Name-sc-1tx8nkd-1 eieSeJ">{{$question['data']['hcp'][$option2]['ratio1']}}</p>
-									<p class="Selection__Odds-sc-1tx8nkd-0 iAtQcF">{{$question['data']['hcp'][$option2]['ratio2']}}</p>
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($question['data']['hcp'][$option2]['ratio2'],2)}}</p>
 								</div>
 							@else
 	                            <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -140,9 +139,9 @@
 						</li>
 						<li class="grid__HomeTOT-jq9sb4-10 gGHKFY">
 							@if(isset($question['data']['tot'][$option1]))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['tot'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="" data-type="Total (incl. overtime)" data-id="{{$question['data']['tot'][$option1]['id']}}">
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['tot'][$option1]['question_id']}}_{{$question['data']['tot'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="" data-type="Total (incl. overtime)" data-id="{{$question['data']['tot'][$option1]['id']}}" data-question="{{$question['data']['tot'][$option1]['question_id']}}">
 									<p class="Selection__Name-sc-1tx8nkd-1 eieSeJ">{{$question['data']['tot'][$option1]['ratio1']}}</p>
-									<p class="Selection__Odds-sc-1tx8nkd-0 iAtQcF">{{$question['data']['tot'][$option1]['ratio2']}}</p>
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($question['data']['tot'][$option1]['ratio2'],2)}}</p>
 								</div>
 							@else
 	                            <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -156,9 +155,9 @@
 						</li>
 						<li class="grid__AwayTOT-jq9sb4-11 jByJBO">
 							@if(isset($match['options'][$option2]['tot']))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['tot'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="" data-type="Total (incl. overtime)" data-id="{{$question['data']['tot'][$option2]['id']}}">
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['tot'][$option2]['question_id']}}_{{$question['data']['tot'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="" data-type="Total (incl. overtime)" data-id="{{$question['data']['tot'][$option2]['id']}}" data-question="{{$question['data']['tot'][$option2]['question_id']}}">
 									<p class="Selection__Name-sc-1tx8nkd-1 eieSeJ">{{$match['options'][$option2]['tot']['ratio1']}}</p>
-									<p class="Selection__Odds-sc-1tx8nkd-0 iAtQcF">{{$match['options'][$option2]['tot']['ratio2']}}</p>
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($match['options'][$option2]['tot']['ratio2'],2)}}</p>
 								</div>
 							@else
 	                            <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -172,8 +171,8 @@
 						</li>
 						<li class="grid__FirstHalfHomeWinner-jq9sb4-12 cVQWRz">
 							@if(isset($match['options'][$option1]['1st half winner']))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half winner'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="1st Half - Winner" data-id="{{$question['data']['1st half winner'][$option1]['id']}}">
-									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$match['options']['1st half winner'][$option1]['ratio2']}}</p>
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half winner'][$option1]['question_id']}}_{{$question['data']['1st half winner'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="1st Half - Winner" data-id="{{$question['data']['1st half winner'][$option1]['id']}}" data-question="{{$question['data']['1st half winner'][$option1]['question_id']}}">
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($match['options']['1st half winner'][$option1]['ratio2'],2)}}</p>
 								</div>
 							@else
 								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -187,8 +186,8 @@
 						</li>
 						<li class="grid__FirstHalfAwayWinner-jq9sb4-13 cnpGOH">
 							@if(isset($match['options'][$option2]['1st half winner']))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half winner'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="1st Half - Winner" data-id="{{$question['data']['1st half winner'][$option2]['id']}}">
-									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$match['options'][$option2]['1st half winner']['ratio2']}}</p>
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half winner'][$option2]['question_id']}}_{{$question['data']['1st half winner'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="1st Half - Winner" data-id="{{$question['data']['1st half winner'][$option2]['id']}}" data-question="{{$question['data']['1st half winner'][$option2]['question_id']}}">
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($match['options'][$option2]['1st half winner']['ratio2'],2)}}</p>
 								</div>
 							@else
 								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -202,9 +201,9 @@
 						</li>
 						<li class="grid__FirstHalfHomeHCP-jq9sb4-17 dAcRU">
 							@if(isset($match['options'][$option1]['1st half hcp']))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half hcp'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="1st Half - Asian Handicap" data-id="{{$question['data']['1st half hcp'][$option1]['id']}}">
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half hcp'][$option1]['question_id']}}_{{$question['data']['1st half hcp'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="1st Half - Asian Handicap" data-id="{{$question['data']['1st half hcp'][$option1]['id']}}" data-question="{{$question['data']['1st half hcp'][$option1]['question_id']}}">
 									<p class="Selection__Name-sc-1tx8nkd-1 eieSeJ">{{$match['options']['1st half hcp'][$option1]['ratio1']}}</p>
-									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$match['options']['1st half hcp'][$option1]['ratio2']}}</p>
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($match['options']['1st half hcp'][$option1]['ratio2'],2)}}</p>
 								</div>
 							@else
 								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -218,9 +217,9 @@
 						</li>
 						<li class="grid__FirstHalfAwayHCP-jq9sb4-18 glEDYr">
 							@if(isset($match['options'][$option2]['1st half hcp']))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half hcp'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="1st Half - Asian Handicap" data-id="{{$question['data']['1st half hcp'][$option2]['id']}}">
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half hcp'][$option2]['question_id']}}_{{$question['data']['1st half hcp'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="1st Half - Asian Handicap" data-id="{{$question['data']['1st half hcp'][$option2]['id']}}" data-question="{{$question['data']['1st half hcp'][$option2]['question_id']}}">
 									<p class="Selection__Name-sc-1tx8nkd-1 eieSeJ">{{$match['options']['1st half hcp'][$option2]['ratio1']}}</p>
-									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$match['options']['1st half hcp'][$option2]['ratio2']}}</p>
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($match['options']['1st half hcp'][$option2]['ratio2'],2)}}</p>
 								</div>
 							@else
 								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -234,9 +233,9 @@
 						</li>
 						<li class="grid__FirstHalfHomeTOT-jq9sb4-19 fcEWGd">
 							@if(isset($match['options'][$option1]['1st half tot']))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half tot'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="" data-type="1st Half - Asian Handicap" data-id="{{$question['data']['1st half tot'][$option1]['id']}}">
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half tot'][$option1]['question_id']}}_{{$question['data']['1st half tot'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="" data-type="1st Half - Asian Handicap" data-id="{{$question['data']['1st half tot'][$option1]['id']}}" data-question="{{$question['data']['1st half tot'][$option1]['question_id']}}">
 									<p class="Selection__Name-sc-1tx8nkd-1 eieSeJ">{{$match['options'][$option1]['1st half tot']['ratio1']}}</p>
-									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$match['options'][$option1]['1st half tot']['ratio2']}}</p>
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($match['options'][$option1]['1st half tot']['ratio2'],2)}}</p>
 								</div>
 							@else
 								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -250,9 +249,9 @@
 						</li>
 						<li class="grid__FirstHalfAwayTOT-jq9sb4-20 DSIxD">
 							@if(isset($match['options'][$option2]['1st half tot']))
-								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half tot'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="" data-type="1st Half - Asian Handicap" data-id="{{$question['data']['1st half tot'][$option2]['id']}}" data-id="{{$question['data']['1st half winner'][$option2]['id']}}">
+								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1st half tot'][$option2]['question_id']}}_{{$question['data']['1st half tot'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="" data-type="1st Half - Asian Handicap" data-id="{{$question['data']['1st half tot'][$option2]['id']}}" data-id="{{$question['data']['1st half winner'][$option2]['id']}}" data-question="{{$question['data']['1st half tot'][$option2]['question_id']}}">
 									<p class="Selection__Name-sc-1tx8nkd-1 eieSeJ">{{$match['options']['1st half tot'][$option2]['ratio1']}}</p>
-									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$match['options']['1st half tot'][$option2]['ratio2']}}</p>
+									<p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($match['options']['1st half tot'][$option2]['ratio2'],2)}}</p>
 								</div>
 							@else
 								<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">

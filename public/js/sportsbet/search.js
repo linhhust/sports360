@@ -29,6 +29,7 @@ function getList(type) {
             type
         },
         success: function(data) {
+            // console.log(data)
             $('#content').html(data);
             addEvent()
         },

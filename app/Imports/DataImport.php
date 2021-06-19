@@ -108,6 +108,7 @@ class DataImport implements ToCollection, WithHeadingRow
                                     }
                                     $option = BetOption::create($arr);
                                 } else {
+                                    Log::info($key);
                                     $option->text = $row[$key];
                                     $option->ratio2 = $row[$key];
                                     if ($value == 'hcp' || $value == 'tot' || $value == '1st half hcp' || $value == '1st half tot') {

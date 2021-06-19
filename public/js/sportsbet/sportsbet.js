@@ -18,7 +18,7 @@ var elementSelect = `
                           </svg>
                       </span>
                   </span>
-                  <span class="odds u-color-piccolo">{odds}</span>
+                  <span class="odds u-color-piccolo option_{question_id}_{option_id}">{odds}</span>
               </span>
           </div>
           <div class="BetInput__InputContainer-sc-1fmcki4-0 jZDdQz">
@@ -144,12 +144,23 @@ var pusher = new Pusher('9d19381a054db6805cf1', {
 });
 var channel_update_option = pusher.subscribe('update-option');
 channel_update_option.bind('App\\Events\\UpdateOption', function(data) {
-  console.log(data);
-    if ($(`.option_${data.option}`).find('.eieSeJ').length > 0){
-        $(`.option_${data.option}`).find('.eieSeJ').text(data.option.text);
+    if ($(`.option_${data.option.question_id}_${data.option.id}`).find('.eieSeJ').length > 0){
+        $(`.option_${data.option.question_id}_${data.option.id}`).find('.eieSeJ').text(data.option.text);
     }
-    if ($(`.option_${data.option}`).find('.ilfAV').length > 0){
-        $(`.option_${data.option}`).find('.ilfAV').text(data.option.ratio2);
+    if ($(`.option_${data.option.question_id}_${data.option.id}`).find('.ilfAV').length > 0){
+        ratio = parseFloat(data.option.ratio2)
+        ratio_old = parseFloat($(`.option_${data.option.question_id}_${data.option.id}`).find('.ilfAV').text());
+        if (ratio != ratio_old){
+            $(`.option_${data.option.question_id}_${data.option.id}`).find('.ilfAV').text(ratio.toFixed(2));
+            if ($('.bets').find(`.option_${data.option.question_id}_${data.option.id}`).length > 0 ) {
+                if ($('.message').length == 0){
+                  $('.bets').find(`.option_${data.option.question_id}_${data.option.id}`).text(ratio.toFixed(2));
+                  $('.buttons').before('<p class="message danger">Odds have changed. To place a bet you need to review and approve changes first.</p>')  
+                }
+                $('.btn-select').removeClass('pt-disabled');
+                $('.btn-select').text('Accept new odds');
+            }
+        }
     }
 });
 function calculateTotal(){
@@ -165,7 +176,8 @@ function calculateTotal(){
         $(this).append(errorWrapper);
       }
     });
-    $('.btn-select').addClass('pt-disabled')
+    $('.btn-select').addClass('pt-disabled');
+    $('.btn-select').attr('data-type', '');
     return false;
   }else{
     $('.event .error').remove();
@@ -218,13 +230,15 @@ function addEvent(){
             .replace('{url}','url')
             .replace('{type}', type)
             .replace('{team}', option)
+            .replace('{question_id}', $(this).attr('data-question'))
+            .replace('{option_id}', $(this).attr('data-id'))
             .replace('{odds}', $(this).find('.ilfAV').length > 0 ? $(this).find('.ilfAV').text() : $(this).find('.iAtQcF').text());
       if ($('.betslip').length == 0){
         $('.modal-bet').html(betWrapper);
         if ($('input[name="is_login"]').val() == 1){
-          $('.betslip').find('.wide').html(`<button class="pt-button pt-fill pt-intent-primary pt-disabled btn-select" type="button">Place bet</button>`)
+          $('.betslip').find('.wide').html(`<button class="pt-button pt-fill pt-intent-primary pt-disabled btn-select" type="button" data-type="1">Place bet</button>`)
         }else{
-          $('.betslip').find('.wide').html(`<button class="pt-button pt-fill pt-intent-primary btn-select" type="button">Sign In</button>`);
+          $('.betslip').find('.wide').html(`<button class="pt-button pt-fill pt-intent-primary btn-select" type="button" data-type="2">Sign In</button>`);
         }
         $('.btn-select').click(function(){
           clickButtonBet();
@@ -333,46 +347,60 @@ var errorWrapper = `
 function clickButtonBet(){
   if ($('.btn-select').text() == 'Sign In'){
     window.location.href = "/login"
+  }else if ($('.btn-select').text() == 'Accept new odds'){
+    if (!calculateTotal()){
+      $('.btn-select').addClass('pt-disabled');
+    } 
+    if ($('input[name="is_login"]') == '1') {
+      $('.btn-select').text('Place bet');
+    }else{
+      $('.btn-select').text('Login');
+    }
+    $('.message').remove();
   }else{
-    if (calculateTotal()){
-      data = [];
-      $('.event').each(function(){
-        data.push({
-          id: $(this).attr('data-id'),
-          amount: $(this).find('input').val(),
-          odds: $(this).find('.target').find('.u-color-piccolo').text(),
+    if ($('.pt-disabled').length == 0){
+      if (calculateTotal()){
+        data = [];
+        $('.event').each(function(){
+          data.push({
+            id: $(this).attr('data-id'),
+            amount: $(this).find('input').val(),
+            odds: $(this).find('.target').find('.u-color-piccolo').text(),
+          });
         });
-      });
-      $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: '/sports/bet',
-            method: "POST",
-            data: {
-              bets: data
-            },
-            success: function(data) {
-                if (data.error){
-                  notify(data.error, 'Error', 'danger')
-                }else{
-                  $('.betslip').remove();
-                  $('.selected').each(function(){
-                    $(this).removeClass('selected');
-                  })
-                  balance = parseFloat($('.balance').text());
-                  balance -= total;
-                  $('.balance').text(balance.toFixed(2));
-                  notify('Bet Success', 'Success')
-                }
-            },
-            error: function(error, b, c) {
-                console.log(error)
-                notify("Error System", 'Error', 'danger')
-            }
-        });
+        $.ajaxSetup({
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
+          });
+          $.ajax({
+              url: '/sports/bet',
+              method: "POST",
+              data: {
+                bets: data
+              },
+              success: function(data) {
+                  if (data.error){
+                    notify(data.error, 'Error', 'danger')
+                  }else{
+                    $('.betslip').remove();
+                    $('.selected').each(function(){
+                      $(this).removeClass('selected');
+                    })
+                    balance = parseFloat($('.balance').text());
+                    balance -= total;
+                    $('.balance').text(balance.toFixed(2));
+                    notify('Bet Success', 'Success')
+                  }
+              },
+              error: function(error, b, c) {
+                  console.log(error)
+                  notify("Error System", 'Error', 'danger')
+              }
+          });
+      }
+    }else{
+
     }
   }
 }

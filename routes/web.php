@@ -41,6 +41,9 @@ Route::get('/sports/{name}', 'SportsBetController@sports');
 Route::get('/sports/{name}/search', 'SportsBetController@searchSport');
 Route::post('/sports/bet', 'SportsBetController@betSports');
 Route::get('/test', 'SportsBetController@test');
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@sendLogin');
+
 
 // payment
 Route::get('payment', 'Gateway\PaymentController@payment')->name('payment');

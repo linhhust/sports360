@@ -2309,7 +2309,9 @@ input:not([type=checkbox]):not([type=radio]) {
 .mLCby.is-hover:not([disabled]), .mLCby:hover:not([disabled]) {
     background-color: rgb(36, 45, 56);
 }
-.selected, .selected:hover, .hWrefL, .hWrefL:hover, .CbMtg:hover, .CbMtg:focus {
+.bGbaJS:hover, .bGbaJS:focus,
+.selected, .selected:hover, 
+.hWrefL, .hWrefL:hover, .CbMtg:hover, .CbMtg:focus {
     border-color: rgb(12, 212, 99)!important;
     border-radius: 4px!important;
 }
@@ -3169,7 +3171,7 @@ img {
     line-height: 28px;
     padding: 32px 20px 12px;
 }
-.mb-5, .my-5 {
+.mb-5{
     margin-bottom: 3rem!important;
     margin-top: 3rem!important;
     background-color: rgb(35, 42, 51)!important;
@@ -3344,4 +3346,12 @@ td {
 
 .result-table-header {
     background-color: #1f262f!important;
+}
+.betslip .message.danger, .betslip .message.pending {
+    color: #ff4e64;
+}
+.betslip .message {
+    text-align: center;
+    font-size: 14px;
+    -webkit-backface-visibility: hidden;
 }

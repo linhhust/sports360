@@ -94,17 +94,21 @@ class SportsBetController extends Controller
                     $arrName = [];
                     $arrQuestion = [];
                     foreach ($match->questions as $question) {
+                        $arrData = [];
                         foreach ($question->options as $option) {
                             if (!in_array($option->option_name, $arrName)) {
                                 $arrName[] = $option->option_name;
                             }
                             $arrData[$option->option_name] = [
                                 'id'      => $option->id,
-                                'ratio1' => $option->ratio1,
-                                'ratio2' => $option->ratio2,
+                                'ratio1' => $option->text,
+                                'ratio2' => floatval($option->ratio2),
+                                'question_id' => $question->id,
                             ];
                         }
-                        $arrQuestion[$question->question] = $arrData;
+                        if (count($arrData) > 0) 
+                            $arrQuestion[$question->question] = $arrData;
+                        // break;
                     }
                     $arrMatch[] = [
                         'name'    => $match->name,
@@ -146,7 +150,7 @@ class SportsBetController extends Controller
             }
             return null;
         } else {
-            return redirect()->route('/login');
+            return redirect()->route('login');
         }
     }
 

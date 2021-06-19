@@ -32,7 +32,7 @@
                                 class="logo__IdLogoLink-sc-1b2sl50-0 bFkCVt"><svg fill="none" viewBox="0 0 115 20"
                                     width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" verticalalign="middle"
                                     color="bulma.100" class="LogoSportsbet-et4h3y-0 lcxmtj">
-                                    <title>Sportsbet.io</title>
+                                    <title>Sports360.io</title>
                                     <path fill="currentColor" fill-rule="evenodd"
                                         d="M9.99985 19.4074c5.35925 0 9.70375-4.3445 9.70375-9.70369C19.7036 4.3445 15.3591 0 9.99985 0 4.64064 0 .29615 4.3445.29615 9.70371c0 5.35919 4.34449 9.70369 9.7037 9.70369zm.00009-1.9882c4.26116 0 7.71546-3.4543 7.71546-7.71547 0-4.26114-3.4543-7.71548-7.71546-7.71548-4.26114 0-7.71547 3.45434-7.71547 7.71548 0 4.26117 3.45433 7.71547 7.71547 7.71547z"
                                         clip-rule="evenodd"></path>
@@ -403,9 +403,9 @@
                                     <ul class="Stack-saln32-0 fMcwwO">
                                         <li class="FormItem-sc-5ofmdi-0 btCexx"><label
                                                 class="label__LabelFlex-sc-4w9rwl-1"><span
-                                                    class="label__LabelContent-sc-4w9rwl-0 gfoyzb">Username</span><input type="text" placeholder=" " required=""
+                                                    class="label__LabelContent-sc-4w9rwl-0 gfoyzb">Username</span><input type="text" placeholder=" " required="" name="username"
                                                     autofocus="" autocorrect="off" autocapitalize="none"
-                                                    data-test-id="loginPage-usernameField" value=""
+                                                    data-test-id="loginPage-usernameField" value="{{old('username')}}"
                                                     class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 dfVTHf hMFjBq"></label>
                                         </li>
                                         {{-- <li class="FormItem-sc-5ofmdi-0 form__IdFormItem-sc-1xyj9v7-0 btCexx iMcJYU">
@@ -433,7 +433,7 @@
                         <div class="body__IdBodyItem-sc-1kb3j31-1 hIQBUp">
                             <p class="cta__CtaText-sc-16w8d27-0 dmytFS">Don't have an account?
                                 <!-- --> &nbsp;<a class="Link-n1sjvn-0-withRouter-MapProps ePMdHW"
-                                    staticcontext="[object Object]" href="/signup">Create account</a></p>
+                                    staticcontext="[object Object]" href="/register">Create account</a></p>
                         </div>
                     </div>
                 </div>
