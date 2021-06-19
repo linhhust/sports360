@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 
 use App\Event;
 use Illuminate\Support\Facades\Auth;
+use App\Events\UpdateOption;
 
 class ProphecyManageController extends Controller
 {
@@ -266,6 +267,8 @@ class ProphecyManageController extends Controller
         $data->fill($in)->save();
 
         session()->flash('success', 'Update Successfully!');
+        $option = BetOption::find($request->id);
+        event(new UpdateOption($option));
         return back();
     }
 

@@ -16,6 +16,10 @@
         padding-left: 24px;
     }
 }
+.bGbaJS:hover, .bGbaJS:focus {
+    border-color: rgb(49, 55, 63);
+    border-radius: 4px;
+}
 .RJJHw {
     grid-area: header / header / header / header;
     padding: 1em;

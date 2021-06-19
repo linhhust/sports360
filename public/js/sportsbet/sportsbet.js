@@ -134,6 +134,24 @@ $('.bGovrs').click(function(){
     }
 });
 var total;
+// var pusher = new Pusher('c6551a3f0e4ab646ff51', {
+//   encrypted: true,
+//   cluster: 'us3',
+// });
+var pusher = new Pusher('9d19381a054db6805cf1', {
+  encrypted: true,
+  cluster: 'ap1',
+});
+var channel_update_option = pusher.subscribe('update-option');
+channel_update_option.bind('App\\Events\\UpdateOption', function(data) {
+  console.log(data);
+    if ($(`.option_${data.option}`).find('.eieSeJ').length > 0){
+        $(`.option_${data.option}`).find('.eieSeJ').text(data.option.text);
+    }
+    if ($(`.option_${data.option}`).find('.ilfAV').length > 0){
+        $(`.option_${data.option}`).find('.ilfAV').text(data.option.ratio2);
+    }
+});
 function calculateTotal(){
   total = 0;
   $('.event .numbers').each(function(item){

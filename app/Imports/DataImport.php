@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Log;
+use App\Events\UpdateOption;
 
 class DataImport implements ToCollection, WithHeadingRow
 {
@@ -97,8 +98,9 @@ class DataImport implements ToCollection, WithHeadingRow
                                         'question_id' => $arrQuestion[$value],
                                         'match_id'    => $match->id,
                                         'option_name' => $row['team'],
-                                        'ratio1'      => $row[$key],
+                                        'ratio1'      => 1,
                                         'ratio2'      => $row[$key],
+                                        'text'        => $row[$key],
                                         'admin_id'    => 1,
                                     ];
                                     if ($value == 'hcp' || $value == 'tot' || $value == '1st half hcp' || $value == '1st half tot') {
@@ -106,12 +108,13 @@ class DataImport implements ToCollection, WithHeadingRow
                                     }
                                     $option = BetOption::create($arr);
                                 } else {
-                                    $option->ratio1 = $row[$key];
+                                    $option->text = $row[$key];
                                     $option->ratio2 = $row[$key];
                                     if ($value == 'hcp' || $value == 'tot' || $value == '1st half hcp' || $value == '1st half tot') {
                                         $option->ratio2 = $row[$key . "_2"];
                                     }
                                     $option->save();
+                                    event(new UpdateOption($option));
                                 }
                             }
                         }

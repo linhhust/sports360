@@ -11,6 +11,7 @@
     @yield('import-css')
     @yield('css')
     <link rel="stylesheet" href="{{asset('public/admin/css/custom.css')}}">
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
   </head>
   <body>
 
