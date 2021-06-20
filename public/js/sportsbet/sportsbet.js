@@ -1,6 +1,6 @@
 $(document).ready(function(){
   if ($(window).width() < 600) {
-    $('.bIUEeK').remove();
+    $('.vzgLe').remove();
   }
 });
 

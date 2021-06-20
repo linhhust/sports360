@@ -364,6 +364,7 @@
 	        	</li>
 	    	</ul>
 		</nav>
+		@if (Auth::check())
 		<nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
 			<ul class="list__MenuList-ejejhx-1 gqgeHc">
 				<li class="list__MenuListItem-ejejhx-0 gCXWqb">
@@ -389,7 +390,7 @@
 		<nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
 			<ul class="list__MenuList-ejejhx-1 gqgeHc">
 				<li class="list__MenuListItem-ejejhx-0 gCXWqb">
-					<a class="link__MenuLink-vob4so-2 fdrwMr" href="/withdraw">
+					<span class="link__MenuLink-vob4so-2 fdrwMr" data-toggle="modal" data-target="#exampleModal">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 							<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconSlots-sc-1o58l3g-0 gRJiSO">
 								<path d="M13.77 17.756a4.23 4.23 0 100-8.461 4.23 4.23 0 000 8.461zM16.462 13.526c0 1.5-1.193 2.692-2.693 2.692M8.77 15.718c-.424.308-.962.5-1.54.5" stroke="currentColor" stroke-width="0.769" stroke-miterlimit="10" stroke-linecap="round"></path>
@@ -398,7 +399,7 @@
 							</svg>
 						</span>
 						<span class="link__MenuLinkText-vob4so-0 herjey">Withdraw</span>
-					</a>
+					</span>
 					<a class="link__MenuLink-vob4so-2 fdrwMr" href="/payment">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 							<svg width="1em" height="1em" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconLiveCasino-sc-1guasm2-0 hbQvku">
@@ -411,7 +412,7 @@
 				</li>
 			</ul>
 		</nav>
-
+		@endif
 		<nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
 			<ul class="list__MenuList-ejejhx-1 gqgeHc">
 				<li class="list__MenuListItem-ejejhx-0 gCXWqb">
@@ -471,6 +472,7 @@
 				</li>
 			</ul>
 		</nav>
+		@if (Auth::check())
 		<nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
 			<ul class="list__MenuList-ejejhx-1 gqgeHc">
 				<li class="list__MenuListItem-ejejhx-0 gCXWqb">
@@ -487,6 +489,7 @@
 				</li>
 			</ul>
 		</nav>
+		@endif
 		<!-- <div class="container__MenuContainer-sc-15c58pa-0 dXxcal">
 			<form>
 				<label>

@@ -12,13 +12,12 @@ use App\Trx;
 use App\User;
 use App\WithdrawLog;
 use App\WithdrawMethod;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Auth;
+use Carbon\Carbon;
 use File;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Image;
-use Validator;
 
 class HomeController extends Controller
 {
@@ -46,13 +45,13 @@ class HomeController extends Controller
     {
         $user = User::find(Auth::user()->id);
         if (Carbon::parse($user->email_time)->addMinutes(2) > Carbon::now()) {
-            $time = Carbon::parse($user->email_time)->addMinutes(2);
+            $time  = Carbon::parse($user->email_time)->addMinutes(2);
             $delay = $time->diffInSeconds(Carbon::now());
             $delay = gmdate('i:s', $delay);
             session()->flash('danger', 'You can resend Verification Code after ' . $delay . ' minutes');
         } else {
-            $code = mt_rand(100000, 999999);
-            $user->email_time = Carbon::now();
+            $code                    = mt_rand(100000, 999999);
+            $user->email_time        = Carbon::now();
             $user->verification_code = $code;
             $user->save();
             send_email($user->email, $user->username, 'Verification Code', 'Your Verification Code: ' . $code);
@@ -66,7 +65,7 @@ class HomeController extends Controller
     {
         $user = User::find(Auth::user()->id);
         if ($user->verification_code == $request->email_code) {
-            $user->email_verify = 1;
+            $user->email_verify      = 1;
             $user->verification_code = mt_rand(100000, 999999);
             $user->save();
 
@@ -83,7 +82,7 @@ class HomeController extends Controller
         $user = User::find(Auth::user()->id);
         if ($user->sms_code == $request->sms_code) {
             $user->phone_verify = 1;
-            $user->sms_code = mt_rand(100000, 999999);
+            $user->sms_code     = mt_rand(100000, 999999);
             $user->save();
 
             session()->flash('success', 'Your Profile has been verified successfully');
@@ -99,16 +98,16 @@ class HomeController extends Controller
         $user = User::find(Auth::user()->id);
 
         if (Carbon::parse($user->phone_time)->addMinutes(2) > Carbon::now()) {
-            $time = Carbon::parse($user->phone_time)->addMinutes(2);
+            $time  = Carbon::parse($user->phone_time)->addMinutes(2);
             $delay = $time->diffInSeconds(Carbon::now());
             $delay = gmdate('i:s', $delay);
             session()->flash('danger', 'You can resend Verification Code after ' . $delay . ' minutes');
             return back();
 
         } else {
-            $code = mt_rand(100000, 999999);
+            $code             = mt_rand(100000, 999999);
             $user->phone_time = Carbon::now();
-            $user->sms_code = $code;
+            $user->sms_code   = $code;
             $user->save();
             send_sms($user->phone, 'Your Verification Code : ' . $code);
 
@@ -116,7 +115,6 @@ class HomeController extends Controller
 
         }
     }
-
 
     /**
      * Show the application dashboard.
@@ -126,25 +124,23 @@ class HomeController extends Controller
     public function index()
     {
         $data['page_title'] = "My Prediction";
-        $data['logs'] = BetInvest::with('match', 'user', 'ques', 'betoption')->whereUser_id(Auth::id())->latest()->paginate(20);
+        $data['logs']       = BetInvest::with('match', 'user', 'ques', 'betoption')->whereUser_id(Auth::id())->latest()->paginate(20);
         return view('sportsbet.my-prediction', $data);
         return view('user.my-prediction', $data);
     }
 
-
     public function activity()
     {
-        $user = Auth::user();
-        $data['logs'] = Trx::whereUser_id($user->id)->latest()->paginate(20);
+        $user               = Auth::user();
+        $data['logs']       = Trx::whereUser_id($user->id)->latest()->paginate(20);
         $data['page_title'] = "Transaction Log";
         return view('user.transaction-log', $data);
     }
 
-
     public function depositLog()
     {
-        $user = Auth::user();
-        $data['logs'] = Deposit::with('user', 'myGatewayCurrency')->whereUser_id($user->id)->whereIn('status', [1, 2, -2])->latest()->paginate(20);
+        $user               = Auth::user();
+        $data['logs']       = Deposit::with('user', 'myGatewayCurrency')->whereUser_id($user->id)->whereIn('status', [1, 2, -2])->latest()->paginate(20);
         $data['page_title'] = "Deposit Log";
         return view('user.deposit.log', $data);
     }
@@ -159,15 +155,15 @@ class HomeController extends Controller
     {
         $this->validate($request, [
             'current_password' => 'required',
-            'password' => 'required|min:5|confirmed'
+            'password'         => 'required|min:5|confirmed',
         ]);
         try {
 
             $c_password = Auth::user()->password;
-            $c_id = Auth::user()->id;
-            $user = User::findOrFail($c_id);
+            $c_id       = Auth::user()->id;
+            $user       = User::findOrFail($c_id);
             if (Hash::check($request->current_password, $c_password)) {
-                $password = Hash::make($request->password);
+                $password       = Hash::make($request->password);
                 $user->password = $password;
                 $user->save();
 
@@ -188,7 +184,7 @@ class HomeController extends Controller
     public function profileSetting()
     {
         $data['page_title'] = "Profile Settings";
-        $data['user'] = User::findOrFail(Auth::id());
+        $data['user']       = User::findOrFail(Auth::id());
         return view('user.profile', $data);
     }
 
@@ -197,21 +193,21 @@ class HomeController extends Controller
         $user = User::findOrFail(Auth::id());
         $request->validate([
             'first_name' => 'required|string|max:30',
-            'last_name' => 'required|string|max:30',
-            'username' => 'required|min:5||alpha_num|unique:users,username,' . $user->id,
-            'city' => 'required|string|max:255',
-            'zip_code' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            'image' => 'mimes:png,jpg,jpeg'
+            'last_name'  => 'required|string|max:30',
+            'username'   => 'required|min:5||alpha_num|unique:users,username,' . $user->id,
+            'city'       => 'required|string|max:255',
+            'zip_code'   => 'required|string|max:255',
+            'address'    => 'required|string|max:255',
+            'image'      => 'mimes:png,jpg,jpeg',
         ]);
         $in = request()->except('_method', '_token', 'balance');
         if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $filename = time() . '_' . $user->username . '.jpg';
-            $location = 'public/images/user/' . $filename;
+            $image       = $request->file('image');
+            $filename    = time() . '_' . $user->username . '.jpg';
+            $location    = 'public/images/user/' . $filename;
             $in['image'] = $filename;
-            $path = './public/images/user/';
-            $link = $path . $user->image;
+            $path        = './public/images/user/';
+            $link        = $path . $user->image;
             if (file_exists($link)) {
                 @unlink($link);
             }
@@ -233,8 +229,8 @@ class HomeController extends Controller
     {
 
         $this->validate($request, [
-            'email' => 'required',
-            'amount' => 'required',
+            'email'    => 'required',
+            'amount'   => 'required',
             'password' => 'required',
         ]);
 
@@ -242,7 +238,6 @@ class HomeController extends Controller
         $email = trim($request->email);
 
         $receiver = User::where('email', $email)->first();
-
 
         if (!$receiver) {
             session()->flash('danger', 'This Email  could not Found!');
@@ -258,7 +253,6 @@ class HomeController extends Controller
             return back()->withInput();
         }
 
-
         if ($request->amount < $basic->min_transfer) {
             session()->flash('danger', 'Minimum Transfer Amount ' . $basic->min_transfer . ' ' . $basic->currency);
             return back()->withInput();
@@ -268,21 +262,18 @@ class HomeController extends Controller
             return back()->withInput();
         }
 
-
         $transferCharge = ($request->amount * $basic->transfer_charge) / 100;
-
 
         $user = User::find(Auth::id());
         if ($user->balance >= ($request->amount + $transferCharge)) {
 
             if (Hash::check($request->password, $user->password)) {
 
-
                 $sendMoneyCheck = MoneyTransfer::where('sender_id', $user->id)->where('receiver_id', $receiver->id)->latest()->first();
 
                 if (isset($sendMoneyCheck) && Carbon::parse($sendMoneyCheck->send_at) > Carbon::now()) {
 
-                    $time = $sendMoneyCheck->send_at;
+                    $time  = $sendMoneyCheck->send_at;
                     $delay = $time->diffInSeconds(Carbon::now());
                     $delay = gmdate('i:s', $delay);
 
@@ -295,39 +286,35 @@ class HomeController extends Controller
                     $user->balance = round(($user->balance - ($transferCharge + $request->amount)), 2);
                     $user->save();
 
-
-                    $trans = getTrx();
-                    $sendTaka = new MoneyTransfer();
-                    $sendTaka->sender_id = $user->id;
+                    $trans                 = getTrx();
+                    $sendTaka              = new MoneyTransfer();
+                    $sendTaka->sender_id   = $user->id;
                     $sendTaka->receiver_id = $receiver->id;
-                    $sendTaka->amount = round($request->amount, 2);
-                    $sendTaka->charge = $transferCharge;
-                    $sendTaka->trx = $trans;
-                    $sendTaka->send_at = Carbon::parse()->addMinutes(1);
+                    $sendTaka->amount      = round($request->amount, 2);
+                    $sendTaka->charge      = $transferCharge;
+                    $sendTaka->trx         = $trans;
+                    $sendTaka->send_at     = Carbon::parse()->addMinutes(1);
                     $sendTaka->save();
 
-
                     $trx = Trx::create([
-                        'user_id' => $user->id,
-                        'amount' => round($request->amount, 2),
+                        'user_id'  => $user->id,
+                        'amount'   => round($request->amount, 2),
                         'main_amo' => $user->balance,
-                        'charge' => $transferCharge,
-                        'type' => '-',
-                        'title' => 'Balance Transfer to  ' . $receiver->email,
-                        'trx' => $trans,
+                        'charge'   => $transferCharge,
+                        'type'     => '-',
+                        'title'    => 'Balance Transfer to  ' . $receiver->email,
+                        'trx'      => $trans,
                     ]);
-
 
                     $receiverRrx = Trx::create([
-                        'user_id' => $receiver->id,
-                        'amount' => round($request->amount, 2),
+                        'user_id'  => $receiver->id,
+                        'amount'   => round($request->amount, 2),
                         'main_amo' => $receiver->balance,
-                        'charge' => 0,
-                        'type' => '+',
-                        'title' => 'Balance Transfer From  ' . $user->email,
-                        'trx' => $trans,
+                        'charge'   => 0,
+                        'type'     => '+',
+                        'title'    => 'Balance Transfer From  ' . $user->email,
+                        'trx'      => $trans,
                     ]);
-
 
                     $receiverMsg = round($request->amount, 2) . ' ' . $basic->currency . ' Balance Transfer From ' . $user->email . " \n Your main balance " . number_format($receiver->balance, 2) . " " . $basic->currency . ' #trx: ' . $receiverRrx->trx . "\n" . date('d M Y  h:i A');
                     notify($receiver, 'Balance Transfer', $receiverMsg);
@@ -355,12 +342,12 @@ class HomeController extends Controller
         $basic = GeneralSettings::first();
         $this->validate($request, [
             'invest_amount' => 'required|numeric',
-            'return_amount' => 'required|numeric'
+            'return_amount' => 'required|numeric',
         ]);
 
         $predictOption = BetOption::find($request->betoption_id);
 
-        $user = User::find(Auth::id());
+        $user        = User::find(Auth::id());
         $invseterBal = $user->balance;
 
         if (Carbon::parse($predictOption->question->end_time) > Carbon::now()) {
@@ -368,11 +355,11 @@ class HomeController extends Controller
 
                 if ($predictOption->min_amo <= $request->invest_amount) {
 
-                    $predictIn = BetInvest::where('user_id', Auth::id())->where('betoption_id', $predictOption->id)->where('betquestion_id', $predictOption->question->id)->where('match_id', $predictOption->match->id)->sum('invest_amount');
+                    $predictIn        = BetInvest::where('user_id', Auth::id())->where('betoption_id', $predictOption->id)->where('betquestion_id', $predictOption->question->id)->where('match_id', $predictOption->match->id)->sum('invest_amount');
                     $lastPredictionIn = BetInvest::where('user_id', Auth::id())->where('betoption_id', $predictOption->id)->where('betquestion_id', $predictOption->question->id)->where('match_id', $predictOption->match->id)->latest()->first();
 
                     if ($lastPredictionIn && Carbon::parse($lastPredictionIn->created_at)->addSeconds(15) > Carbon::now()) {
-                        $time = Carbon::parse($lastPredictionIn->created_at)->addSeconds(15);
+                        $time  = Carbon::parse($lastPredictionIn->created_at)->addSeconds(15);
                         $delay = $time->diffInSeconds(Carbon::now());
                         $delay = gmdate('i:s', $delay);
                         session()->flash('danger', 'You can next predict after ' . $delay . ' seconds in ' . $predictOption->option_name);
@@ -384,21 +371,20 @@ class HomeController extends Controller
                         return back();
                     }
 
-
-                    $data['user_id'] = Auth::id();
-                    $data['betoption_id'] = $request->betoption_id;
+                    $data['user_id']        = Auth::id();
+                    $data['betoption_id']   = $request->betoption_id;
                     $data['betquestion_id'] = $request->betquestion_id;
-                    $data['match_id'] = $request->match_id;
-                    $data['invest_amount'] = $request->invest_amount;
+                    $data['match_id']       = $request->match_id;
+                    $data['invest_amount']  = $request->invest_amount;
 
                     $finalRatioReturnAmo = round((($request->invest_amount * $predictOption->ratio2) / $predictOption->ratio1), 2);
 
-                    $data['return_amount'] = $finalRatioReturnAmo;
+                    $data['return_amount']     = $finalRatioReturnAmo;
                     $data['remaining_balance'] = $invseterBal;
-                    $data['ratio'] = "$predictOption->ratio1 : $predictOption->ratio2";
+                    $data['ratio']             = "$predictOption->ratio1 : $predictOption->ratio2";
 
                     $inverstInfo = BetInvest::create($data);
-                    $trxQ = $inverstInfo->ques->question;
+                    $trxQ        = $inverstInfo->ques->question;
 
                     $user->balance -= round($request->invest_amount, 2);
                     $user->save();
@@ -406,13 +392,13 @@ class HomeController extends Controller
                     $mm = Match::whereId($request->match_id)->first();
                     $tr = getTrx();
                     Trx::create([
-                        'user_id' => $user->id,
-                        'amount' => round($request->invest_amount, 2),
+                        'user_id'  => $user->id,
+                        'amount'   => round($request->invest_amount, 2),
                         'main_amo' => $user->balance,
-                        'charge' => 0,
-                        'type' => '-',
-                        'title' => 'Predict in ' . $mm->name . "<strong> ( " . $trxQ . "  =>   $predictOption->option_name )</strong>",
-                        'trx' => $tr
+                        'charge'   => 0,
+                        'type'     => '-',
+                        'title'    => 'Predict in ' . $mm->name . "<strong> ( " . $trxQ . "  =>   $predictOption->option_name )</strong>",
+                        'trx'      => $tr,
                     ]);
 
                     session()->flash('success', 'Successfully Prediction in ' . $predictOption->option_name);
@@ -431,36 +417,32 @@ class HomeController extends Controller
         }
     }
 
-
-
     public function withdrawLog()
     {
-        $user = Auth::user();
-        $data['logs'] = WithdrawLog::with('user', 'method')->whereUser_id($user->id)->where('status', '!=', 0)->latest()->paginate(20);
+        $user               = Auth::user();
+        $data['logs']       = WithdrawLog::with('user', 'method')->whereUser_id($user->id)->where('status', '!=', 0)->latest()->paginate(20);
         $data['page_title'] = "Withdraw Log";
         return view('user.withdraw.log', $data);
     }
 
     public function withdrawMoney()
     {
-        $data['page_title'] = "Withdraw Money";
+        $data['page_title']     = "Withdraw Money";
         $data['withdrawMethod'] = WithdrawMethod::whereStatus(1)->get();
         return view('user.withdraw.money', $data);
     }
 
-
     public function withdrawMoneyRequest(Request $request)
     {
         $this->validate($request, [
-            'id' => 'required',
-            'amount' => ['required','numeric']
+            'id'     => 'required',
+            'amount' => ['required', 'numeric'],
         ]);
 
-        $basic = GeneralSettings::first();
+        $basic  = GeneralSettings::first();
         $method = WithdrawMethod::where('id', $request->id)->where('status', 1)->firstOrFail();
 
         $authWallet = User::find(Auth::id());
-
 
         $charge = $method->fix + ($request->amount * $method->percent / 100);
 
@@ -471,7 +453,7 @@ class HomeController extends Controller
             return back();
         }
         if ($request->amount > $method->withdraw_max) {
-            session()->flash('danger', 'Maximum Withdraw Amount ' . round($method->withdraw_max, 2 ). ' ' . $basic->currency);
+            session()->flash('danger', 'Maximum Withdraw Amount ' . round($method->withdraw_max, 2) . ' ' . $basic->currency);
             return back();
         }
 
@@ -480,39 +462,35 @@ class HomeController extends Controller
             return back();
         } else {
 
-            $w['method_id'] = $method->id;
-            $w['user_id'] = Auth::id();
-            $w['amount'] = formatter_money($request->amount);
-            $w['charge'] = $charge;
+            $w['method_id']  = $method->id;
+            $w['user_id']    = Auth::id();
+            $w['amount']     = formatter_money($request->amount);
+            $w['charge']     = $charge;
             $w['net_amount'] = $finalAmo;
 
             $w['transaction_id'] = getTrx();
-            $w['status'] = 0;
-            $result = WithdrawLog::create($w);
-
+            $w['status']         = 0;
+            $result              = WithdrawLog::create($w);
 
             session()->put('wtrx', $result->transaction_id);
             return redirect()->route('user.withdraw.preview');
         }
     }
 
-
     public function withdrawReqPreview()
     {
 
-        $withdraw = WithdrawLog::with('method', 'user')->where('transaction_id', session()->get('wtrx'))->where('status', 0)->latest()->firstOrFail();
+        $withdraw   = WithdrawLog::with('method', 'user')->where('transaction_id', session()->get('wtrx'))->where('status', 0)->latest()->firstOrFail();
         $page_title = "Withdraw Form";
         return view('user.withdraw.preview', compact('withdraw', 'page_title'));
     }
 
-
     public function withdrawReqSubmit(Request $request)
     {
-        $basic = GeneralSettings::first();
+        $basic    = GeneralSettings::first();
         $withdraw = WithdrawLog::with('method', 'user')->where('transaction_id', session()->get('wtrx'))->where('status', 0)->latest()->firstOrFail();
 
-
-        $rules = [];
+        $rules      = [];
         $inputField = [];
         if ($withdraw->method->input_form != null) {
             foreach ($withdraw->method->input_form as $key => $cus) {
@@ -541,7 +519,7 @@ class HomeController extends Controller
             return redirect()->route('user.withdraw-money');
         } else {
             $collection = collect($request);
-            $reqField = [];
+            $reqField   = [];
             if ($withdraw->method->input_form != null) {
                 foreach ($collection as $k => $v) {
                     foreach ($withdraw->method->input_form as $inKey => $inVal) {
@@ -552,11 +530,11 @@ class HomeController extends Controller
                                 if ($request->hasFile($inKey)) {
                                     $image = $request->file($inKey);
 
-                                    $filename = time() . uniqid() . '.jpg';
-                                    $location = 'public/images/' . $filename;
+                                    $filename         = time() . uniqid() . '.jpg';
+                                    $location         = 'public/images/' . $filename;
                                     $reqField[$inKey] = [
                                         'field_name' => $filename,
-                                        'type' => $inVal->type,
+                                        'type'       => $inVal->type,
                                     ];
                                     Image::make($image)->save($location);
                                 }
@@ -564,7 +542,7 @@ class HomeController extends Controller
                                 $reqField[$inKey] = $v;
                                 $reqField[$inKey] = [
                                     'field_name' => $v,
-                                    'type' => $inVal->type,
+                                    'type'       => $inVal->type,
                                 ];
                             }
                         }
@@ -575,41 +553,36 @@ class HomeController extends Controller
                 $withdraw['withdraw_information'] = null;
             }
 
-
             $withdraw->status = 1;
             $withdraw->save();
-
 
             $user->balance = formatter_money($user->balance - $withdraw->net_amount);
             $user->save();
 
-
-             Trx::create([
-                'user_id' => $user->id,
-                'amount' => formatter_money($withdraw->amount),
+            Trx::create([
+                'user_id'  => $user->id,
+                'amount'   => formatter_money($withdraw->amount),
                 'main_amo' => $user->balance,
-                'charge' => formatter_money($withdraw->charge),
-                'type' => '-',
-                'title' => 'Withdraw Via ' . $withdraw->method->name,
-                'trx' => $withdraw->transaction_id
+                'charge'   => formatter_money($withdraw->charge),
+                'type'     => '-',
+                'title'    => 'Withdraw Via ' . $withdraw->method->name,
+                'trx'      => $withdraw->transaction_id,
             ]);
 
             $text = number_format($withdraw->amount) . " " . $basic->currency . " Withdraw Request Send via " . $withdraw->method->name . ". <br> Transaction ID : <b>#$withdraw->transaction_id</b>";
             $text .= " Your main balance " . number_format($user->balance, 2) . " " . $basic->currency . "\n" . date('d M Y  h:i A');
             notify($user, 'Withdraw Via ' . $withdraw->method->name, $text);
 
-            session()->flash('success','Withdraw request Successfully Submitted. Wait For Confirmation.');
+            session()->flash('success', 'Withdraw request Successfully Submitted. Wait For Confirmation.');
             return redirect()->route('user.withdraw-money');
 
         }
-
-
-
-
-
-
-
     }
-
+    
+    public function withdraw()
+    {
+        $page_title = 'Withdraw';
+        return view('sportsbet.withdraw', compact('page_title'));
+    }
 
 }
