@@ -171,40 +171,55 @@
                         </div>
                         <div class="body__IdBodyItem-sc-1kb3j31-1 jBPoYd">
                             <h1 size="32" data-test-id="signupPage-heading" color="bulma.100" class="Heading-sc-1fj2bsx-0 typography__IdHeading-sy3hob-0 hDOeka">Create account</h1>
-                            <form class="Form___StyledForm-sc-11bajar-1 bwvtHp SignupForm__CustomForm-yqg9ct-0 glbjYe">
+                            <form class="Form___StyledForm-sc-11bajar-1 bwvtHp SignupForm__CustomForm-yqg9ct-0 glbjYe" method="POST">
+                                @csrf
                                 <fieldset class="Form__Fieldset-sc-11bajar-0 jVBjCW">
                                     <legend class="Form___StyledLegend-sc-11bajar-2 cqsjax">Sign up</legend>
                                     <ul class="Stack-saln32-0 fMcwwO">
                                         <li class="FormItem-sc-5ofmdi-0 btCexx">
                                             <label class="label__LabelFlex-sc-4w9rwl-1">
                                                 <span class="label__LabelContent-sc-4w9rwl-0 gfoyzb">Username</span>
-                                                <input type="text" placeholder="Name your account" autocorrect="off" autocapitalize="none" required="" data-test-id="signupPage-usernameField" value="" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 dfVTHf hMFjBq"></label>
-                                            </li>
+                                                <input type="text" placeholder="Name your account" autocorrect="off" autocapitalize="none" required="" data-test-id="signupPage-usernameField" value="{{old('username')}}" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 dfVTHf hMFjBq" name="username">
+                                            </label>
+                                            @if ($errors->has('username'))
+                                                <p role="alert" class="FormError-sc-11a4iqy-0 jNvcIW">{{ $errors->first('username') }}</p>
+                                            @endif
+                                        </li>
                                             <li class="FormItem-sc-5ofmdi-0 btCexx">
                                                 <label class="label__LabelFlex-sc-4w9rwl-1">
                                                     <span class="label__LabelContent-sc-4w9rwl-0 gfoyzb">Email</span>
-                                                    <input type="email" placeholder="e.g. you@example.com" required="" data-test-id="signupPage-emailField" value="" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 dfVTHf hMFjBq">
+                                                    <input type="email" placeholder="e.g. you@example.com" required="" data-test-id="signupPage-emailField" value="{{old('email')}}" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 dfVTHf hMFjBq" name="email">
                                                 </label>
+                                                @if ($errors->has('email'))
+                                                <p role="alert" class="FormError-sc-11a4iqy-0 jNvcIW">{{ $errors->first('email') }}</p>
+                                            @endif
+                                            {{-- {{dd($errors)}} --}}
                                             </li>
                                             <li class="FormItem-sc-5ofmdi-0 btCexx">
                                                 <div class="SignupForm__Label-yqg9ct-3 hnwyZi">Date of birth</div>
                                                 <div class="SignupForm__DOBWrapper-yqg9ct-4 bcDWLH">
-                                                    <input type="number" placeholder="Day" min="1" max="31" required="" data-test-id="signupPage-dayOfBirthField" value="" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 hMFjBq">
-                                                    <input type="number" placeholder="Month" min="01" max="12" required="" data-test-id="signupPage-monthOfBirthField" value="" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 hMFjBq">
-                                                    <input type="number" placeholder="Year" min="1900" max="2003" required="" data-test-id="signupPage-yearOfBirthField" value="1902" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 hMFjBq">
+                                                    <input type="number" placeholder="Day" min="1" max="31" required="" data-test-id="signupPage-dayOfBirthField" value="{{old('day')}}" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 hMFjBq" name="day">
+                                                    <input type="number" placeholder="Month" min="01" max="12" required="" data-test-id="signupPage-monthOfBirthField" value="{{old('month')}}" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 hMFjBq" name="month">
+                                                    <input type="number" placeholder="Year" min="1900" max="2003" required="" data-test-id="signupPage-yearOfBirthField" value="{{old('year')}}" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 hMFjBq" name="year">
                                                 </div>
+                                                {{-- @if ($errors->has('username'))
+                                                    <p role="alert" class="FormError-sc-11a4iqy-0 jNvcIW">{{ $errors->first('username') }}</p>
+                                                @endif --}}
                                             </li>
                                                 <li class="FormItem-sc-5ofmdi-0 SignupForm__FormItemSpaced-yqg9ct-2 btCexx fCzvsf">
                                                     <label class="label__LabelFlex-sc-4w9rwl-1">
                                                         <span class="label__LabelContent-sc-4w9rwl-0 gfoyzb">Password</span>
-                                                        <input type="password" placeholder=" " required="" data-test-id="signupPage-passwordField" value="" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 dfVTHf hMFjBq">
+                                                        <input type="password" placeholder=" " required="" data-test-id="signupPage-passwordField" value="" class="Input-bxe8t3-0 TextInput__TextInputElem-xu44xk-0 dfVTHf hMFjBq" name="password">
                                                     </label>
+                                                    @if ($errors->has('password'))
+                                                        <p role="alert" class="FormError-sc-11a4iqy-0 jNvcIW">{{ $errors->first('password') }}</p>
+                                                    @endif
                                                 </li>
                                                 <li class="FormItem-sc-5ofmdi-0 btCexx">
                                                     <label for="Checkbox-xee853uqw" class="Checkbox__CheckboxLabel-sc-1ig52xa-0 jiZCdt">
                                                         <input type="checkbox" id="Checkbox-xee853uqw" name="agreedTerms" required="" data-test-id="signupPage-tosCheckbox" class="Checkbox__CheckboxInput-sc-1ig52xa-2 fkwCQb">
                                                         <span class="Checkbox__CheckboxCaption-sc-1ig52xa-1 cFwIvG">I confirm that I am at least 18 years of age, and accept the<!-- -->&nbsp;
-                                                            <button class="Link-n1sjvn-0 gXSVQx">Terms and Conditions</button>.
+                                                            <span class="gXSVQx">Terms and Conditions</span>.
                                                         </span>
                                                     </label>
                                                 </li>
