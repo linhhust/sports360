@@ -125,8 +125,8 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::guard()->logout();
-
+        // Auth::guard()->logout();
+        Auth::logout();
         session()->flash('success', 'You have been successfully logged out!!');
         return redirect(route('login'));
     }

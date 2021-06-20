@@ -4,7 +4,7 @@
 			<div class="SponsorsIcon__SponsorInner-sc-1ahpp78-1 jqZkJM">
 				<div class="SponsorsIcon__SponsorTitle-sc-1ahpp78-4 fyrabx">Official Partner of</div>
 				<div class="SponsorsIcon__SponsorList-sc-1ahpp78-2 lbUSwt">
-					<a to="/about/sportsbet-io-partnerships" href="/about/sportsbet-io-partnerships">
+					<a href="/">
 						<div class="SponsorsIcon__SponsorItem-sc-1ahpp78-3 gCRwOO">
 							<svg height="1em" viewBox="0 0 322.793 379.84" xmlns="http://www.w3.org/2000/svg" font-size="1.3rem" verticalAlign="middle" class="CrestArsenal-sc-1nz8fsz-0 hDJpwR">
 								<path fill="#9C824A" stroke="#9C824A" stroke-width="0.793" stroke-miterlimit="282" d="M161.396.396C122.96.396 52.087 10.34 15.994 31.328c-47.52 168.475 17.107 283.042 145.402 348.068 128.296-65.026 192.923-180.16 145.402-348.067C270.669 10.34 199.831.396 161.396.396h0z"></path>
@@ -50,7 +50,7 @@
 							</svg>
 						</div>
 					</a>
-					<a to="/about/sportsbet-io-partnerships" href="/about/sportsbet-io-partnerships">
+					<a href="/">
 						<div class="SponsorsIcon__SponsorItem-sc-1ahpp78-3 gCRwOO">
 							<svg height="1em" viewBox="0 0 355.508 405.592" xmlns="http://www.w3.org/2000/svg" font-size="1.3rem" verticalAlign="middle" class="CrestSouthampton-sc-1tik4et-0 kiTmOy">
 								<path fill="#211E1F" d="M305.354 289.95c-30.246 35.949-75.561 58.813-126.242 58.813-50.182 0-95.056-22.383-125.327-57.729L17.95 334.129c40.247 43.217 97.668 70.285 161.394 70.285 64.105 0 121.783-27.359 162.029-71.04l-36.019-43.424"></path>
@@ -106,7 +106,7 @@
 							</svg>
 						</div>
 					</a>
-					<a to="/about/sportsbet-io-partnerships" href="/about/sportsbet-io-partnerships">
+					<a href="/">
 						<div class="SponsorsIcon__SponsorItem-sc-1ahpp78-3 gCRwOO">
 							<svg height="1em" viewBox="0 0 260 320" fill="none" xmlns="http://www.w3.org/2000/svg" font-size="1.3rem" verticalAlign="middle" class="CrestFlamengo-c4scqm-0 kmGoAD">
 								<path d="M130 306.659C59.5225 275.957 12.2331 206.876 12.2331 129.754V12.2444H247.584V129.754C247.584 206.876 200.295 275.957 130 306.659ZM260 129.754V0H0V129.754C0 214.734 52.4017 287.105 130 320C207.416 287.287 260 214.917 260 129.754Z" fill="white"></path>
@@ -116,7 +116,7 @@
 							</svg>
 						</div>
 					</a>
-					<a to="/about/sportsbet-io-partnerships" href="/about/sportsbet-io-partnerships">
+					<a href="/">
 						<div class="SponsorsIcon__SponsorItem-sc-1ahpp78-3 gCRwOO">
 							<svg height="1em" viewBox="0 0 216 248" fill="none" xmlns="http://www.w3.org/2000/svg" font-size="1.3rem" verticalAlign="middle" class="CrestWatford-sc-39g5ai-0 ccTrZQ">
     							<path fill-rule="evenodd" clip-rule="evenodd" d="M107.973 248L216 137.675L180.468 54.4311H200.514V0H15.4323V54.4311H35.5315L0 137.675L107.973 248Z" fill="#ED2127"></path>
@@ -144,10 +144,10 @@
         <nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
         	<ul class="list__MenuList-ejejhx-1 gqgeHc">
         		<li class="list__MenuListItem-ejejhx-0 gCXWqb">
-        			<a aria-current="page" class="link__MenuLink-vob4so-2 bxGHmM active" variant="primary" sidebar="[object Object]" href="/sports">
+        			<a aria-current="page" class="link__MenuLink-vob4so-2 bxGHmM active" variant="primary" href="/sports">
         				<span class="link__MenuLinkText-vob4so-0 herjey">Sports</span>
         			</a>
-        			<a class="link__MenuLink-vob4so-2 fdrwMr" sidebar="[object Object]" href="/sports/inplay">
+        			<a class="link__MenuLink-vob4so-2 fdrwMr" href="/sports/inplay">
         				<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
         					<svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconInPlay-sc-15ns67t-0 dpGMtu">
         						<path fill-rule="evenodd" clip-rule="evenodd" d="M15 0H1C.45 0 0 .45 0 1v10c0 .55.45 1 1 1h4.75l-.5 2H4c-.55 0-1 .45-1 1s.45 1 1 1h8c.55 0 1-.45 1-1s-.45-1-1-1h-1.25l-.5-2H15c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1zm0 11H1V1h14v10z" fill="currentColor"></path>
@@ -155,7 +155,7 @@
         				</span>
         				<span class="link__MenuLinkText-vob4so-0 herjey">Inplay</span>
         			</a>
-        			<a class="link__MenuLink-vob4so-2 fdrwMr" sidebar="[object Object]" href="/sports/upcoming">
+        			<a class="link__MenuLink-vob4so-2 fdrwMr" href="/">
         				<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
             				<svg width="1em" height="1em" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconCalendar-sc-6132fy-0 cWtUGU">
             					<path d="M11 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .5.4 1 1 1zm3-2h-1v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H6v1c0 1.1-.9 2-2 2s-2-.9-2-2V1H1c-.6 0-1 .5-1 1v12c0 .6.4 1 1 1h13c.6 0 1-.4 1-1V2c0-.6-.5-1-1-1zM5 13H2v-3h3v3zm0-4H2V5h3v4zm4 4H6v-3h3v3zm0-4H6V5h3v4zm4 4h-3v-3h3v3zm0-4h-3V5h3v4zM4 3c.6 0 1-.5 1-1V1c0-.6-.4-1-1-1S3 .4 3 1v1c0 .5.4 1 1 1z" fill="currentColor"></path>
@@ -163,7 +163,7 @@
             			</span>
             			<span class="link__MenuLinkText-vob4so-0 herjey">Upcoming</span>
             		</a>
-            		<a class="link__MenuLink-vob4so-2 fdrwMr" featureflags="[object Object]" sidebar="[object Object]" href="/sports/4-3-free">
+            		<a class="link__MenuLink-vob4so-2 fdrwMr" href="/">
 	            		<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 	            			<svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" color="gohan.100" class="IconFreeGames433-lx86xm-0 bQAubT">
 	            				<g clip-path="url(#icon-free-games-433_svg__clip0)">
@@ -240,7 +240,7 @@
 	            		</span>
 	            		<span class="link__MenuLinkText-vob4so-0 herjey">4-3-Free</span>
 	            	</a>
-	            	<a class="link__MenuLink-vob4so-2 fdrwMr" featureflags="[object Object]" sidebar="[object Object]" href="/sports/bet-free-6-6">
+	            	<a class="link__MenuLink-vob4so-2 fdrwMr" featureflags="[object Object]" href="/">
 	            		<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 	            			<svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" color="gohan.100" class="IconFreeGames666-sc-5ngfzh-0 gNrqLu">
 	            				<g clip-path="url(#icon-free-games-666_svg__clip0)">
@@ -367,19 +367,29 @@
 		<nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
 			<ul class="list__MenuList-ejejhx-1 gqgeHc">
 				<li class="list__MenuListItem-ejejhx-0 gCXWqb">
-					<a variant="primary" to="/casino" sidebar="[object Object]" class="link__MenuLink-vob4so-2 bxGHmM" href="/casino">
-						<span class="link__MenuLinkText-vob4so-0 herjey">Casino</span>
-					</a>
-					<a to="/casino/categories/live-dealer" sidebar="[object Object]" class="link__MenuLink-vob4so-2 fdrwMr" href="/casino/categories/live-dealer">
+					<a class="link__MenuLink-vob4so-2 fdrwMr" href="/mybet">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
-							<svg width="1em" height="1em" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconLiveCasino-sc-1guasm2-0 hbQvku">
-								<path d="M18.02 5.55V1.486c0-.372-.192-.722-.51-.918a1 1 0 00-1.018-.044L13.46 1.88a1.093 1.093 0 00-.764-.306H9.6c-.296 0-.593.131-.805.371-.022.022-.022.044-.043.044L5.486.502A1.118 1.118 0 004.47.546a1.08 1.08 0 00-.51.918V5.44C1.798 5.965.8 8.303.8 10.379v6.927c0 1.267.912 2.294 2.057 2.294h16.286c1.124 0 2.057-1.027 2.057-2.294v-6.927c0-2.6-1.633-4.174-3.18-4.83zm-8.992.743c.19.262.509.415.848.415h2.566c.297 0 .551-.11.742-.306l3.308 1.595c.149.066.297.11.446.11-.743 2.01-1.845 3.692-3.33 5.003A9.91 9.91 0 0111 14.77c-3.499-1.594-5.026-4.61-5.704-6.685l.19-.066 3.542-1.726zm7.93-4.786l.022 5.529-3.414-1.661.233-2.425 3.16-1.443zM9.58 2.666h3.138v.021l-.254 2.885c0 .022-.021.022-.021.022H9.876c-.021 0-.021-.022-.021-.022l-.276-2.885v-.021zM8.54 3.08l.191 2.141L5.02 7.036v-5.55L8.54 3.08zm11.6 14.225c0 .655-.446 1.201-.997 1.201H2.857c-.551 0-.997-.546-.997-1.201v-6.927c0-1.508.636-3.168 1.972-3.737.319 1.836 1.633 6.905 6.935 9.221l.17.088.19-.066c.233-.065 5.429-1.77 7.274-8.893.954.656 1.718 1.77 1.718 3.387v6.927h.02z" fill="currentColor"></path>
-								<path d="M11 9.789c.527 0 .954-.44.954-.983 0-.543-.427-.984-.954-.984-.527 0-.954.44-.954.984 0 .543.427.983.954.983zM11.318 11.078c-.488-.175-1.04.088-1.23.59-.17.503.085 1.07.573 1.268.487.174 1.039-.088 1.23-.59.19-.503-.085-1.071-.573-1.268z" fill="currentColor"></path>
-							</svg>
+							{{-- <span class="link__MenuLinkIcon-vob4so-1 bKdquj"> --}}
+								<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconBombayClub-h6phnk-0 cfkIjj">
+									<path d="M15 11.247c0-2.16-1.182-4.04-2.927-5.014.197-.387.31-.825.31-1.292 0-.904-.42-1.683-1.073-2.194-.636-.5-1.274-.814-2.465-.735-1.21.08-1.891.828-1.891.828a1.908 1.908 0 00-.55 1.33 1.908 1.908 0 00.91 1.643c.12.074.279.016.328-.119l.167-.461.02-.058.003-.008a1.304 1.304 0 01-.086-.04 1.458 1.458 0 01-.497-1.933c.06-.104.562-.878 1.966-.752.215.026.443.08.679.173.109.04.213.09.313.147l.01.006a2.112 2.112 0 011.049 1.83c0 .628-.211 1.26-.642 1.647l-.006.006c-.06.059-.13.117-.208.173-.249.152-.55.244-.848.299V5.125l-.001-.02v-.767a.273.273 0 00-.192-.262l-.702-.216v2.916h-.612c-.158 0-.298.1-.352.249l-.18.497 1.061.01c.668.031 1.301.167 1.875.389a4.036 4.036 0 012.644 3.802c0 .218-.018.43-.051.637a4.4 4.4 0 01-.369 1.26 4.333 4.333 0 01-3.929 2.531 4.28 4.28 0 01-2.811-1.047 3.378 3.378 0 01-.393-.382 2.985 2.985 0 01-.756-1.96c0-1.64 1.311-2.86 2.93-2.86.383 0 .75.074 1.085.21.314.133.583.329.797.573.228.293.364.662.364 1.063 0 .391-.13.752-.346 1.04-.286.33-.688.378-.871.382a2.107 2.107 0 01-.607-.113.242.242 0 00-.307.149l-.107.298c.245.127.518.207.807.23.006.002.011.002.017.002.027.002.055.002.082.003l.046.002h.021c.031 0 .062 0 .093-.002h.01c.04-.002.078-.005.116-.009 1.27-.124 2.298-1.318 2.298-2.682A2.715 2.715 0 009.41 8.476a3.968 3.968 0 00-4.456 1.166 4.064 4.064 0 00-.951 2.714v-.002.025l.004.096v.003c.004.078.01.156.02.233.245 2.4 2.24 4.262 4.642 4.277V18l.726-.186a.223.223 0 00.167-.217v-.458l.002-.039v-.063c3.02-.103 5.437-2.613 5.437-5.695v-.095z" fill="url(#icon-bombay-club_svg__paint0_linear)"></path>
+									<defs>
+										<linearGradient id="icon-bombay-club_svg__paint0_linear" x1="9.5" y1="2" x2="9.5" y2="18" gradientUnits="userSpaceOnUse">
+											<stop stop-color="#CDAE81"></stop>
+											<stop offset="1" stop-color="#B29265"></stop>
+										</linearGradient>
+									</defs>
+								</svg>
+							{{-- </span> --}}
 						</span>
-						<span class="link__MenuLinkText-vob4so-0 herjey">Live Casino</span>
+						<span class="link__MenuLinkText-vob4so-0 herjey">My bet</span>
 					</a>
-					<a to="/casino/categories/video-slots" sidebar="[object Object]" class="link__MenuLink-vob4so-2 fdrwMr" href="/casino/categories/video-slots">
+				</li>
+			</ul>
+		</nav>
+		<nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
+			<ul class="list__MenuList-ejejhx-1 gqgeHc">
+				<li class="list__MenuListItem-ejejhx-0 gCXWqb">
+					<a class="link__MenuLink-vob4so-2 fdrwMr" href="/withdraw">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 							<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconSlots-sc-1o58l3g-0 gRJiSO">
 								<path d="M13.77 17.756a4.23 4.23 0 100-8.461 4.23 4.23 0 000 8.461zM16.462 13.526c0 1.5-1.193 2.692-2.693 2.692M8.77 15.718c-.424.308-.962.5-1.54.5" stroke="currentColor" stroke-width="0.769" stroke-miterlimit="10" stroke-linecap="round"></path>
@@ -387,21 +397,16 @@
 								<path d="M7.423 11.218c1.115-2.73 3.192-5.346 5.23-6.039 1.5-.5 3.078-.5 4.193-.5M8.385 7.449C6.154 6.987 4.423 5.14 4.423 5.14s2.192-2.692 4.962-2.77c1.577-.038 3.038.732 4 1.424" stroke="currentColor" stroke-width="0.769" stroke-miterlimit="10" stroke-linecap="round"></path>
 							</svg>
 						</span>
-						<span class="link__MenuLinkText-vob4so-0 herjey">Slots</span>
+						<span class="link__MenuLinkText-vob4so-0 herjey">Withdraw</span>
 					</a>
-					<a to="/casino/categories/bombayclub" sidebar="[object Object]" class="link__MenuLink-vob4so-2 bLDRLo" href="/casino/categories/bombayclub">
+					<a class="link__MenuLink-vob4so-2 fdrwMr" href="/payment">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
-							<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconBombayClub-h6phnk-0 cfkIjj">
-								<path d="M15 11.247c0-2.16-1.182-4.04-2.927-5.014.197-.387.31-.825.31-1.292 0-.904-.42-1.683-1.073-2.194-.636-.5-1.274-.814-2.465-.735-1.21.08-1.891.828-1.891.828a1.908 1.908 0 00-.55 1.33 1.908 1.908 0 00.91 1.643c.12.074.279.016.328-.119l.167-.461.02-.058.003-.008a1.304 1.304 0 01-.086-.04 1.458 1.458 0 01-.497-1.933c.06-.104.562-.878 1.966-.752.215.026.443.08.679.173.109.04.213.09.313.147l.01.006a2.112 2.112 0 011.049 1.83c0 .628-.211 1.26-.642 1.647l-.006.006c-.06.059-.13.117-.208.173-.249.152-.55.244-.848.299V5.125l-.001-.02v-.767a.273.273 0 00-.192-.262l-.702-.216v2.916h-.612c-.158 0-.298.1-.352.249l-.18.497 1.061.01c.668.031 1.301.167 1.875.389a4.036 4.036 0 012.644 3.802c0 .218-.018.43-.051.637a4.4 4.4 0 01-.369 1.26 4.333 4.333 0 01-3.929 2.531 4.28 4.28 0 01-2.811-1.047 3.378 3.378 0 01-.393-.382 2.985 2.985 0 01-.756-1.96c0-1.64 1.311-2.86 2.93-2.86.383 0 .75.074 1.085.21.314.133.583.329.797.573.228.293.364.662.364 1.063 0 .391-.13.752-.346 1.04-.286.33-.688.378-.871.382a2.107 2.107 0 01-.607-.113.242.242 0 00-.307.149l-.107.298c.245.127.518.207.807.23.006.002.011.002.017.002.027.002.055.002.082.003l.046.002h.021c.031 0 .062 0 .093-.002h.01c.04-.002.078-.005.116-.009 1.27-.124 2.298-1.318 2.298-2.682A2.715 2.715 0 009.41 8.476a3.968 3.968 0 00-4.456 1.166 4.064 4.064 0 00-.951 2.714v-.002.025l.004.096v.003c.004.078.01.156.02.233.245 2.4 2.24 4.262 4.642 4.277V18l.726-.186a.223.223 0 00.167-.217v-.458l.002-.039v-.063c3.02-.103 5.437-2.613 5.437-5.695v-.095z" fill="url(#icon-bombay-club_svg__paint0_linear)"></path>
-								<defs>
-									<linearGradient id="icon-bombay-club_svg__paint0_linear" x1="9.5" y1="2" x2="9.5" y2="18" gradientUnits="userSpaceOnUse">
-										<stop stop-color="#CDAE81"></stop>
-										<stop offset="1" stop-color="#B29265"></stop>
-									</linearGradient>
-								</defs>
+							<svg width="1em" height="1em" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconLiveCasino-sc-1guasm2-0 hbQvku">
+								<path d="M18.02 5.55V1.486c0-.372-.192-.722-.51-.918a1 1 0 00-1.018-.044L13.46 1.88a1.093 1.093 0 00-.764-.306H9.6c-.296 0-.593.131-.805.371-.022.022-.022.044-.043.044L5.486.502A1.118 1.118 0 004.47.546a1.08 1.08 0 00-.51.918V5.44C1.798 5.965.8 8.303.8 10.379v6.927c0 1.267.912 2.294 2.057 2.294h16.286c1.124 0 2.057-1.027 2.057-2.294v-6.927c0-2.6-1.633-4.174-3.18-4.83zm-8.992.743c.19.262.509.415.848.415h2.566c.297 0 .551-.11.742-.306l3.308 1.595c.149.066.297.11.446.11-.743 2.01-1.845 3.692-3.33 5.003A9.91 9.91 0 0111 14.77c-3.499-1.594-5.026-4.61-5.704-6.685l.19-.066 3.542-1.726zm7.93-4.786l.022 5.529-3.414-1.661.233-2.425 3.16-1.443zM9.58 2.666h3.138v.021l-.254 2.885c0 .022-.021.022-.021.022H9.876c-.021 0-.021-.022-.021-.022l-.276-2.885v-.021zM8.54 3.08l.191 2.141L5.02 7.036v-5.55L8.54 3.08zm11.6 14.225c0 .655-.446 1.201-.997 1.201H2.857c-.551 0-.997-.546-.997-1.201v-6.927c0-1.508.636-3.168 1.972-3.737.319 1.836 1.633 6.905 6.935 9.221l.17.088.19-.066c.233-.065 5.429-1.77 7.274-8.893.954.656 1.718 1.77 1.718 3.387v6.927h.02z" fill="currentColor"></path>
+								<path d="M11 9.789c.527 0 .954-.44.954-.983 0-.543-.427-.984-.954-.984-.527 0-.954.44-.954.984 0 .543.427.983.954.983zM11.318 11.078c-.488-.175-1.04.088-1.23.59-.17.503.085 1.07.573 1.268.487.174 1.039-.088 1.23-.59.19-.503-.085-1.071-.573-1.268z" fill="currentColor"></path>
 							</svg>
 						</span>
-						<span class="link__MenuLinkText-vob4so-0 herjey">Bombay club</span>
+						<span class="link__MenuLinkText-vob4so-0 herjey">Deposit</span>
 					</a>
 				</li>
 			</ul>
@@ -410,53 +415,7 @@
 		<nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
 			<ul class="list__MenuList-ejejhx-1 gqgeHc">
 				<li class="list__MenuListItem-ejejhx-0 gCXWqb">
-					<a to="/clubhouse" sidebar="[object Object]" class="link__MenuLink-vob4so-2 fdrwMr" href="/clubhouse">
-						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
-							<svg width="1em" height="1em" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconStarFilled-m4nujw-0 dmKxAF">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.45 4.056c1.024-2.464 4.514-2.464 5.54 0l2.18 5.243a1 1 0 00.843.613l5.66.454c2.66.213 3.74 3.532 1.713 5.268l-4.313 3.695a1 1 0 00-.322.991l1.317 5.524c.62 2.596-2.204 4.647-4.481 3.256l-4.847-2.96a1 1 0 00-1.042 0l-4.846 2.96c-2.278 1.391-5.101-.66-4.482-3.256l1.317-5.524a1 1 0 00-.322-.991l-4.312-3.695c-2.027-1.736-.948-5.055 1.712-5.268l5.66-.454a1 1 0 00.843-.613l2.181-5.243z" fill="currentColor"></path>
-							</svg>
-						</span>
-						<span class="link__MenuLinkText-vob4so-0 herjey">Clubhouse</span>
-					</a>
-				</li>
-			</ul>
-		</nav>
-
-		<nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
-			<ul class="list__MenuList-ejejhx-1 gqgeHc">
-				<li class="list__MenuListItem-ejejhx-0 gCXWqb">
-					<a class="link__MenuLink-vob4so-2 fdrwMr" featureflags="[object Object]" sidebar="[object Object]" href="/sports/betsy">
-						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
-							<svg width="1em" height="1em" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconStarFilled-m4nujw-0 dmKxAF">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.45 4.056c1.024-2.464 4.514-2.464 5.54 0l2.18 5.243a1 1 0 00.843.613l5.66.454c2.66.213 3.74 3.532 1.713 5.268l-4.313 3.695a1 1 0 00-.322.991l1.317 5.524c.62 2.596-2.204 4.647-4.481 3.256l-4.847-2.96a1 1 0 00-1.042 0l-4.846 2.96c-2.278 1.391-5.101-.66-4.482-3.256l1.317-5.524a1 1 0 00-.322-.991l-4.312-3.695c-2.027-1.736-.948-5.055 1.712-5.268l5.66-.454a1 1 0 00.843-.613l2.181-5.243z" fill="currentColor"></path>
-							</svg>
-						</span>
-						<span class="link__MenuLinkText-vob4so-0 herjey">Esports</span>
-					</a>
-					<a class="link__MenuLink-vob4so-2 fdrwMr" featureflags="[object Object]" sidebar="[object Object]" href="/sports/horse-racing">
-						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
-							<svg width="1em" height="1em" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconStarFilled-m4nujw-0 dmKxAF">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.45 4.056c1.024-2.464 4.514-2.464 5.54 0l2.18 5.243a1 1 0 00.843.613l5.66.454c2.66.213 3.74 3.532 1.713 5.268l-4.313 3.695a1 1 0 00-.322.991l1.317 5.524c.62 2.596-2.204 4.647-4.481 3.256l-4.847-2.96a1 1 0 00-1.042 0l-4.846 2.96c-2.278 1.391-5.101-.66-4.482-3.256l1.317-5.524a1 1 0 00-.322-.991l-4.312-3.695c-2.027-1.736-.948-5.055 1.712-5.268l5.66-.454a1 1 0 00.843-.613l2.181-5.243z" fill="currentColor"></path>
-							</svg>
-						</span>
-						<span class="link__MenuLinkText-vob4so-0 herjey">Horse racing</span>
-					</a>
-					<a class="link__MenuLink-vob4so-2 fdrwMr" featureflags="[object Object]" sidebar="[object Object]" href="/sports/virtual-sports">
-						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
-							<svg width="1em" height="1em" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconStarFilled-m4nujw-0 dmKxAF">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.45 4.056c1.024-2.464 4.514-2.464 5.54 0l2.18 5.243a1 1 0 00.843.613l5.66.454c2.66.213 3.74 3.532 1.713 5.268l-4.313 3.695a1 1 0 00-.322.991l1.317 5.524c.62 2.596-2.204 4.647-4.481 3.256l-4.847-2.96a1 1 0 00-1.042 0l-4.846 2.96c-2.278 1.391-5.101-.66-4.482-3.256l1.317-5.524a1 1 0 00-.322-.991l-4.312-3.695c-2.027-1.736-.948-5.055 1.712-5.268l5.66-.454a1 1 0 00.843-.613l2.181-5.243z" fill="currentColor"></path>
-							</svg>
-						</span>
-						<span class="link__MenuLinkText-vob4so-0 herjey">Virtual sports</span>
-					</a>
-				</li>
-			</ul>
-		</nav>
-
-		<nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
-			<ul class="list__MenuList-ejejhx-1 gqgeHc">
-				<li class="list__MenuListItem-ejejhx-0 gCXWqb">
-					<a class="link__MenuLink-vob4so-2 CommsChat__ChatMenuLink-sc-12m0dof-0 dHiINp">
+					<a class="link__MenuLink-vob4so-2 CommsChat__ChatMenuLink-sc-12m0dof-0 dHiINp" href="/">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 							<svg width="1em" height="1em" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconLiveChat-sc-1s7flce-0 gLYzpQ">
 								<path d="M20.938 10.186c-.08 1.643-.397 3.203-.872 4.353-.952 2.3-3.252 2.875-5.394 3.04-1.269.082-2.379.164-3.41.164-.634 0-1.19 0-1.824-.082-.159 0-.317.082-.476.164L5.79 20.043l-.238-2.464c0-.247-.159-.493-.476-.575-1.27-.493-2.142-1.315-2.617-2.465-.476-1.15-.793-2.71-.873-4.353V9.2c0-1.725.317-3.286.793-4.436.952-2.3 3.252-2.793 5.393-3.039 1.27-.082 2.38-.164 3.41-.164 1.032 0 2.221.082 3.411.164 2.142.246 4.442.74 5.393 3.04.476 1.15.793 2.71.873 4.353.079.41.079.74.079 1.068zm.555-5.997c-.317-.739-.714-1.396-1.19-1.889-.475-.493-1.03-.904-1.665-1.15C17.369.575 16.02.329 14.91.246 13.562.082 12.372 0 11.262 0c-1.19 0-2.3.082-3.648.164-1.11.165-2.459.329-3.728.904A6.36 6.36 0 002.221 2.3c-.555.493-.952 1.15-1.27 1.89C.398 5.503.08 7.228 0 9.117v1.15c.08 1.89.476 3.614.952 4.928.317.822.793 1.561 1.427 2.136.397.41.873.74 1.428.986.08 0 .159.082.159.164l.396 3.614c0 .247.238.411.397.411.079 0 .158 0 .238-.082l4.282-3.04c.08-.081.238-.081.318-.081h1.506c1.19 0 2.3-.083 3.649-.165 1.11-.082 2.458-.328 3.727-.903a8.678 8.678 0 001.666-1.15c.555-.493.952-1.15 1.269-1.89.555-1.314.872-3.039.951-4.928v-1.15c-.079-1.89-.396-3.614-.872-4.929z" fill="currentColor"></path>
@@ -465,7 +424,7 @@
 						</span>
 						<span class="link__MenuLinkText-vob4so-0 herjey"> Live chat</span>
 					</a>
-					<a to="/support/faq" sidebar="[object Object]" class="link__MenuLink-vob4so-2 fdrwMr" href="/support/faq">
+					<a class="link__MenuLink-vob4so-2 fdrwMr" href="/">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 							<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconSupport-sc-1myjpcq-0 kjFSYf">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M3.03 13.899a9.178 9.178 0 007.071 7.07 4.7 4.7 0 00.027.105 1.25 1.25 0 001.207.926h1.32c.566 0 1.06-.38 1.207-.926a6.12 6.12 0 00.027-.102 9.178 9.178 0 007.08-7.073 4.7 4.7 0 00.105-.027A1.25 1.25 0 0022 12.665v-1.32c0-.566-.38-1.06-.926-1.207a6.12 6.12 0 00-.102-.027 9.178 9.178 0 00-7.083-7.083 6.35 6.35 0 00-.027-.102A1.25 1.25 0 0012.655 2h-1.32c-.565 0-1.06.38-1.207.926-.01.034-.018.069-.027.104a9.178 9.178 0 00-7.073 7.081 6.35 6.35 0 00-.102.027A1.25 1.25 0 002 11.345v1.32c0 .565.38 1.06.926 1.207.034.01.069.018.104.027zm8.386 1.851c-.258 0-.5.079-.701.215a4.177 4.177 0 01-2.68-2.68c.136-.201.215-.443.215-.7V11.42c0-.258-.08-.5-.216-.702a4.177 4.177 0 012.681-2.684c.201.137.443.215.7.215h1.164c.258 0 .5-.079.702-.216a4.177 4.177 0 012.685 2.685 1.247 1.247 0 00-.216.702v1.163c0 .258.078.5.215.7a4.177 4.177 0 01-2.684 2.682 1.247 1.247 0 00-.702-.216h-1.163zm2.627 4.331a8.347 8.347 0 006.037-6.035c-.259.025-.532.037-.818.037a12.59 12.59 0 01-2.592-.293 5.015 5.015 0 01-2.885 2.882c.008.027.014.055.02.083.185.93.278 1.765.278 2.507 0 .283-.013.556-.04.82zm-4.126-.82c0 .287.012.56.037.82a8.347 8.347 0 01-6.034-6.035c.259.025.532.037.818.037a12.59 12.59 0 002.592-.293 5.016 5.016 0 002.88 2.88 12.59 12.59 0 00-.293 2.592zM14.043 3.92c.027.263.04.536.04.82 0 .741-.093 1.576-.278 2.506a1.267 1.267 0 01-.02.083 5.016 5.016 0 012.887 2.887c.027-.008.055-.014.083-.02.93-.185 1.765-.278 2.507-.278.283 0 .556.013.82.04a8.347 8.347 0 00-6.04-6.038zM3.918 9.957A8.347 8.347 0 019.954 3.92c-.025.259-.038.532-.038.818a12.597 12.597 0 00.294 2.592 5.016 5.016 0 00-2.882 2.885 1.268 1.268 0 00-.084-.02c-.929-.185-1.764-.278-2.506-.278-.283 0-.556.013-.82.04zm3.163 1.055c-.879-.175-1.66-.262-2.344-.262-.588 0-1.12.065-1.596.192a.417.417 0 00-.309.403v1.32c0 .188.127.353.309.402.452.121.984.183 1.596.183.722 0 1.504-.086 2.345-.258a.417.417 0 00.334-.408v-1.163c0-.199-.14-.37-.335-.409zm12.18-.262c.588 0 1.12.065 1.596.192a.417.417 0 01.309.403v1.32a.417.417 0 01-.309.402c-.452.121-.984.183-1.596.183-.722 0-1.504-.086-2.345-.258a.417.417 0 01-.334-.408v-1.163c0-.199.14-.37.336-.409.878-.175 1.66-.262 2.343-.262zm-6.274-3.668c.175-.879.262-1.66.262-2.344 0-.588-.065-1.12-.192-1.596a.417.417 0 00-.403-.309h-1.32a.417.417 0 00-.402.309c-.121.452-.183.984-.183 1.596 0 .722.086 1.504.258 2.345.04.194.21.334.408.334h1.163c.199 0 .37-.14.409-.335zm.262 12.18c0 .588-.065 1.12-.192 1.596a.417.417 0 01-.403.309h-1.32a.417.417 0 01-.402-.309c-.121-.452-.183-.984-.183-1.596 0-.722.086-1.504.258-2.345a.417.417 0 01.408-.334h1.163c.199 0 .37.14.409.336.175.878.262 1.66.262 2.343z" fill="currentColor"></path>
@@ -474,7 +433,7 @@
 						</span>
 						<span class="link__MenuLinkText-vob4so-0 herjey">Help centre</span>
 					</a>
-					<a to="/promotions" sidebar="[object Object]" class="link__MenuLink-vob4so-2 fdrwMr" href="/promotions">
+					<a class="link__MenuLink-vob4so-2 fdrwMr" href="/">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 							<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconPromotions-sc-1v5co57-0 IdbOr">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M8.816 16.91v-3.272h.6c.27 0 .535.06.778.175l5.56 2.634a1.09 1.09 0 001.552-.873c.156-1.504.234-3.602.234-6.298s-.078-4.794-.234-6.298a1.09 1.09 0 00-1.552-.873l-5.56 2.634a1.817 1.817 0 01-.778.175H7.004a3.999 3.999 0 00-3.997 3.884c-.003.11-.005.268-.007.475.002.213.004.371.007.481.04 1.375.77 2.57 1.851 3.26l.972 4.06c.08.531.538.926 1.078.926h.817a1.09 1.09 0 001.091-1.09zm1.69-3.754a2.543 2.543 0 00-.963-.242V5.638c.333-.017.66-.099.963-.242l5.56-2.634a.363.363 0 01.517.291c.153 1.475.23 3.55.23 6.223s-.077 4.748-.23 6.223a.364.364 0 01-.517.29l-5.56-2.633zm-1.69-.245H7.004a3.271 3.271 0 01-3.27-3.178 23.55 23.55 0 01-.007-.46c.002-.197.004-.35.007-.454a3.271 3.271 0 013.27-3.178h1.812v7.27zm-.727 3.998v-3.271H7.004c-.455 0-.893-.076-1.3-.216l.837 3.499.007.036c.024.181.178.316.36.316h.818c.2 0 .363-.163.363-.364z" fill="currentColor"></path>
@@ -483,7 +442,7 @@
 						</span>
 						<span class="link__MenuLinkText-vob4so-0 herjey">Promotions</span>
 					</a>
-					<a to="/vip" sidebar="[object Object]" class="link__MenuLink-vob4so-2 fdrwMr" href="/vip">
+					<a to="/vip" class="link__MenuLink-vob4so-2 fdrwMr" href="/vip">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 							<svg width="1em" height="1em" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconStarFilled-m4nujw-0 dmKxAF">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.45 4.056c1.024-2.464 4.514-2.464 5.54 0l2.18 5.243a1 1 0 00.843.613l5.66.454c2.66.213 3.74 3.532 1.713 5.268l-4.313 3.695a1 1 0 00-.322.991l1.317 5.524c.62 2.596-2.204 4.647-4.481 3.256l-4.847-2.96a1 1 0 00-1.042 0l-4.846 2.96c-2.278 1.391-5.101-.66-4.482-3.256l1.317-5.524a1 1 0 00-.322-.991l-4.312-3.695c-2.027-1.736-.948-5.055 1.712-5.268l5.66-.454a1 1 0 00.843-.613l2.181-5.243z" fill="currentColor"></path>
@@ -491,7 +450,7 @@
 						</span>
 						<span class="link__MenuLinkText-vob4so-0 herjey">VIP</span>
 					</a>
-					<a to="/about" sidebar="[object Object]" class="link__MenuLink-vob4so-2 fdrwMr" href="/about">
+					<a to="/about" class="link__MenuLink-vob4so-2 fdrwMr" href="/about">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 							<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconAbout-ybxvgu-0 iFkGRU">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M10 1a9 9 0 00-9 9 9 9 0 009 9 9 9 0 009-9 9 9 0 00-9-9zm0 17.1A8.1 8.1 0 011.9 10 8.1 8.1 0 0110 1.9a8.1 8.1 0 018.1 8.1 8.1 8.1 0 01-8.1 8.1zm0-9.9a.424.424 0 01.45.45v4.95h1.35c.6 0 .6.9 0 .9H8.2c-.6 0-.6-.9 0-.9h1.35V9.1H9.1c-.6 0-.6-.9 0-.9h.9zm.9-1.8a.9.9 0 10-1.8 0 .9.9 0 001.8 0z" fill="currentColor"></path>
@@ -500,7 +459,7 @@
 						</span>
 						<span class="link__MenuLinkText-vob4so-0 herjey">About</span>
 					</a>
-					<a to="/news" sidebar="[object Object]" class="link__MenuLink-vob4so-2 fdrwMr" href="/news">
+					<a to="/news" class="link__MenuLink-vob4so-2 fdrwMr" href="/news">
 						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
 							<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconNews-fh2ca-0 jJRuns">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M16.692 18.594a.41.41 0 00-.409-.41h-1.566a2.446 2.446 0 01-.625-1.636v-.818a.41.41 0 00.818 0v.818a1.637 1.637 0 103.273 0v-4.5a.41.41 0 00-.409-.41h-1.636a.41.41 0 010-.818h1.636c.678 0 1.228.55 1.228 1.227v4.5a2.455 2.455 0 01-2.643 2.449.41.41 0 00.333-.402zm-2.6-3.287a.41.41 0 01.818.014v.409l.007-11.865A2.864 2.864 0 0012.053 1l-4.058.001H4.08a2.864 2.864 0 00-2.857 2.664 91.051 91.051 0 000 12.674 2.864 2.864 0 002.856 2.664h12.205a.413.413 0 00.076-.007 2.45 2.45 0 01-1.642-.812H4.078a2.046 2.046 0 01-2.04-1.902 89.801 89.801 0 010-12.56 2.046 2.046 0 012.04-1.903h7.976c1.13 0 2.045.916 2.044 2.046l-.006 11.442zm0 0v.422-.422zM4.273 5.092v2.455h7.364V5.092H4.273zm7.364-.818H4.273a.818.818 0 00-.818.818v2.455c0 .452.366.818.818.818h7.364a.818.818 0 00.819-.818V5.092a.818.818 0 00-.819-.818zm-7.773 7.364a.41.41 0 010-.818h8.182a.41.41 0 110 .818H3.864zm-.41 2.046c0 .226.184.41.41.41h4.09a.41.41 0 000-.82h-4.09a.41.41 0 00-.41.41z" fill="currentColor"></path>
@@ -512,7 +471,22 @@
 				</li>
 			</ul>
 		</nav>
-		
+		<nav class="nav__MenuNav-sc-15vvngx-0 jbJiFv">
+			<ul class="list__MenuList-ejejhx-1 gqgeHc">
+				<li class="list__MenuListItem-ejejhx-0 gCXWqb">
+					<a class="link__MenuLink-vob4so-2 fdrwMr" href="/logout">
+						<span class="link__MenuLinkIcon-vob4so-1 bKdquj">
+							<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconSlots-sc-1o58l3g-0 gRJiSO">
+								<path d="M13.77 17.756a4.23 4.23 0 100-8.461 4.23 4.23 0 000 8.461zM16.462 13.526c0 1.5-1.193 2.692-2.693 2.692M8.77 15.718c-.424.308-.962.5-1.54.5" stroke="currentColor" stroke-width="0.769" stroke-miterlimit="10" stroke-linecap="round"></path>
+								<path d="M9.846 16.987a4.31 4.31 0 01-2.577.846A4.26 4.26 0 013 13.564a4.26 4.26 0 014.27-4.27c1 0 1.922.347 2.653.924M13.961 5.064c-.538.846-.807 1.654-.884 2.385-.23 1.807.5 3.269.5 4.038" stroke="currentColor" stroke-width="0.769" stroke-miterlimit="10" stroke-linecap="round"></path>
+								<path d="M7.423 11.218c1.115-2.73 3.192-5.346 5.23-6.039 1.5-.5 3.078-.5 4.193-.5M8.385 7.449C6.154 6.987 4.423 5.14 4.423 5.14s2.192-2.692 4.962-2.77c1.577-.038 3.038.732 4 1.424" stroke="currentColor" stroke-width="0.769" stroke-miterlimit="10" stroke-linecap="round"></path>
+							</svg>
+						</span>
+						<span class="link__MenuLinkText-vob4so-0 herjey">Log Out</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
 		<!-- <div class="container__MenuContainer-sc-15c58pa-0 dXxcal">
 			<form>
 				<label>

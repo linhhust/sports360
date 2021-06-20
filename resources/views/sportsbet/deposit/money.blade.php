@@ -37,7 +37,7 @@
             <div class="row-payment ">
 
 
-                            <div class="col-md-6 ">
+                            <div class="col-12 col-md-6 ">
 
                                     <div class="card-body my-5 shadow ">
 
@@ -66,7 +66,7 @@
 
                             </div>
 
-                            <div class="col-md-6 ">
+                            <div class="col-12 col-md-6 ">
 
                                 <div class="card-body my-5 result-show " style="display: none;">
 

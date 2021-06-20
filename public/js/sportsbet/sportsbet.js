@@ -1,3 +1,9 @@
+$(document).ready(function(){
+  if ($(window).width() < 600) {
+    $('.bIUEeK').remove();
+  }
+});
+
 var elementSelect = `
   <li class="">
       <div class="event" data-id="{id}">

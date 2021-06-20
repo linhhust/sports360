@@ -37,7 +37,7 @@
 							<span class="ListEventContainer__SportsLabel-sc-2quhzy-1 bCCTpw">Tennis</span>
 						</div>
 					@endif
-					<a class="ListEventContainer__SportsSeeAllWrapper-sc-2quhzy-3 XYCkf" href="/sports/basketball">See all</a>
+					<a class="ListEventContainer__SportsSeeAllWrapper-sc-2quhzy-3 XYCkf" href="/sports/{{strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $sport['name'])))}}">See all</a>
 				</div>
 				<div class="ListEventContainer__EventsWrapper-sc-2quhzy-4 cxCKIF">
 					@if ($sport['name'] == 'Soccer')
