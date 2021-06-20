@@ -90,12 +90,12 @@
 			            	</div>
 			            </main>
 			            <footer class="template__TemplateFooter-sm5no8-3 ihVqAG"></footer>
-			            <div direction="left" aria-hidden="true" class="banner__ArenaBanner-yjue7o-0 cGYXbL">
+			            {{-- <div direction="left" aria-hidden="true" class="banner__ArenaBanner-yjue7o-0 cGYXbL">
 			            	<a class="Banner-sc-1lne2wd-0 hbiwEg"></a>
 			            </div>
 			            <div direction="right" aria-hidden="true" class="banner__ArenaBanner-yjue7o-0 hzvGjz">
 			            	<a href="https://sportsbet.io/about/sportsbet-io-partnerships" class="Banner-sc-1lne2wd-0 eHaLBO"></a>
-			            </div>
+			            </div> --}}
 			        </div>
 			    </div>
 		    </div>

@@ -58,7 +58,7 @@ var elementSelect = `
               <div class="potentialwin">
                   Potential win:
                   <span class="sum u-color-bulma">
-                      mBTC
+                      USD
                       <span class="numbers">0.00</span>
                   </span>
               </div>
@@ -91,7 +91,7 @@ var betWrapper = `
                             <span class="label u-color-trunks">
                                 Total stake:
                             </span>
-                            mBTC  <span class="numbers">0.00</span>
+                            USD  <span class="numbers">0.00</span>
                         </div>
                     </div>
                     <div class="betslip-footer">

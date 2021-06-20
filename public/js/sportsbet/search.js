@@ -31,6 +31,29 @@ function getList(type) {
         success: function(data) {
             // console.log(data)
             $('#content').html(data);
+            if ($(window).width() < 600) {
+                $('.bIUEeK').remove();
+                $('.bxcQYe').remove();
+                $('.iDUEcT').remove();
+                $('.iKPMp').remove();
+                $('.vzgLe').remove();
+                $('.btXGYI').remove();
+                $('.ijNPnK').remove();
+                $('.ckgoaB').remove();
+                $('.kHupyM').remove();
+                $('.dAcRU').remove();
+                $('.glEDYr').remove();
+                $('.fcEWGd').remove();
+                $('.DSIxD').remove();
+                $('.eJstFh').remove();
+                $('.cVQWRz').remove();
+                $('.cnpGOH').remove();
+                $('.vzgLe').remove();
+                
+                // $('.eJstFh').remove();
+                // $('.eJstFh').remove();
+                // $('.eJstFh').remove();
+            }
             addEvent()
         },
         error: function(error, b, c) {

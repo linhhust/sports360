@@ -11,7 +11,7 @@
 	<div class="BreadCrumbsContainer__Wrapper-sc-12hczw4-0 hFqjqD">
 		<ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs__BreadCrumbsContainer-sc-15jbfj7-1 ccmSiI">
 			<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-				<a aria-current="page" class="active" itemprop="item" href="/sports">
+				<a aria-current="page" class="active" itemprop="item" href="/">
 					<span itemprop="name">Home</span>
 					<meta itemprop="position" content="1">
 				</a>
@@ -31,7 +31,12 @@
 	</div>
 @stop
 @section('sport-panel')
-	<div id="content"></div>
+	{{-- <div id="content"></div> --}}
+	<div class="mt20">
+		<div class="sports-nomarkets u-bg-goku">
+			<span>Events are currently not available</span>
+		</div>
+	</div>
 @stop
 @section('js')
 	<script src="{{asset('public/js/sportsbet/search.js')}}"></script>

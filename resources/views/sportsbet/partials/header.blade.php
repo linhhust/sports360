@@ -54,10 +54,10 @@
 	<div class="Inline-sc-1rz1cju-0 jtWmMp" style="overflow: visible;">
 		@guest
 			<a variant="link" class="button__Button-sc-1kryk61-2 fzoWrk" href="/register">
-				<span class="button__ButtonText-sc-1kryk61-0 fNvhMU">Register</span>
+				<span class="button__ButtonText-sc-1kryk61-0 abc">Register</span>
 			</a>
 			<a variant="primary" class="button__Button-sc-1kryk61-2 ieTUff" href="/login">
-				<span class="button__ButtonText-sc-1kryk61-0 fNvhMU">Sign In</span>
+				<span class="button__ButtonText-sc-1kryk61-0 abc">Sign In</span>
 			</a>
 		@endguest
 		@auth
@@ -69,7 +69,7 @@
 			                <span dir="ltr" class="user-info__HeaderUserInfoBalance-sc-1y2nmky-3 RguHV">
 			                    <span class="deposit__DepositSign-sc-1ca1un2-0 hGtOUz">+&nbsp;</span>
 			                    <span class="balance">{{Auth::user()->balance}}</span>
-			                    &nbsp;mBTC
+			                    &nbsp;USD
 			                </span>
 			            </span>
 			        </button>
