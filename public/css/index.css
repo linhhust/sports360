@@ -2917,6 +2917,7 @@ input:not([type=checkbox]):not([type=radio]) {
     -webkit-box-pack: center;
     justify-content: center;
     transition: inherit;
+    padding: 1px;
 }
 .ggTfbD {
     display: inline-flex;
@@ -3309,7 +3310,7 @@ img {
 td {
     border: none;
 }
-@media (min-width: 576px) {
+/*@media (min-width: 576px) {
     .container {
         max-width: 540px;
     }
@@ -3328,11 +3329,11 @@ td {
     .container {
         max-width: 960px;
     }
-}
+}*/
 .container {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    /*padding-right: 15px;
+    padding-left: 15px;*/
     margin-right: auto;
     margin-left: auto;
 }
@@ -3348,7 +3349,7 @@ td {
     background: #595959!important;
 }
 .table-striped tbody tr:nth-of-type(even) {
-    background: #696969!important;
+    background: rgb(35, 42, 51)!important;
 }
 .result-table-tr {
     border: none!important;
@@ -3364,7 +3365,7 @@ td {
 }
 
 .result-table-header {
-    background-color: #1f262f!important;
+    background-color: rgb(26, 33, 42)!important;
 }
 .betslip .message.danger, .betslip .message.pending {
     color: #ff4e64;
@@ -3373,4 +3374,32 @@ td {
     text-align: center;
     font-size: 14px;
     -webkit-backface-visibility: hidden;
+}
+
+@media(max-width: 1024px){
+    .ggTfbD {
+        padding: 0px;
+        height: 2.5em;
+        min-width: 2.5em;
+    }
+    .fNvhMU {
+        display: none;
+    }
+    .lkmuTB {
+        display: none;
+    }
+}
+
+@media(max-width: 599px){
+    .ggTfbD {
+        padding: 0px;
+        height: 2.5em;
+        min-width: 2.5em;
+    }
+    .lkmuTB {
+        display: none;
+    }
+    .fNvhMU {
+        display: none;
+    }
 }

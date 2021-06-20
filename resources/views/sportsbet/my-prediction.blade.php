@@ -4,8 +4,6 @@
     <link rel="stylesheet" href="{{asset('public/templates/css/custom-table.css')}}">
 @stop
 @section('content')
-
-
     <div class="faq-section shadow-bg ">
         <div class="container">
 

@@ -1,9 +1,9 @@
 @extends('sportsbet.layout')
-@section('heading')
-	<h1 size="24" class="Heading-sc-1fj2bsx-0 ggJTHf withFeaturedEvents__StyledHeading-sc-1hwqevl-1 bsyJuc" color="bulma.100">Featured events</h1>
-@stop
-@section('sport-panel-featured')
+
+@section('content')
 {{-- {{dd($sports)}} --}}
+<div class="withFeaturedEvents__Wrapper-sc-1hwqevl-0 cwVMaU">
+	<h1 size="24" class="Heading-sc-1fj2bsx-0 ggJTHf withFeaturedEvents__StyledHeading-sc-1hwqevl-1 bsyJuc" color="bulma.100">Featured events</h1>
 	@foreach($sports as $sport)
 		<div class="breakout__LTRArenaBreakout-ojwmgi-0 hhKAHt">
 			<div class="ListEventContainer__ListEventWrapper-sc-2quhzy-0 dIlBK">
@@ -53,4 +53,5 @@
 			</div>
 		</div>
 	@endforeach
+</div>
 @stop

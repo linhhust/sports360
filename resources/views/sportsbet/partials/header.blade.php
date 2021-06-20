@@ -12,7 +12,7 @@
 </div>
 
 <div class="layout__HeaderLayoutItem-sc-1sp98x0-1 euCTqU">
-	<a href="/sports" class="link-logo__LinkLogo-yldhxm-1 kCoNgl">
+	<a href="/" class="link-logo__LinkLogo-yldhxm-1 kCoNgl">
 		<svg fill="none" viewBox="0 0 115 20" width="75%" xmlns="http://www.w3.org/2000/svg" verticalAlign="middle" color="bulma.100" class="LogoSportsbet-et4h3y-0 cmhKcX">
 			<title>Sports360.io</title>
 			<path fill="currentColor" fill-rule="evenodd" d="M9.99985 19.4074c5.35925 0 9.70375-4.3445 9.70375-9.70369C19.7036 4.3445 15.3591 0 9.99985 0 4.64064 0 .29615 4.3445.29615 9.70371c0 5.35919 4.34449 9.70369 9.7037 9.70369zm.00009-1.9882c4.26116 0 7.71546-3.4543 7.71546-7.71547 0-4.26114-3.4543-7.71548-7.71546-7.71548-4.26114 0-7.71547 3.45434-7.71547 7.71548 0 4.26117 3.45433 7.71547 7.71547 7.71547z" clip-rule="evenodd"></path>
@@ -100,14 +100,14 @@
 			        </span>
 			        <span class="button__ButtonText-sc-1kryk61-0 fNvhMU">{{Auth::user()->username}}</span>
 			    </button>
-			    <button class="button__Button-sc-1kryk61-2 jBxHEd">
-			        {{-- <span class="button__ButtonIcon-sc-1kryk61-1 nOOFq">
+			    <button class="button__Button-sc-1kryk61-2 jBxHEd my-bet">
+			        <span class="button__ButtonIcon-sc-1kryk61-1 nOOFq">
 			            <p dir="ltr" class="button__ButtonIcon-sc-1kryk61-1-p ActiveTicketCounter__MyBetsDigits-ov4dkd-0 dJwFz">
-			                <span class="ActiveTicketCounter__MyBetsDigit-ov4dkd-1 hgqPbW">0</span>
-			                <span class="ActiveTicketCounter__MyBetsDigit-ov4dkd-1 hgqPbW">0</span>
+			                <span class="ActiveTicketCounter__MyBetsDigit-ov4dkd-1 hgqPbW">{{App\BetInvest::where('user_id', Auth::user()->id)->count()}}</span>
+			                {{-- <span class="ActiveTicketCounter__MyBetsDigit-ov4dkd-1 hgqPbW">0</span> --}}
 			            </p>
-			        </span> --}}
-			        <span class="button__ButtonText-sc-1kryk61-0 fNvhMU my-bet">My bets</span>
+			        </span>
+			        <span class="button__ButtonText-sc-1kryk61-0 fNvhMU">My bets</span>
 			    </button>
 			    <span>
 			        <button class="button__Button-sc-1kryk61-2 lkmuTB">
