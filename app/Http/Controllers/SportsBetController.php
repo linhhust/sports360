@@ -7,11 +7,11 @@ use App\BetOption;
 use App\Event;
 use App\Sport;
 use Auth;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
-use View;
 use DB;
+use Illuminate\Http\Request;
 use Log;
+use View;
 
 class SportsBetController extends Controller
 {
@@ -20,7 +20,7 @@ class SportsBetController extends Controller
         $sports = Sport::get();
         $result = [];
         foreach ($sports as $sport) {
-            $data = $this->getData($sport->name,1);
+            $data = $this->getData($sport->name, 2);
             if (count($data) > 0) {
                 $result[] = [
                     'name' => $sport->name,
@@ -38,28 +38,29 @@ class SportsBetController extends Controller
         // return view('sportsbet.index', ['name' => 'index']);
         Excel::import(new DataImport, storage_path('data-sportsbet.xlsx'));
     }
-    public function test(){
+    public function test()
+    {
         return [(view()->exists('view.name'))];
     }
     public function sports($name)
     {
         // return view('sportsbet.layout.' . $name, ['name' => $name]);
         // return view('sportsbet.index');
-        if (view()->exists("sportsbet.sports." . strtolower($name))){
+        if (view()->exists("sportsbet.sports." . strtolower($name))) {
             return view('sportsbet.layout.' . $name, ['name' => $name]);
-        }else{
+        } else {
             return view('sportsbet.layout', ['name' => $name]);
         }
     }
 
     public function searchSport(Request $request, $name = '')
     {
-        $type          = $request->type ?? 1;
-        $name          = str_replace('-', ' ', $name);
+        $type   = $request->type ?? 1;
+        $name   = str_replace('-', ' ', $name);
         $result = $this->getData($name, $type);
-        if (view()->exists("sportsbet.sports." . strtolower($name))){
-            return view("sportsbet.sports." . strtolower($name), ['name' => $name,'data' => $result, 'type' => $type]);
-        }else{
+        if (view()->exists("sportsbet.sports." . strtolower($name))) {
+            return view("sportsbet.sports." . strtolower($name), ['name' => $name, 'data' => $result, 'type' => $type]);
+        } else {
             return '';
         }
     }
@@ -70,20 +71,23 @@ class SportsBetController extends Controller
         switch ($type) {
             case '1': //inline
                 $query->with(['matches' => function ($query) {
-                    $query->where('matches.status', 2);
+                    $query->where('matches.status', 1)
+                    ->where('matches.start_date', '<=', Carbon::now())
+                    ->where('matches.end_date', '>', Carbon::now());
                 }, 'matches.questions', 'matches.questions.options']);
                 break;
             case '2': //today
                 $query->with(['matches' => function ($query) {
                     $query->where('matches.status', 1)
-                        ->where('matches.start_date', '>', Carbon::now())
-                        ->whereRaw('TIMESTAMPDIFF(hour, now(), matches.start_date) < 24');
+                        ->where('matches.start_date', '<=', Carbon::now())
+                        ->whereRaw("TIMESTAMPDIFF(hour, '".Carbon::now()."', matches.start_date) < 24");
                 }, 'matches.questions', 'matches.questions.options']);
                 break;
             case '3': //future
                 $query->with(['matches' => function ($query) {
                     $query->where('matches.status', 1)
-                        ->whereRaw('TIMESTAMPDIFF(hour, now(), matches.start_date) >=24');
+                        ->whereRaw("TIMESTAMPDIFF(hour, '".Carbon::now()."', matches.start_date) >= 24");
+                        // ->whereRaw('TIMESTAMPDIFF(hour, '.Carbon::now().', matches.start_date) >=24');
                 }, 'matches.questions', 'matches.questions.options']);
                 break;
         }
@@ -94,8 +98,8 @@ class SportsBetController extends Controller
             $arrMatch = [];
             foreach ($event->matches as $match) {
                 if (count($match->questions) > 0) {
-                    $arrData = [];
-                    $arrName = [];
+                    $arrData     = [];
+                    $arrName     = [];
                     $arrQuestion = [];
                     foreach ($match->questions as $question) {
                         $arrData = [];
@@ -104,23 +108,26 @@ class SportsBetController extends Controller
                                 $arrName[] = $option->option_name;
                             }
                             $arrData[$option->option_name] = [
-                                'id'      => $option->id,
-                                'ratio1' => $option->text,
-                                'ratio2' => floatval($option->ratio2),
+                                'id'          => $option->id,
+                                'ratio1'      => $option->text,
+                                'ratio2'      => floatval($option->ratio2),
                                 'question_id' => $question->id,
                             ];
                         }
-                        if (count($arrData) > 0) 
+                        if (count($arrData) > 0) {
                             $arrQuestion[$question->question] = $arrData;
+                        }
+
                         // break;
                     }
                     $arrMatch[] = [
+                        'id'      => $match->id,
                         'name'    => $match->name,
                         'options' => $arrName,
                         'data'    => $arrQuestion,
                         'time'    => $match->start_date,
-                        'score1'    => $match->score1,
-                        'score2'    => $match->score2,
+                        'score1'  => $match->score1,
+                        'score2'  => $match->score2,
                     ];
                 }
             }
@@ -140,10 +147,10 @@ class SportsBetController extends Controller
         if (Auth::check()) {
             DB::beginTransaction();
             $total = 0;
-            $bets = $request->bets ?? [];
+            $bets  = $request->bets ?? [];
             // return $bets;
             foreach ($bets as $bet) {
-                $data = BetOption::with(['question','match'])->find($bet['id']);
+                $data = BetOption::with(['question', 'match'])->find($bet['id']);
                 BetInvest::create([
                     'user_id'        => Auth::id(),
                     'betquestion_id' => $data->question->id,
@@ -156,14 +163,14 @@ class SportsBetController extends Controller
                 $total += $bet['amount'];
             }
             Log::info($total . "   " . Auth::user()->balance);
-            if ($total <= Auth::user()->balance){
+            if ($total <= Auth::user()->balance) {
                 Auth::user()->balance -= $total;
                 Auth::user()->save();
                 DB::commit();
-                return null;    
-            }else{
+                return null;
+            } else {
                 return response()->json([
-                    'error' => 'Your balance is too low to place this bet'
+                    'error' => 'Your balance is too low to place this bet',
                 ]);
             }
         } else {
@@ -174,7 +181,7 @@ class SportsBetController extends Controller
     public function myBet()
     {
         $data['page_title'] = "My Bet";
-        $data['logs'] = BetInvest::with('match', 'user', 'ques', 'betoption')->whereUser_id(Auth::id())->latest()->paginate(20);
+        $data['logs']       = BetInvest::with('match', 'user', 'ques', 'betoption')->whereUser_id(Auth::id())->latest()->paginate(20);
         return view('user.my-prediction', $data);
     }
 }

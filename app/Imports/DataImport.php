@@ -13,6 +13,8 @@ use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Log;
 use App\Events\UpdateOption;
+use App\Events\UpdateMatch;
+use App\Events\UpdateScore;
 
 class DataImport implements ToCollection, WithHeadingRow
 {
@@ -45,6 +47,8 @@ class DataImport implements ToCollection, WithHeadingRow
                     }
                     if ($row['match']) {
                         $match = Match::where('name', $row['match'])->first();
+                        $end = false;
+                        Log::info($row['start_time']);
                         if (!$match) {
                             $match = Match::create([
                                 'event_id'   => $event->id,
@@ -52,9 +56,31 @@ class DataImport implements ToCollection, WithHeadingRow
                                 'slug'       => str_slug($row['match']),
                                 'start_date' => $row['start_time'],
                                 'status'     => 1,
-                                'end_date'   => '2100/12/31 23:59:59',
+                                'end_date'   => $row['end_time'] ? $row['end_time'] : '2100/12/31 23:59:59',
                                 'admin_id'   => 1,
                             ]);
+                        }else{
+                            if ($row['end_time']) {
+                                $match->end_date = $row['end_time'];
+                                $end = true;
+                            }
+                            $is_update = false;
+                            if ($row['score_1']) {
+                                $match->score1 = $row['score_1'];
+                                $is_update = true;
+                            }
+                            if ($row['score_2']) {
+                                $match->score2 = $row['score_2'];
+                                $is_update = true;
+                            }
+                            $match->save();
+                            if ($is_update){
+                                event(new UpdateScore($match));
+                            }
+                            // if ($end){
+                            //     event(new UpdateMatch($match->id));
+                            // }
+                            
                         }
 
                         switch ($row['sport']) {
@@ -75,13 +101,20 @@ class DataImport implements ToCollection, WithHeadingRow
                         foreach ($questions as $value) {
                             $question = BetQuestion::where('question', $value)->where('match_id', $match->id)->first();
                             if (!$question) {
-                                $question = BetQuestion::create([
-                                    'match_id' => $match->id,
-                                    'question' => $value,
-                                    'limit'    => 100,
-                                    'admin_id' => 1,
-                                    'end_time' => '2100/12/31 23:59:59',
-                                ]);
+                                if (!$end){
+                                    $question = BetQuestion::create([
+                                        'match_id' => $match->id,
+                                        'question' => $value,
+                                        'limit'    => 100,
+                                        'admin_id' => 1,
+                                        'end_time' => '2100/12/31 23:59:59',
+                                    ]);
+                                }
+                            }else{
+                                if ($end){
+                                    $question->end_time = $row['end_time'];
+                                    $question->save();
+                                }
                             }
                             $arrQuestion[$value] = $question->id;
                         }
@@ -108,7 +141,6 @@ class DataImport implements ToCollection, WithHeadingRow
                                     }
                                     $option = BetOption::create($arr);
                                 } else {
-                                    Log::info($key);
                                     $option->text = $row[$key];
                                     $option->ratio2 = $row[$key];
                                     if ($value == 'hcp' || $value == 'tot' || $value == '1st half hcp' || $value == '1st half tot') {
@@ -124,4 +156,5 @@ class DataImport implements ToCollection, WithHeadingRow
             }
         }
     }
+
 }

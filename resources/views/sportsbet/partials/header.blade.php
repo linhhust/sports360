@@ -53,7 +53,7 @@
 <div class="layout__HeaderLayoutItem-sc-1sp98x0-1 iEwrVY">
 	<div class="Inline-sc-1rz1cju-0 jtWmMp" style="overflow: visible;">
 		@guest
-			<a variant="link" to="/id/signup" class="button__Button-sc-1kryk61-2 fzoWrk" href="/signup">
+			<a variant="link" class="button__Button-sc-1kryk61-2 fzoWrk" href="/register">
 				<span class="button__ButtonText-sc-1kryk61-0 fNvhMU">Register</span>
 			</a>
 			<a variant="primary" class="button__Button-sc-1kryk61-2 ieTUff" href="/login">

@@ -23,7 +23,9 @@ use DB;
 use Image;
 use File;
 use App\Imports\DataImport;
+use App\Imports\UpdateResult;
 use Excel;
+use Log;
 
 class AdminController extends Controller
 {
@@ -256,6 +258,27 @@ class AdminController extends Controller
             session()->flash('danger', $e->getMessage());
             return back();
         }
+    }
+    public function viewUpdateResult()
+    {
+        return view('admin.update', ['page_title' => 'Update Result']);
+    }
+
+    public function updateResult(Request $request)
+    {
+        // try{
+            $request->validate([
+                'file' => 'required',
+            ]);
+            Log::info('update result');
+            Log::info($request->file('file')->getClientOriginalName());
+            Excel::import(new UpdateResult, $request->file);
+            session()->flash('success', 'Update Result Successfully !!');
+            return back();
+        // }catch(\Exception $e){
+        //     session()->flash('danger', $e->getMessage());
+        //     return back();
+        // }
     }
 
 }

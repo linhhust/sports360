@@ -33,9 +33,15 @@
                 </a>
             </li>
         @endif
-        <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.import')}}">
                     <span class="menu-title">Import Data</span>
+                    <i class="mdi mdi-arrow-up-bold menu-icon"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.upresult')}}">
+                    <span class="menu-title">Update Result</span>
                     <i class="mdi mdi-arrow-up-bold menu-icon"></i>
                 </a>
             </li>
@@ -139,7 +145,7 @@
             </li>
         @endif
 
-        @if(in_array('8',$access))
+        {{-- @if(in_array('8',$access))
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.changePrefix')}}">
                     <span class="menu-title">Admin Prefix</span>
@@ -155,18 +161,18 @@
                     <i class="mdi mdi-email menu-icon"></i>
                 </a>
             </li>
-        @endif
+        @endif --}}
 
 
-        <li class="nav-item sidebar-actions">
+        {{-- <li class="nav-item sidebar-actions">
               <span class="nav-link">
                 <div class="border-bottom">
                   <h6 class="font-weight-normal mb-3">UI SETTINGS</h6>
                 </div>
               </span>
-        </li>
+        </li> --}}
 
-        @if(in_array('9',$access))
+       {{--  @if(in_array('9',$access))
             <li class="nav-item">
                 <a class="nav-link" href="{{route('siteControl')}}">
                     <span class="menu-title">Site Settings</span>
@@ -180,7 +186,7 @@
                     <i class="mdi mdi-xbox-controller menu-icon"></i>
                 </a>
             </li>
-        @endif
+        @endif --}}
 
 
         @if(in_array('17',$access))

@@ -44,7 +44,7 @@
                                 $option2 = isset($question['options'][1])?$question['options'][1]:'';
                                 $option3 = 'Draw';
                         @endphp
-                                <ul class="grid__EventListBodyWrapper-ljbzft-0 bfDTRZ" itemscope="" itemtype="https://schema.org/SportsEvent" variant="asian-desktop">
+                                <ul class="grid__EventListBodyWrapper-ljbzft-0 bfDTRZ match_{{$question['id']}}" itemscope="" itemtype="https://schema.org/SportsEvent" variant="asian-desktop">
                                     <li itemprop="location" itemscope="" itemtype="https://schema.org/Place" style="display: none;">
                                     </li>
                                     <li class="grid__HomeCompetitor-jq9sb4-0 eFFTax">
@@ -52,7 +52,7 @@
                                             <meta content="Soccer" itemprop="sport" property="">
                                             <p class="CompetitorWithScore__Name-v0fmv1-1 bAXEiS" itemprop="name">{{$option1}}</p>
                                             <p class="CompetitorWithScore__Scores-v0fmv1-2 aBgbT">
-                                                <span class="CompetitorWithScore__Score-v0fmv1-3 qLfpg">{{$question['score1']}}</span>
+                                                <span class="CompetitorWithScore__Score-v0fmv1-3 qLfpg score1">{{$question['score1']}}</span>
                                             </p>
                                         </a>
                                     </li>
@@ -60,7 +60,7 @@
                                         <a class="CompetitorWithScore__CompetitorWrapper-v0fmv1-0 ifMAfU" href="javascript:void(0)" itemprop="awayTeam" itemscope="" itemtype="https://schema.org/SportsTeam">
                                             <p class="CompetitorWithScore__Name-v0fmv1-1 bAXEiS" itemprop="name">{{$option2}}</p>
                                             <p class="CompetitorWithScore__Scores-v0fmv1-2 aBgbT">
-                                                <span class="CompetitorWithScore__Score-v0fmv1-3 qLfpg">{{$question['score2']}}</span>
+                                                <span class="CompetitorWithScore__Score-v0fmv1-3 qLfpg score2">{{$question['score2']}}</span>
                                             </p>
                                         </a>
                                     </li>
@@ -349,12 +349,9 @@
                                         </a>
                                     </li>
                                 </ul>
-                        {{-- @php
+                        @php
                             }
-                        @endphp  --}}
-                    @php
-                        }
-                    @endphp    
+                        @endphp    
                 </div>
             </div>
     @endforeach

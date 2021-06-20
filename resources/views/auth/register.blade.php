@@ -225,7 +225,7 @@
                                     </form>
                                 </div>
                                 <div class="body__IdBodyItem-sc-1kb3j31-1 hIQBUp">
-                                    <p class="cta__CtaText-sc-16w8d27-0 dmytFS">Have an account?<!-- -->&nbsp;<a class="Link-n1sjvn-0-withRouter-MapProps ePMdHW" staticcontext="[object Object]" href="/id/login">Sign In</a></p>
+                                    <p class="cta__CtaText-sc-16w8d27-0 dmytFS">Have an account?<!-- -->&nbsp;<a class="Link-n1sjvn-0-withRouter-MapProps ePMdHW" staticcontext="[object Object]" href="/login">Sign In</a></p>
                                 </div>
                             </div>
                         </div>

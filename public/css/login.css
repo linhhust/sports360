@@ -132,6 +132,9 @@
     text-align: center;
 }
 
+.eckzt {
+    display: none;
+}
 @media (min-width: 50em){
 	.ldVpeu {
 	    padding-bottom: 0px;
@@ -140,15 +143,12 @@
 	    display: block;
 	    position: relative;
 	    background-color: rgb(12, 207, 97);
-	    background-image: url(http://prophecy.test/public/images/logo/banner.png);
+	    background-image: url(https://sports360.io/public/images/logo/banner.png);
 	    background-attachment: fixed;
 	    background-size: cover;
 	    background-position: center top;
 	    background-repeat: no-repeat;
 	}
-}
-.eckzt {
-    display: none;
 }
 .ldVpeu {
     display: block;

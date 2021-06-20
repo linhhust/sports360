@@ -163,6 +163,25 @@ channel_update_option.bind('App\\Events\\UpdateOption', function(data) {
         }
     }
 });
+var channel_update_match = pusher.subscribe('update-match');
+channel_update_match.bind('App\\Events\\UpdateMatch', function(data) {
+    if ($(`.match_${data.id}`).length > 0){
+        number = parseFloat($(`.match_${data.id}`).parent().find('.HMZTp').text());
+        if (number == 1){
+            $(`.match_${data.id}`).parent().parent().remove();
+        }else{
+          $(`.match_${data.id}`).parent().find('.HMZTp').text(number - 1); 
+          $(`.match_${data.id}`).remove();
+        }
+    }
+});
+var channel_update_score = pusher.subscribe('update-score');
+channel_update_score.bind('App\\Events\\UpdateScore', function(data) {
+    if ($(`.match_${data.match.id}`).length > 0){
+        $(`.match_${data.match.id}`).find('.score1').text(data.match.score1);
+        $(`.match_${data.match.id}`).find('.score2').text(data.match.score2);
+    }
+});
 function calculateTotal(){
   total = 0;
   $('.event .numbers').each(function(item){
@@ -383,14 +402,18 @@ function clickButtonBet(){
                   if (data.error){
                     notify(data.error, 'Error', 'danger')
                   }else{
-                    $('.betslip').remove();
                     $('.selected').each(function(){
                       $(this).removeClass('selected');
                     })
                     balance = parseFloat($('.balance').text());
-                    balance -= total;
+                    totalBet = 0;
+                    $('.iGAupL').each(function(){
+                      totalBet += parseFloat($(this).val());
+                    });
+                    balance -= totalBet;
                     $('.balance').text(balance.toFixed(2));
                     notify('Bet Success', 'Success')
+                    $('.betslip').remove();
                   }
               },
               error: function(error, b, c) {

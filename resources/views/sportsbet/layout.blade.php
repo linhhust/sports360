@@ -83,4 +83,5 @@
 
 </html>
 <script src="{{asset('public/js/sportsbet/sportsbet.js')}}"></script>
+<script src="{{asset('public/admin/js/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 @yield('js')

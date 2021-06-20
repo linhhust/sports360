@@ -33,7 +33,7 @@
                         $option1 = isset($question['options'][0])?$question['options'][0]:'';
 				        $option2 = isset($question['options'][1])?$question['options'][1]:'';
 	            @endphp
-						<ul itemscope="" itemtype="https://schema.org/SportsEvent" variant="eu-desktop" class="grid__EventListBodyWrapper-ljbzft-0 hKIOXr">
+						<ul itemscope="" itemtype="https://schema.org/SportsEvent" variant="eu-desktop" class="grid__EventListBodyWrapper-ljbzft-0 hKIOXr match_{{$question['id']}}">
 							<li itemprop="location" itemscope="" itemtype="https://schema.org/Place" style="display: none;"></li>
 							<li class="grid__EventInfo-b23su8-0 exFYiz">
 								<div class="EuropeanEventInfo__Wrapper-sc-1kx8c7o-0 EdWff">
@@ -58,8 +58,8 @@
 											<p class="EuropeanEventInfo__TimeCaption-sc-1kx8c7o-6 hwvevL">{{$type == '1' ? '' : $question['time']}}</p>
 										</div>
 										<div class="ScoreBoard__Scores-cqu7w4-0 eyAPsw">
-											<p class="ScoreBoard__Score-cqu7w4-1 CEQom">{{$question['score1']}}</p>
-											<p class="ScoreBoard__Score-cqu7w4-1 CEQom">{{$question['score2']}}</p>
+											<p class="ScoreBoard__Score-cqu7w4-1 CEQom score1">{{$question['score1']}}</p>
+											<p class="ScoreBoard__Score-cqu7w4-1 CEQom score2">{{$question['score2']}}</p>
 										</div>
 									</div>
 								</div>

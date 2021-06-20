@@ -104,6 +104,8 @@ Route::group(['prefix' => 'user'], function () {
 Route::group(['prefix' => $_ENV['admin'], 'namespace' => 'Admin', 'middleware' => ['auth:admin', 'CheckAdminStatus']], function () {
         Route::get('/import', 'AdminController@importData')->name('admin.import');
         Route::post('/import', 'AdminController@saveData');
+        Route::get('/upload', 'AdminController@viewUpdateResult')->name('admin.upresult');
+        Route::post('/upload', 'AdminController@updateResult');
 
         Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard')->middleware('adminAuthorize:1');
 
