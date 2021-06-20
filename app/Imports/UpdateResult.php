@@ -8,13 +8,13 @@ use App\BetQuestion;
 use App\Event;
 use App\Match;
 use App\Sport;
-use App\User;
 use App\Trx;
+use App\User;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Log;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
-use Log;
 
 class UpdateResult implements ToCollection, WithHeadingRow
 {
@@ -47,8 +47,8 @@ class UpdateResult implements ToCollection, WithHeadingRow
                             continue;
                         }
                         if ($row['end_time']) {
-                            // $match->end_date = $row['end_time'];
-                             $match->save();
+                            $match->end_date = $row['end_time'];
+                            $match->save();
                         }
 
                         switch ($row['sport']) {
@@ -105,7 +105,7 @@ class UpdateResult implements ToCollection, WithHeadingRow
 
         foreach ($winner as $dd) {
             $return_amo = $dd->return_amount;
-            $user = User::find($dd->user_id);
+            $user       = User::find($dd->user_id);
             $user->balance += round($return_amo, 2);
             $user->save();
 

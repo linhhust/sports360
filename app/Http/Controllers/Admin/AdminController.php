@@ -266,7 +266,7 @@ class AdminController extends Controller
 
     public function updateResult(Request $request)
     {
-        // try{
+        try{
             $request->validate([
                 'file' => 'required',
             ]);
@@ -275,10 +275,10 @@ class AdminController extends Controller
             Excel::import(new UpdateResult, $request->file);
             session()->flash('success', 'Update Result Successfully !!');
             return back();
-        // }catch(\Exception $e){
-        //     session()->flash('danger', $e->getMessage());
-        //     return back();
-        // }
+        }catch(\Exception $e){
+            session()->flash('danger', $e->getMessage());
+            return back();
+        }
     }
 
 }
