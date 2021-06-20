@@ -1,7 +1,3 @@
-@if(count($data) > 0)
-    @foreach($data as $event)
-   
-            <div class="{{$name == 'index' ? '' : 'breakout__LTRArenaBreakout-ojwmgi-0 hhKAHt'}}">
                 <div>
                     <div class="summary__SummaryWrapper-b40yh6-0 ceRxxX">
                         <div class="summary__IconWrapper-b40yh6-3 gDjwJB">
@@ -86,7 +82,7 @@
                                     <li class="grid__Home1X2-jq9sb4-3 iKPMp">
                                         @if(isset($question['data']['1x2'][$option1]))
                                             <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS option_{{$question['data']['1x2'][$option1]['question_id']}}_{{$question['data']['1x2'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="1x2" data-id="{{$question['data']['1x2'][$option1]['id']}}" data-question="{{$question['data']['1x2'][$option1]['question_id']}}">
-                                                <p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{number_format($question['data']['1x2'][$option1]['ratio2'],2)}}</p>
+                                                <p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['1x2'][$option1]['ratio2']}}</p>
                                             </div>
                                         @else
                                             <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
@@ -356,12 +352,3 @@
                         }
                     @endphp    
                 </div>
-            </div>
-    @endforeach
-@else
-    <div class="mt20">
-        <div class="sports-nomarkets u-bg-goku">
-            <span>Events are currently not available</span>
-        </div>
-    </div>
-@endif

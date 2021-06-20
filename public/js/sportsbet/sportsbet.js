@@ -134,14 +134,14 @@ $('.bGovrs').click(function(){
     }
 });
 var total;
-// var pusher = new Pusher('c6551a3f0e4ab646ff51', {
-//   encrypted: true,
-//   cluster: 'us3',
-// });
-var pusher = new Pusher('9d19381a054db6805cf1', {
+var pusher = new Pusher('c6551a3f0e4ab646ff51', {
   encrypted: true,
-  cluster: 'ap1',
+  cluster: 'us3',
 });
+// var pusher = new Pusher('9d19381a054db6805cf1', {
+//   encrypted: true,
+//   cluster: 'ap1',
+// });
 var channel_update_option = pusher.subscribe('update-option');
 channel_update_option.bind('App\\Events\\UpdateOption', function(data) {
     if ($(`.option_${data.option.question_id}_${data.option.id}`).find('.eieSeJ').length > 0){
@@ -185,7 +185,7 @@ function calculateTotal(){
     return true;
   }
 }
-
+addEvent();
 // select item
 var stake = '';
 // add event 

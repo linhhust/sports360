@@ -24,7 +24,6 @@ Route::get('clear', function () {
 Route::get('/cron-match', 'WebsiteController@cronMatchEnd');
 
 
-Route::get('/', 'WebsiteController@index')->name('site');
 Route::get('/tournament/{name?}/{id}', 'WebsiteController@tournament')->name('tournament');
 Route::get('/about', 'WebsiteController@about')->name('about');
 Route::get('/terms', 'WebsiteController@terms')->name('terms');
@@ -37,6 +36,7 @@ Route::post('/contact', 'WebsiteController@contactSubmit')->name('contact.submit
 
 Auth::routes();
 /* ====================== sportsbet =================== */
+Route::get('/', 'SportsBetController@index')->name('site');
 Route::get('/sports/{name}', 'SportsBetController@sports');
 Route::get('/sports/{name}/search', 'SportsBetController@searchSport');
 Route::post('/sports/bet', 'SportsBetController@betSports');

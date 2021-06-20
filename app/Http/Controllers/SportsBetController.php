@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BetInvest;
 use App\BetOption;
 use App\Event;
+use App\Sport;
 use Auth;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -16,18 +17,19 @@ class SportsBetController extends Controller
 {
     public function index()
     {
-        $events = Event::get();
+        $sports = Sport::get();
         $result = [];
-        foreach ($events as $event) {
-            $data = $this->getData($event->name);
-            if (count($result) > 0) {
+        foreach ($sports as $sport) {
+            $data = $this->getData($sport->name,1);
+            if (count($data) > 0) {
                 $result[] = [
-                    'name' => $event->name,
+                    'name' => $sport->name,
                     'data' => $data,
                 ];
             }
         }
-        return view('sportsbet.index', ['name' => 'index', 'data' => $result]);
+        // return $result;
+        return view('sportsbet.index', ['name' => 'index', 'sports' => $result]);
 
         // Excel::import(new DataImport, storage_path('data-sportsbet.xlsx'));
     }
@@ -56,12 +58,12 @@ class SportsBetController extends Controller
         $name          = str_replace('-', ' ', $name);
         $result = $this->getData($name, $type);
         if (view()->exists("sportsbet.sports." . strtolower($name))){
-            return view("sportsbet.sports." . strtolower($name), ['data' => $result, 'type' => $type]);
+            return view("sportsbet.sports." . strtolower($name), ['name' => $name,'data' => $result, 'type' => $type]);
         }else{
             return '';
         }
     }
-    private function getData($sportName = '', $type = 2)
+    private function getData($sportName = '', $type = 1)
     {
         $query = Event::join('sports', 'sports.id', '=', 'events.sport_id')
             ->where('sports.name', ucfirst($sportName));

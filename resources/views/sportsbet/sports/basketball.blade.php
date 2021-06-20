@@ -1,6 +1,6 @@
 @if(count($data) > 0)
     @foreach($data as $event)
-		<div class="breakout__LTRArenaBreakout-ojwmgi-0 hhKAHt">
+		<div class="{{$name == 'index' ? '' : 'breakout__LTRArenaBreakout-ojwmgi-0 hhKAHt'}}">
 <div class="ListEventContainer__EventsWrapper-sc-2quhzy-4 cxCKIF">
 			<div>
 				<div class="summary__SummaryWrapper-b40yh6-0 ceRxxX">
@@ -46,7 +46,6 @@
 						</li>
 						<li class="grid__HomeCompetitor-jq9sb4-0 eFFTax">
 							<a class="CompetitorWithScore__CompetitorWrapper-v0fmv1-0 ifMAfU" itemprop="homeTeam" itemscope="" itemtype="https://schema.org/SportsTeam" href="javascript:void(0)">
-								<meta itemprop="sport" content="Baseball" property="">
 								<p itemprop="name" class="CompetitorWithScore__Name-v0fmv1-1 bAXEiS">{{$option1}}</p>
 								<p class="CompetitorWithScore__Scores-v0fmv1-2 aBgbT">
 									<span class="CompetitorWithScore__Score-v0fmv1-3 qLfpg">{{$question['score1']}}</span>
@@ -273,6 +272,7 @@
                         }
                     @endphp   
 			</div>				
+		</div>
 		</div>
 	@endforeach
 @else

@@ -53,8 +53,7 @@
 			            									<div class="withFeaturedEvents__Wrapper-sc-1hwqevl-0 cwVMaU">
 			            										@yield('heading')
 			            										@yield('sport-panel-featured')
-			            										
-    @yield('content')
+    															@yield('content')
 			            									</div>
 			            								</div>
 			            							</div>

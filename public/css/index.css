@@ -2741,6 +2741,25 @@ input:not([type=checkbox]):not([type=radio]) {
 .cnLutz>*+* {
     margin-left: 1rem;
 }
+.jndfmp {
+    background-color: rgb(35, 42, 51);
+    border-radius: 0.125rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-width: 5.5rem;
+    min-height: 2rem;
+    margin-inline-start: 0.5rem;
+}
+.jndfmp:first-child {
+    margin-inline-start: 0px;
+}
 .jndfmp>svg {
     color: rgb(134, 151, 162);
 }
