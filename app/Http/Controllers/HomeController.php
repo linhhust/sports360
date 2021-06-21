@@ -17,6 +17,8 @@ use Carbon\Carbon;
 use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 use Image;
 
 class HomeController extends Controller
@@ -578,11 +580,63 @@ class HomeController extends Controller
 
         }
     }
-    
-    public function withdraw()
+
+    public function sendWithdraw(Request $request)
     {
-        $page_title = 'Withdraw';
-        return view('sportsbet.withdraw', compact('page_title'));
+        try {
+            $rules = array(
+                'address' => 'required',
+                'type'    => 'required',
+                'amount'  => 'required',
+            );
+
+            if (!$request->address) {
+                return response()->json([
+                    'error' => 'Your address is required',
+                ]);
+            }
+            if (!$request->type) {
+                return response()->json([
+                    'error' => 'Type withdraw is required',
+                ]);
+            }
+            if (!$request->amount) {
+                return response()->json([
+                    'error' => 'Amount is required',
+                ]);
+            }
+
+            if ($request->amount > Auth::user()->balance) {
+                return response()->json([
+                    'error' => 'Your balance is too low to withdraw',
+                ]);
+            }
+            WithdrawLog::create([
+                'user_id' => Auth::user()->id,
+                'amount' => $request->amount,
+                'withdraw_information' => "",
+                'address' => $request->address,
+                'type' => $request->type,
+                'status' => 1
+            ]);
+            Auth::user()->balance = formatter_money(Auth::user()->balance - $request->amount);
+            Auth::user()->save();
+
+            // Trx::create([
+            //     'user_id'  => Auth::user()->id,
+            //     'amount'   => formatter_money($withdraw->amount),
+            //     'main_amo' => Auth::user()->balance,
+            //     'charge'   => 0,
+            //     'type'     => '-',
+            //     'title'    => 'Withdraw',
+            //     'trx'      => $withdraw->transaction_id,
+            // ]);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => $e->getMessage(),
+            ]);
+        }
     }
 
 }

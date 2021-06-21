@@ -53,7 +53,6 @@ Route::post('payment', 'Gateway\PaymentController@payment')->name('payment');
 Route::post('make-request', 'Gateway\PaymentController@paymentRequest')->name('make-request');
 Route::get('pay-now', 'Gateway\PaymentController@payNow')->name('deposit-confirm');
 Route::get('mybet', 'HomeController@index');
-Route::get('withdraw', 'HomeController@withdraw');
 Route::post('withdraw', 'HomeController@sendWithdraw');
 
 Route::group(['prefix' => 'user'], function () {

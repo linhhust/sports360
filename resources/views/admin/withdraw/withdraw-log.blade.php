@@ -33,7 +33,8 @@
                         <tr>
                             <th scope="col">SL</th>
                             <th scope="col">Username</th>
-                            <th scope="col">Withdraw Method</th>
+                            <th scope="col" style="width: 25%">Address</th>
+                            <th scope="col">Type</th>
                             <th scope="col">Amount</th>
                             <th scope="col">STATUS</th>
                             <th scope="col">Date</th>
@@ -50,11 +51,12 @@
                                     </a>
                                 </td>
 
-                                <td data-label="Withdraw Method">
-                                    <span class="font-weight-bold text-info"> {{($data->method)? $data->method->name : '' }}</span>
+                                <td data-label="Address">
+                                    <span class="font-weight-bold text-info"> {{($data->address)? $data->address : '' }}</span>
                                 </td>
-
-
+                                <td data-label="Type">
+                                    <span class="font-weight-bold text-info"> {{($data->type)? $data->type : '' }}</span>
+                                </td>
 
                                 <td data-label="Amount">
                                     <span class="font-weight-bold text-success">{{formatter_money($data->amount)}} {{$basic->currency}}</span>
@@ -72,7 +74,7 @@
                                 </td>
 
                                 <td data-label="Date">
-                                    {{date('d M, Y h:i A',strtotime($data->created_at))}}
+                                    {{$data->created_at}}
                                 </td>
                                 <td data-label="Action">
                                     @php

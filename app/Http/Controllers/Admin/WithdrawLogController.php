@@ -14,7 +14,7 @@ class WithdrawLogController extends Controller
 {
     public function request(){
         $data['page_title'] = "Withdraw Request";
-        $data['logs'] = WithdrawLog::with('user','method')->where('status',1)->latest()->paginate(25);
+        $data['logs'] = WithdrawLog::with('user')->where('status',1)->latest()->paginate(25);
         return view('admin.withdraw.withdraw-log',$data);
     }
 

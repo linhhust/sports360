@@ -1,0 +1,210 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    outline: 0;
+}
+.fade {
+    transition: opacity .15s linear;
+}
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: .5rem;
+    pointer-events: none;
+}
+.modal.fade .modal-dialog {
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+    -webkit-transform: translate(0, -50px);
+    transform: translate(0, -50px);
+}
+.modal.show .modal-dialog {
+    -webkit-transform: none;
+    transform: none;
+}
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+}
+.modal-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 2rem 1rem 1rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+.custom-modal-header {
+    background: #071824;
+    color: #fff;
+    border-bottom: 1px solid #071824;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+}
+.modal-title {
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 1.5;
+    font-size: 1.25rem;
+}
+.text-white {
+    color: #fff!important;
+}
+.close:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.custom-modal-header>.close {
+    color: #fff;
+}
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.modal-header .close {
+    padding: 1rem 1rem;
+    margin: -1rem -1rem -1rem auto;
+}
+.modal-body {
+    background-color: #213743;
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    color: rgb(134, 151, 162);
+}
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+.input-control {
+    border-radius: 0.75rem!important;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.5rem 1rem;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgb(255, 255, 255)!important;
+    background-color: rgb(26, 33, 42);
+    border: 1px solid rgb(49, 55, 63);
+    border-radius: 0.75rem!important;
+    transition: border-color 0.2s ease 0s;
+    appearance: none!important;
+}
+.input-control:focus {
+    border-color: rgb(12, 207, 97);
+    outline: none;
+}
+.form-element {
+    margin-bottom: 20px;
+    margin-top: .5rem!important;
+    display: flex;
+    justify-content: center;
+}
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 500px;
+        margin: 1.75rem auto;
+    }
+}
+@media (max-width: 576px) {
+    .modal-dialog {
+        /*max-width: 500px;*/
+        margin: 4rem 1.5rem auto;
+    }
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-submit {
+    display: inline-block;
+    /*width: 100%;*/
+    min-height: 1.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 6.25em;
+    transition: background-color 0.2s ease 0s;
+    white-space: nowrap;
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-color: rgb(12, 207, 97);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    height: 3rem;
+    padding: 0px 1.5rem;
+}
+.btn-submit.is-hover:not([disabled]), .btn-submit:hover:not([disabled]) {
+    background-color: rgb(24, 220, 109)!important;
+}
+
+.group-radio {
+    display: flex;
+    justify-content: space-evenly;
+}
+.radio-label {
+    margin-left: 0.5rem;
+}
+.err-msg {
+    color: rgb(255, 78, 100)
+}
