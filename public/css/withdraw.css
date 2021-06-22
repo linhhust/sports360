@@ -111,7 +111,7 @@ button.close {
 .form-group {
     margin-bottom: 1rem;
 }
-label {
+.label-form {
     display: inline-block;
     margin-bottom: .5rem;
     color: rgb(134, 151, 162);

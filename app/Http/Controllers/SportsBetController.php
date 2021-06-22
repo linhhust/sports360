@@ -79,15 +79,15 @@ class SportsBetController extends Controller
             case '2': //today
                 $query->with(['matches' => function ($query) {
                     $query->where('matches.status', 1)
-                        ->where('matches.start_date', '<=', Carbon::now())
+                        ->where('matches.start_date', '>=', Carbon::now())
                         ->whereRaw("TIMESTAMPDIFF(hour, '".Carbon::now()."', matches.start_date) < 24");
                 }, 'matches.questions', 'matches.questions.options']);
                 break;
             case '3': //future
                 $query->with(['matches' => function ($query) {
                     $query->where('matches.status', 1)
+                        ->where('matches.start_date', '>', Carbon::now())
                         ->whereRaw("TIMESTAMPDIFF(hour, '".Carbon::now()."', matches.start_date) >= 24");
-                        // ->whereRaw('TIMESTAMPDIFF(hour, '.Carbon::now().', matches.start_date) >=24');
                 }, 'matches.questions', 'matches.questions.options']);
                 break;
         }

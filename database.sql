@@ -366,7 +366,7 @@ CREATE TABLE `matches` (
   `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '',
   `name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slug` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `start_date` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `start_date` datetime DEFAULT NULL,
   `end_date` datetime DEFAULT NULL,
   `score1` tinyint(4) NOT NULL DEFAULT 0,
   `score2` tinyint(4) NOT NULL DEFAULT 0,

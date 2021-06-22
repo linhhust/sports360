@@ -48,20 +48,20 @@ class DataImport implements ToCollection, WithHeadingRow
                     if ($row['match']) {
                         $match = Match::where('name', $row['match'])->first();
                         $end = false;
-                        Log::info($row['start_time']);
+                        // Log::info($row['match'] . ': ' .$row['start_time']);
                         if (!$match) {
                             $match = Match::create([
                                 'event_id'   => $event->id,
                                 'name'       => $row['match'],
                                 'slug'       => str_slug($row['match']),
-                                'start_date' => $row['start_time'],
+                                'start_date' => str_replace('/', '-',$row['start_time']),
                                 'status'     => 1,
-                                'end_date'   => $row['end_time'] ? $row['end_time'] : '2100/12/31 23:59:59',
+                                'end_date'   => $row['end_time'] ? str_replace('/', '-',$row['end_time']) : '2100-12-31 23:59:59',
                                 'admin_id'   => 1,
                             ]);
                         }else{
                             if ($row['end_time']) {
-                                $match->end_date = $row['end_time'];
+                                $match->end_date = str_replace('/', '-',$row['end_time']);
                                 $end = true;
                             }
                             $is_update = false;
