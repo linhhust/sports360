@@ -48,17 +48,6 @@
 				</a>
 			</li>
 			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
-				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'baseball' ? 'active': ''}}" href="/sports/baseball">
-					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
-					<div class="category-bar__CategoryIcon-sc-1x14uyd-3 bNIXLx">
-						<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#725550" class="IconSportsBaseBall-zd7f6y-0 bbrwZv">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M6.798 7.39a9.64 9.64 0 00-.393-1.051.403.403 0 00-.737.328c.139.31.257.631.36.961a.402.402 0 10.77-.237zm.352 3.339c.03-.37.034-.752.022-1.123a.404.404 0 00-.42-.387c-.223.01-.403.219-.386.42.014.337.007.684-.02 1.025v.032a.404.404 0 00.804.033zM1.806 10c0 2.194.873 4.186 2.282 5.658.11-.113.224-.223.327-.342a.403.403 0 01.614.522c-.112.132-.237.25-.357.374a8.157 8.157 0 0010.655.002 8.97 8.97 0 01-.582-.654.404.404 0 01.067-.566.402.402 0 01.565.069c.164.207.349.404.533.596a8.155 8.155 0 000-11.32c-.103.11-.212.212-.31.327a.403.403 0 01-.613-.525c.107-.125.226-.237.34-.356a8.155 8.155 0 00-10.654.002c.196.205.392.41.567.631a.404.404 0 01-.631.5c-.162-.203-.341-.39-.52-.578A8.161 8.161 0 001.805 10zm1.987 6.52c-.009-.009-.005-.02-.013-.031A8.968 8.968 0 011 10c0-4.963 4.037-9 9-9 2.393 0 4.565.945 6.178 2.473.006.005.017.003.024.01.004.004.002.011.006.016A8.97 8.97 0 0119 10c0 4.963-4.036 9-9 9-2.385 0-4.55-.94-6.162-2.459-.014-.01-.032-.007-.045-.02zm2.467-2.557c.165-.33.31-.681.433-1.039a.403.403 0 00-.762-.262 7.887 7.887 0 01-.393.944.4.4 0 00.183.54c.2.099.44.017.54-.183zm6.936-1.382c.107.356.239.71.39 1.056a.403.403 0 00.737-.326 8.332 8.332 0 01-.354-.96.405.405 0 00-.79.115c0 .038.005.078.017.115zM12.82 10c0 .125.002.248.007.37.011.222.2.395.422.386a.402.402 0 00.384-.422 8.082 8.082 0 01.023-1.022.393.393 0 00-.369-.435.404.404 0 00-.435.369c-.021.249-.032.5-.032.754zm.494-2.95c.123-.353.269-.704.435-1.038a.402.402 0 11.723.357 8.15 8.15 0 00-.396.943.401.401 0 01-.511.25.404.404 0 01-.25-.512z" fill="currentColor"></path>
-						</svg>
-					</div>
-					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Baseball</div>
-				</a>
-			</li>
-			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
 				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'tennis' ? 'active': ''}}" href="/sports/tennis">
 					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
 					<div class="category-bar__CategoryIcon-sc-1x14uyd-3 bNIXLx">
@@ -70,26 +59,25 @@
 				</a>
 			</li>
 			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
-				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'ice-hockey' ? 'active': ''}}" href="/sports/ice-hockey">
+				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'baseball' ? 'active': ''}}" href="/sports/baseball">
 					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
 					<div class="category-bar__CategoryIcon-sc-1x14uyd-3 bNIXLx">
-						<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0F75BD" class="IconSportsIceHockey-yktzxt-0 gFfYWM">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M12.447 14.28c-4.135 2.727-7.742 3.501-8.396 2.492L2.69 14.668c.134.015.263.033.411.033.532 0 1.156-.094 1.867-.282 1.732-.46 3.785-1.437 5.786-2.754 1.999-1.319 3.712-2.823 4.826-4.24.579-.736.958-1.405 1.146-1.996l1.357 2.096c.652 1.009-1.502 4.032-5.636 6.755zm-9.53-3.5c1.06-1.35 2.707-2.793 4.635-4.063 2.981-1.964 5.687-2.914 7.212-2.914.59 0 1.003.143 1.184.425.316.487-.058 1.494-1 2.693-1.061 1.348-2.707 2.791-4.635 4.062-1.93 1.271-3.9 2.212-5.55 2.65-1.469.386-2.531.326-2.846-.16-.316-.488.058-1.495 1-2.693zm15.84-3.7l-2.134-3.298c-1.182-1.824-5.782-.203-9.51 2.254-2 1.317-3.713 2.823-4.826 4.239-1.222 1.552-1.583 2.81-1.044 3.642l2.133 3.3c.353.545 1.01.783 1.858.783 1.993 0 5.038-1.314 7.653-3.038 3.727-2.456 7.052-6.053 5.87-7.882z" fill="currentColor"></path>
+						<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#725550" class="IconSportsBaseBall-zd7f6y-0 bbrwZv">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M6.798 7.39a9.64 9.64 0 00-.393-1.051.403.403 0 00-.737.328c.139.31.257.631.36.961a.402.402 0 10.77-.237zm.352 3.339c.03-.37.034-.752.022-1.123a.404.404 0 00-.42-.387c-.223.01-.403.219-.386.42.014.337.007.684-.02 1.025v.032a.404.404 0 00.804.033zM1.806 10c0 2.194.873 4.186 2.282 5.658.11-.113.224-.223.327-.342a.403.403 0 01.614.522c-.112.132-.237.25-.357.374a8.157 8.157 0 0010.655.002 8.97 8.97 0 01-.582-.654.404.404 0 01.067-.566.402.402 0 01.565.069c.164.207.349.404.533.596a8.155 8.155 0 000-11.32c-.103.11-.212.212-.31.327a.403.403 0 01-.613-.525c.107-.125.226-.237.34-.356a8.155 8.155 0 00-10.654.002c.196.205.392.41.567.631a.404.404 0 01-.631.5c-.162-.203-.341-.39-.52-.578A8.161 8.161 0 001.805 10zm1.987 6.52c-.009-.009-.005-.02-.013-.031A8.968 8.968 0 011 10c0-4.963 4.037-9 9-9 2.393 0 4.565.945 6.178 2.473.006.005.017.003.024.01.004.004.002.011.006.016A8.97 8.97 0 0119 10c0 4.963-4.036 9-9 9-2.385 0-4.55-.94-6.162-2.459-.014-.01-.032-.007-.045-.02zm2.467-2.557c.165-.33.31-.681.433-1.039a.403.403 0 00-.762-.262 7.887 7.887 0 01-.393.944.4.4 0 00.183.54c.2.099.44.017.54-.183zm6.936-1.382c.107.356.239.71.39 1.056a.403.403 0 00.737-.326 8.332 8.332 0 01-.354-.96.405.405 0 00-.79.115c0 .038.005.078.017.115zM12.82 10c0 .125.002.248.007.37.011.222.2.395.422.386a.402.402 0 00.384-.422 8.082 8.082 0 01.023-1.022.393.393 0 00-.369-.435.404.404 0 00-.435.369c-.021.249-.032.5-.032.754zm.494-2.95c.123-.353.269-.704.435-1.038a.402.402 0 11.723.357 8.15 8.15 0 00-.396.943.401.401 0 01-.511.25.404.404 0 01-.25-.512z" fill="currentColor"></path>
 						</svg>
 					</div>
-					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Ice Hockey</div>
+					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Baseball</div>
 				</a>
 			</li>
 			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
-				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'sportsbet-specials' ? 'active': ''}}" href="/sports/sports-specials">
+				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'counter-strike' ? 'active': ''}}" href="/sports/counter-strike">
 					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
 					<div class="category-bar__CategoryIcon-sc-1x14uyd-3 bNIXLx">
-						<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0AB758" class="IconSportsSpecial-sc-1xt3hi6-0 hYoHrk">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0-2.049A7.951 7.951 0 1012 4.05a7.951 7.951 0 000 15.902z" fill="#fff"></path>
-							<path d="M6 10a4 4 0 100-8 4 4 0 000 8z" fill="#0CD664"></path>
+						<svg width="1em" height="1em" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" color="#5C33CF" class="IconSportsESports-sc-1j3mtag-0 bMmSQj">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M9.59 10.647h.82c1.802 0 3.48.891 4.488 2.385l.098.146a1.63 1.63 0 002.666.054l.053-.07a1.62 1.62 0 00.317-.968v-.934c0-2.862-.64-5.746-1.852-8.34a1.42 1.42 0 00-1.282-.816h-.26c-.4 0-.782.17-1.05.465a2.547 2.547 0 01-1.882.835H8.295a2.545 2.545 0 01-1.883-.835 1.419 1.419 0 00-1.05-.465h-.26c-.547 0-1.05.32-1.282.817a19.838 19.838 0 00-1.851 8.34v.934c0 .35.11.684.318.967l.052.071a1.629 1.629 0 002.665-.056l.098-.145a5.408 5.408 0 014.488-2.385zm6.758 4.374a2.753 2.753 0 01-2.284-1.214l-.099-.146a4.285 4.285 0 00-3.555-1.889h-.82a4.285 4.285 0 00-3.555 1.89l-.098.145a2.752 2.752 0 01-2.285 1.214c-.872 0-1.702-.419-2.22-1.121l-.052-.071a2.74 2.74 0 01-.537-1.635v-.934c0-3.026.677-6.074 1.958-8.816A2.55 2.55 0 015.103.98h.26c.716 0 1.402.304 1.882.834.268.296.651.465 1.05.465h3.41c.4 0 .782-.17 1.05-.465A2.545 2.545 0 0114.638.98h.26A2.55 2.55 0 0117.2 2.444a20.971 20.971 0 011.957 8.816v.934c0 .593-.186 1.158-.537 1.635l-.053.071a2.767 2.767 0 01-2.219 1.121z" fill="currentColor"></path>
 						</svg>
 					</div>
-					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Sports Specials</div>
+					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">CS:GO</div>
 				</a>
 			</li>
 			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
@@ -136,7 +124,7 @@
 					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Boxing</div>
 				</a>
 			</li>
-			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
+			{{-- <li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
 				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'call-of-duty' ? 'active': ''}}" href="/sports/call-of-duty">
 					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
 					<div class="category-bar__CategoryIcon-sc-1x14uyd-3 bNIXLx">
@@ -146,7 +134,7 @@
 					</div>
 					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Call of Duty</div>
 				</a>
-			</li>
+			</li> --}}
 			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
 				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'cricket' ? 'active': ''}}" href="/sports/cricket">
 					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
@@ -156,17 +144,6 @@
 						</svg>
 					</div>
 					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Cricket</div>
-				</a>
-			</li>
-			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
-				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'counter-strike' ? 'active': ''}}" href="/sports/counter-strike">
-					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
-					<div class="category-bar__CategoryIcon-sc-1x14uyd-3 bNIXLx">
-						<svg width="1em" height="1em" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" color="#5C33CF" class="IconSportsESports-sc-1j3mtag-0 bMmSQj">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M9.59 10.647h.82c1.802 0 3.48.891 4.488 2.385l.098.146a1.63 1.63 0 002.666.054l.053-.07a1.62 1.62 0 00.317-.968v-.934c0-2.862-.64-5.746-1.852-8.34a1.42 1.42 0 00-1.282-.816h-.26c-.4 0-.782.17-1.05.465a2.547 2.547 0 01-1.882.835H8.295a2.545 2.545 0 01-1.883-.835 1.419 1.419 0 00-1.05-.465h-.26c-.547 0-1.05.32-1.282.817a19.838 19.838 0 00-1.851 8.34v.934c0 .35.11.684.318.967l.052.071a1.629 1.629 0 002.665-.056l.098-.145a5.408 5.408 0 014.488-2.385zm6.758 4.374a2.753 2.753 0 01-2.284-1.214l-.099-.146a4.285 4.285 0 00-3.555-1.889h-.82a4.285 4.285 0 00-3.555 1.89l-.098.145a2.752 2.752 0 01-2.285 1.214c-.872 0-1.702-.419-2.22-1.121l-.052-.071a2.74 2.74 0 01-.537-1.635v-.934c0-3.026.677-6.074 1.958-8.816A2.55 2.55 0 015.103.98h.26c.716 0 1.402.304 1.882.834.268.296.651.465 1.05.465h3.41c.4 0 .782-.17 1.05-.465A2.545 2.545 0 0114.638.98h.26A2.55 2.55 0 0117.2 2.444a20.971 20.971 0 011.957 8.816v.934c0 .593-.186 1.158-.537 1.635l-.053.071a2.767 2.767 0 01-2.219 1.121z" fill="currentColor"></path>
-						</svg>
-					</div>
-					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">CS:GO</div>
 				</a>
 			</li>
 			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
@@ -202,7 +179,7 @@
 					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">eNBA</div>
 				</a>
 			</li>
-			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
+			{{-- <li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
 				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'floorball' ? 'active': ''}}" href="/sports/floorball">
 					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
 					<div class="category-bar__CategoryIcon-sc-1x14uyd-3 bNIXLx">
@@ -212,7 +189,7 @@
 					</div>
 					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Floorball</div>
 				</a>
-			</li>
+			</li> --}}
 			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
 				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'formula-1' ? 'active': ''}}" href="/sports/formula-1">
 					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
@@ -224,7 +201,7 @@
 					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Formula 1</div>
 				</a>
 			</li>
-			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
+			{{-- <li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
 				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'futsal' ? 'active': ''}}" href="/sports/futsal">
 					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
 					<div class="category-bar__CategoryIcon-sc-1x14uyd-3 bNIXLx">
@@ -234,7 +211,7 @@
 					</div>
 					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Futsal</div>
 				</a>
-			</li>
+			</li> --}}
 			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD">
 				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'golf' ? 'active': ''}}" href="/sports/golf">
 					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
@@ -255,6 +232,17 @@
 						</svg>
 					</div>
 					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Handball</div>
+				</a>
+			</li>
+			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD" visible="true">
+				<a class="category-bar__ItemLink-sc-1x14uyd-1 hpEriv {{$name == 'ice-hockey' ? 'active': ''}}" href="/sports/ice-hockey">
+					<div class="category-bar__ItemLinkIndicator-sc-1x14uyd-0 hVsNIU"></div>
+					<div class="category-bar__CategoryIcon-sc-1x14uyd-3 bNIXLx">
+						<svg width="1em" height="1em" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0F75BD" class="IconSportsIceHockey-yktzxt-0 gFfYWM">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M12.447 14.28c-4.135 2.727-7.742 3.501-8.396 2.492L2.69 14.668c.134.015.263.033.411.033.532 0 1.156-.094 1.867-.282 1.732-.46 3.785-1.437 5.786-2.754 1.999-1.319 3.712-2.823 4.826-4.24.579-.736.958-1.405 1.146-1.996l1.357 2.096c.652 1.009-1.502 4.032-5.636 6.755zm-9.53-3.5c1.06-1.35 2.707-2.793 4.635-4.063 2.981-1.964 5.687-2.914 7.212-2.914.59 0 1.003.143 1.184.425.316.487-.058 1.494-1 2.693-1.061 1.348-2.707 2.791-4.635 4.062-1.93 1.271-3.9 2.212-5.55 2.65-1.469.386-2.531.326-2.846-.16-.316-.488.058-1.495 1-2.693zm15.84-3.7l-2.134-3.298c-1.182-1.824-5.782-.203-9.51 2.254-2 1.317-3.713 2.823-4.826 4.239-1.222 1.552-1.583 2.81-1.044 3.642l2.133 3.3c.353.545 1.01.783 1.858.783 1.993 0 5.038-1.314 7.653-3.038 3.727-2.456 7.052-6.053 5.87-7.882z" fill="currentColor"></path>
+						</svg>
+					</div>
+					<div class="category-bar__CategoryLabel-sc-1x14uyd-2 dwESOU">Ice Hockey</div>
 				</a>
 			</li>
 			<li class="Carousel__CarouselScrollItem-xel9ev-2 ngyrD">

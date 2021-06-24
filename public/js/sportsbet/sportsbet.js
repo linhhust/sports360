@@ -1,9 +1,3 @@
-$(document).ready(function(){
-  if ($(window).width() < 600) {
-    $('.vzgLe').remove();
-  }
-});
-
 var elementSelect = `
   <li class="">
       <div class="event" data-id="{id}">

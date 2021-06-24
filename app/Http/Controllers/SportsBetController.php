@@ -56,10 +56,11 @@ class SportsBetController extends Controller
     public function searchSport(Request $request, $name = '')
     {
         $type   = $request->type ?? 1;
-        $name   = str_replace('-', ' ', $name);
-        $result = $this->getData($name, $type);
+        // $name   = str_replace('-', ' ', $name);
+        $result = $this->getData(str_replace('-', ' ', $name), $type);
+        // Log::info("sportsbet.sports." . strtolower($name));
         if (view()->exists("sportsbet.sports." . strtolower($name))) {
-            return view("sportsbet.sports." . strtolower($name), ['name' => $name, 'data' => $result, 'type' => $type]);
+            return view("sportsbet.sports." . strtolower($name), ['name' => $name, 'data' => $result, 'type' => $type, 'size' => $request->size]);
         } else {
             return '';
         }
@@ -67,7 +68,7 @@ class SportsBetController extends Controller
     private function getData($sportName = '', $type = 1)
     {
         $query = Event::join('sports', 'sports.id', '=', 'events.sport_id')
-            ->where('sports.name', ucfirst($sportName));
+            ->where('sports.name', ucwords($sportName));
         switch ($type) {
             case '1': //inline
                 $query->with(['matches' => function ($query) {

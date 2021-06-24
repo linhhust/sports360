@@ -31,12 +31,7 @@
 	</div>
 @stop
 @section('sport-panel')
-	{{-- <div id="content"></div> --}}
-	<div class="mt20">
-		<div class="sports-nomarkets u-bg-goku">
-			<span>Events are currently not available</span>
-		</div>
-	</div>
+	<div id="content"></div>
 @stop
 @section('js')
 	<script src="{{asset('public/js/sportsbet/search.js')}}"></script>

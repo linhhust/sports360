@@ -1,3 +1,6 @@
+.vKXIN{
+    display: none;
+}
 .gqgeHc {
     display: grid;
     gap: 1em;
@@ -1267,7 +1270,7 @@ li {
     margin: 0px;
     grid-template-rows: auto;
     background-color: rgb(35, 42, 51);
-    grid-template-columns: 1fr 4.875rem 7rem 7rem 4.875rem 7rem 7rem 3rem;
+    grid-template-columns: 1fr 4.875rem 7rem 7rem 4.875rem 7rem 7rem;
     gap: 0.25rem;
     padding: 0.25rem;
 }
@@ -1347,10 +1350,10 @@ li {
     margin: 0px;
     background-color: rgb(26, 33, 42);
     border-bottom: 1px solid rgb(49, 55, 63);
-    grid-template-columns: 1fr 4.875rem 7rem 7rem 4.875rem 7rem 7rem 3rem;
+    grid-template-columns: 1fr 4.875rem 7rem 7rem 4.875rem 7rem 7rem;
     grid-template-rows: repeat(6, 0.75rem);
     gap: 0.25rem;
-    padding: 0.25rem;
+    padding: 0.25rem 0rem;
 }
 .eFFTax {
     grid-area: 1 / 1 / 3 / auto;
@@ -1388,7 +1391,7 @@ li {
         margin: 0px;
         grid-template-rows: auto;
         background-color: rgb(35, 42, 51);
-        grid-template-columns: 1fr 4.875rem 7rem 7rem 3rem;
+        grid-template-columns: 1fr 4.875rem 7rem 7rem;
         gap: 0.25rem;
         padding: 0.25rem;
     }
@@ -1431,18 +1434,6 @@ li {
 }
 .eAKYok {
     grid-area: 3 / 1 / 5 / auto;
-}
-.ifMAfU {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    height: 100%;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    width: 100%;
-    box-sizing: border-box;
 }
 .isoPst {
     grid-area: 5 / 1 / 7 / auto;
@@ -1574,6 +1565,7 @@ li {
 }
 .fgbAIV {
     grid-area: 1 / 8 / 7 / auto;
+    display: none;
 }
 .vKXIN {
     display: flex;
@@ -2549,7 +2541,7 @@ input:not([type=checkbox]):not([type=radio]) {
     margin: 0px;
     grid-template-rows: auto;
     background-color: rgb(35, 42, 51);
-    grid-template-columns: 1fr auto auto auto 2rem;
+    grid-template-columns: 1fr auto auto auto;
     gap: 1rem;
     padding: 0.25rem 0.75rem;
 }
@@ -2611,6 +2603,7 @@ input:not([type=checkbox]):not([type=radio]) {
     -webkit-box-pack: center;
     justify-content: center;
     min-height: 1.5rem;
+    display: none;
 }
 .hKIOXr:last-child {
     border-bottom-style: none;
@@ -2621,7 +2614,7 @@ input:not([type=checkbox]):not([type=radio]) {
     margin: 0px;
     background-color: rgb(26, 33, 42);
     border-bottom: 1px solid rgb(49, 55, 63);
-    grid-template-columns: 1fr auto auto auto 2rem;
+    grid-template-columns: 1fr auto auto auto;
     grid-template-rows: 1fr;
     gap: 1rem;
     padding: 1rem;
@@ -3395,7 +3388,7 @@ td {
         margin: 0px;
         grid-template-rows: auto;
         background-color: rgb(35, 42, 51);
-        grid-template-columns: 1fr 4.875rem 7rem 7rem 3rem;
+        grid-template-columns: 1fr 4.875rem 7rem 7rem;
         gap: 0.1rem;
         padding: 0.25rem;
     }
@@ -3405,17 +3398,103 @@ td {
         margin: 0px;
         background-color: rgb(26, 33, 42);
         border-bottom: 1px solid rgb(49, 55, 63);
-        grid-template-columns: 1fr 4.875rem 7rem 7rem 3rem;
+        grid-template-columns: 1fr 4.875rem 7rem 7rem;
         grid-template-rows: repeat(6, 0.75rem);
         gap: 0.25rem;
-        padding: 0.25rem;
+        padding: 0.25rem 0rem;
     }
-    .cYPXjA, .hhWHNF, .beDdSp, .ijNPnK, .ckgoaB, .kHupyM, .dAcRU, .glEDYr, .fcEWGd, .DSIxD {
+    .cYPXjA, .hhWHNF, .beDdSp, .ijNPnK, .ckgoaB, .kHupyM, .dAcRU, 
+    .glEDYr, .fcEWGd, .DSIxD, .lgINkj, .iNCxHO, .gukBNl, .gAMcB
+    , .dWfbIS, .iMvrrg 
+    {
         display: none;        
     }
     .fgbAIV {
         grid-area: 1 / 5 / 7 / auto!important;
     }
+
+    /*basebal*/
+    /*.bXwSvB {
+        list-style-type: none;
+        display: grid;
+        margin: 0px;
+        grid-template-rows: auto;
+        background-color: rgb(35, 42, 51);
+        grid-template-columns: 1fr auto auto auto;
+        gap: 1.5rem;
+        padding: 0.25rem 0.75rem;
+    }
+    .hKIOXr {
+        list-style-type: none;
+        display: grid;
+        margin: 0px;
+        background-color: rgb(26, 33, 42);
+        border-bottom: 1px solid rgb(49, 55, 63);
+        grid-template-columns: 1fr auto auto auto;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+        padding: 0.75rem;
+    }*/
+    .bXwSvB {
+        list-style-type: none;
+        display: grid;
+        margin: 0px;
+        grid-template-rows: auto;
+        background-color: rgb(35, 42, 51);
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        padding: 0.25rem 0.75rem;
+    }   
+    .hKIOXr {
+        list-style-type: none;
+        display: grid;
+        margin: 0px;
+        background-color: rgb(26, 33, 42);
+        border-bottom: 1px solid rgb(49, 55, 63);
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+        padding: 0.75rem;
+    }
+    .lgINkj {
+        grid-area: 1 / 3 / auto / auto;
+        display: none;
+    }
+}
+@media(max-width: 768px){
+    .dWfbIS, .iMvrrg, .gukBNl, .gAMcB
+    {
+        display: none;        
+    }
+    /*.fgbAIV {
+        grid-area: 1 / 5 / 7 / auto!important;
+    }*/
+
+    /*basebal*/
+    .bXwSvB {
+        list-style-type: none;
+        display: grid;
+        margin: 0px;
+        grid-template-rows: auto;
+        background-color: rgb(35, 42, 51);
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        padding: 0.25rem 0.75rem;
+    }   
+    .hKIOXr {
+        list-style-type: none;
+        display: grid;
+        margin: 0px;
+        background-color: rgb(26, 33, 42);
+        border-bottom: 1px solid rgb(49, 55, 63);
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+        padding: 0.75rem;
+    }
+    /*.lgINkj {
+        grid-area: 1 / 3 / auto / auto;
+    }*/
 }
 @media(max-width: 599px){
     .ggTfbD {
@@ -3435,7 +3514,7 @@ td {
         margin: 0px;
         grid-template-rows: auto;
         background-color: rgb(35, 42, 51);
-        grid-template-columns: 1fr 5rem 5rem 3rem;
+        grid-template-columns: 1fr 3rem 3rem 3rem;
         gap: 0.09rem;
         padding: 0.125rem;
     }
@@ -3445,14 +3524,15 @@ td {
         margin: 0px;
         background-color: rgb(26, 33, 42);
         border-bottom: 1px solid rgb(49, 55, 63);
-        grid-template-columns: 1fr 5rem 5rem 3rem;
+        grid-template-columns: 1fr 3rem 3rem 3rem;
         grid-template-rows: repeat(6, 0.75rem);
         gap: 0.125rem;
-        padding: 0.125rem;
+        padding: 0.125rem 0rem;
     }
     .cYPXjA, .hhWHNF, .beDdSp, .ijNPnK, .ckgoaB, 
     .kHupyM, .dAcRU, .glEDYr, .fcEWGd, .DSIxD,
-    .iDUEcT, .bIUEeK, .bxcQYe {
+    .cVQWRz, .cnpGOH, .SOdlZ, .dWfbIS, .iMvrrg
+    .vKXIN, .fgbAIV {
         display: none;        
     }
     .bGbaJS {
@@ -3475,16 +3555,16 @@ td {
     .eAKYok {
         grid-area: 3 / 1 / 5 / auto;
     }
-    .gCcUzs {
+    /*.gCcUzs {
         grid-area: 1 / 2 / auto / auto;
-    }
-    .latHAo {
+    }*/
+    /*.latHAo {
         grid-area: 1 / 3 / auto / auto;   
-    }
-    .dHMwDp {
+    }*/
+    /*.dHMwDp {
         grid-area: 1 / 2 / 4 / auto;
-    }
-    .geniht {
+    }*/
+    /*.geniht {
         grid-area: 4 / 2 / 7 / auto;
     }
     .gGHKFY {
@@ -3492,14 +3572,148 @@ td {
     }
     .jByJBO {
         grid-area: 4 / 3 / 7 / auto;   
-    }
-    .fgbAIV {
+    }*/
+    /*.fgbAIV {
         grid-area: 1 / 4 / 7 / auto!important;
-    }
+    }*/
     .col-md-4 {
         max-width: 100%;
     }
     .row-payment {
         display: block!important;
     }
+    .libVaR {
+        grid-area: 3 / 1 / auto / auto;
+    }
+    .bXwSvB {
+        list-style-type: none;
+        display: grid;
+        margin: 0px;
+        grid-template-rows: auto;
+        background-color: rgb(35, 42, 51);
+        grid-template-columns: 1fr auto;
+        gap: 0.125rem;
+        padding: 0.125rem;
+    }
+}
+.iEuGNS {
+    list-style-type: none;
+    display: grid;
+    margin: 0px;
+    background-color: rgb(26, 33, 42);
+    border-bottom: 1px solid rgb(49, 55, 63);
+    grid-template-columns: 1fr 2.75rem 2.75rem 1.625rem;
+    grid-template-rows: repeat(3, 1.5rem);
+    gap: 0.125rem;
+    padding: 0.125rem;
+}
+.iEuGNS::before, .jaFLCg::before {
+    position: absolute;
+    content: "​";
+}
+.gzwJXk {
+    grid-area: 1 / 1 / auto / auto;
+}
+.hGXhfW {
+    grid-area: 2 / 1 / auto / auto;
+}
+.dxyJqL {
+    grid-area: 3 / 1 / auto / auto;
+}
+.gPAJgV {
+    grid-area: 1 / 2 / 4 / auto;
+}
+.gTokSk {
+    background-color: rgb(35, 42, 51);
+    border-radius: 0.125rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.dNsKOD {
+    grid-area: 1 / 3 / 4 / auto;
+}
+.gTokSk {
+    background-color: rgb(35, 42, 51);
+    border-radius: 0.125rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.dFhuhr {
+    grid-area: 1 / 4 / 4 / auto;
+}
+.jaFLCg {
+    list-style-type: none;
+    display: grid;
+    margin: 0px;
+    grid-template-rows: auto;
+    background-color: rgb(35, 42, 51);
+    grid-template-columns: 1fr 2.75rem 2.75rem 1.625rem;
+    gap: 0.125rem;
+    padding: 0.125rem;
+}
+.bfIAFC {
+    grid-area: 1 / 1 / auto / auto;
+}
+.hXokRj {
+    grid-area: 1 / 2 / auto / auto;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-height: 1.25rem;
+}
+.ioApLE {
+    margin: 0px;
+    font-size: 0.625rem;
+    line-height: 1.2;
+    color: rgb(134, 151, 162);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+.hzCDbe {
+    grid-area: 1 / 3 / auto / auto;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-height: 1.5rem;
+}
+.fOeRbP {
+    grid-area: 1 / 4 / auto / auto;
+}
+.gGNKKw {
+    background-color: rgb(35, 42, 51);
+    border-radius: 0.125rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.gGNKKw > svg {
+    color: rgb(134, 151, 162);
 }
