@@ -20,7 +20,7 @@ class SportsBetController extends Controller
         $sports = Sport::get();
         $result = [];
         foreach ($sports as $sport) {
-            $data = $this->getData($sport->name, 2);
+            $data = $this->getData($sport->name, 1);
             if (count($data) > 0) {
                 $result[] = [
                     'name' => $sport->name,

@@ -9,6 +9,7 @@ use App\Http\Controllers\Gateway\PaymentController;
 use Auth;
 use Illuminate\Http\Request;
 use Session;
+use Log;
 
 class ProcessController extends Controller
 {
@@ -68,6 +69,7 @@ class ProcessController extends Controller
     public function ipn(Request $request)
     {
         $postdata = file_get_contents("php://input");
+        Log::info($postdata);
         $res = json_decode($postdata);
         $data = Deposit::where('trx', $res->event->data->metadata->trx)->orderBy('id', 'DESC')->first();
         $coinbaseAcc = json_decode($data->gateway_currency()->parameter);
