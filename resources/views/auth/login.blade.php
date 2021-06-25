@@ -22,7 +22,7 @@
             <div class="layout__IdLayout-h90yrz-0 fgBaNW">
                 <div class="layout__IdLayoutBody-h90yrz-2 cxzNhQ">
                     <div class="body__IdBody-sc-1kb3j31-0 iwdBQt">
-                        <div class="body__IdBodyItem-sc-1kb3j31-1 dEPATL">
+                        <div class="body__IdBodyItem-sc-1kb3j31-1 dEPATL btn-back">
                             <button
                                 class="button__IconButton-sc-1357fco-0 bBovPm">
                                 <svg width="1em" height="1em"
@@ -423,7 +423,7 @@
                                                 class="form__IdFormItemHint-sc-1xyj9v7-1 lgErke"><a
                                                     class="Link-n1sjvn-0-withRouter-MapProps gxpIOt"
                                                     data-test-id="loginPage-forgotPasswordLink"
-                                                    staticcontext="[object Object]" href="/id/forgot">Forgot
+                                                    staticcontext="[object Object]" href="/password/reset">Forgot
                                                     Password?</a></span></li>
                                         <li class="FormItem-sc-5ofmdi-0 btCexx"><button
                                                 class="Button__StyledButton-sc-1xtdszg-0 iWtOZP"
@@ -447,5 +447,9 @@
         </div>
     </div>
 </body>
-
+<script type="text/javascript">
+    $('.btn-back').click(function(){
+        window.history.back()
+    });
+</script>
 </html>

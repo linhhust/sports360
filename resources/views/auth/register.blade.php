@@ -244,6 +244,11 @@
             </div>
 </body>
 
+<script type="text/javascript">
+    $('.btn-back').click(function(){
+        window.history.back()
+    });
+</script>
 </html>
 {{-- <script src="{{asset('public/js/sportsbet/sportsbet.js')}}"></script> --}}
 @yield('js')
