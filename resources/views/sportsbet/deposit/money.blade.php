@@ -49,15 +49,15 @@
                                                     <label for="Amount" class="font-weight-bold"> @lang('Enter Amount')</label>
                                                     <input type="text" class="form-control amount mb-2" placeholder="0.00"
                                                            onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')">
-                                                    <label class="sr-only" for="inlineFormInputMD">Amount</label>
+                                                    {{-- <label class="sr-only" for="inlineFormInputMD">Amount</label> --}}
 
                                                 </div>
                                             </div>
-
-
+                                        </div>
+                                        <div class="form-row align-items-center ">
                                             <div class="col-auto">
-                                                <div class="md-form " style="margin-left: 2rem;">
-                                                    <button type="button" class="ggTfbD mt-4 request-button">Submit
+                                                <div class="md-form">
+                                                    <button type="button" class="btn-deposit-submit mt-4 request-button">Submit
                                                     </button>
                                                 </div>
                                             </div>

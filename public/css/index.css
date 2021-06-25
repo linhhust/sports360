@@ -2913,7 +2913,7 @@ input:not([type=checkbox]):not([type=radio]) {
     transition: inherit;
     padding: 1px;
 }
-.ggTfbD {
+.ggTfbD, .btn-deposit-submit {
     display: inline-flex;
     font-size: 1rem;
     -webkit-box-pack: center;
@@ -3576,9 +3576,6 @@ td {
     /*.fgbAIV {
         grid-area: 1 / 4 / 7 / auto!important;
     }*/
-    .col-md-4 {
-        max-width: 100%;
-    }
     .row-payment {
         display: block!important;
     }
@@ -3595,6 +3592,23 @@ td {
         gap: 0.125rem;
         padding: 0.125rem;
     }
+    .col-md-4 {
+        max-width: 100%;
+    }
+    .method {
+        flex-direction: column!important;
+    }
+    .card-logos {
+        justify-content: center!important;
+    }
+    .col-md-6 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+.text-danger {
+    color: #dc3545!important;
 }
 .iEuGNS {
     list-style-type: none;
