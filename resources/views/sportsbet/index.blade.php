@@ -168,7 +168,7 @@
 					@php
 						$name_file = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $sport['name'])));
 					@endphp
-					@include('sportsbet.sports.'.$name_file, ['data' =>$sport['data'], 'type' => 1])
+					@include('sportsbet.sports.'.$name_file, ['data' =>$sport['data'], 'type' => 2])
 				</div>
 			</div>
 		</div>

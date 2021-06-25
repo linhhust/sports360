@@ -30,7 +30,8 @@ function getList(type) {
             size: $(window).width()
         },
         success: function(data) {
-            // console.log(data)
+            console.log(data)
+            console.log($('#content'))
             $('#content').html(data);
             // if ($(window).width() < 600) {
             //     $('.ijNPnK').remove();

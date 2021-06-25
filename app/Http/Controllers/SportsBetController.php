@@ -20,7 +20,7 @@ class SportsBetController extends Controller
         $sports = Sport::get();
         $result = [];
         foreach ($sports as $sport) {
-            $data = $this->getData($sport->name, 1);
+            $data = $this->getData($sport->name, 2);
             if (count($data) > 0) {
                 $result[] = [
                     'name' => $sport->name,
@@ -46,7 +46,7 @@ class SportsBetController extends Controller
     {
         // return view('sportsbet.layout.' . $name, ['name' => $name]);
         // return view('sportsbet.index');
-        if (view()->exists("sportsbet.sports." . strtolower($name))) {
+        if (view()->exists("sportsbet.layout." . strtolower($name))) {
             return view('sportsbet.layout.' . $name, ['name' => $name]);
         } else {
             return view('sportsbet.layout', ['name' => $name]);

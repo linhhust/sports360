@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Gateway\PaymentController;
 use Auth;
 use Illuminate\Http\Request;
-use Session;
 use Log;
 
 class ProcessController extends Controller
@@ -18,28 +17,28 @@ class ProcessController extends Controller
      */
     public static function process($deposit)
     {
-        $basic = GeneralSettings::first();
+        $basic       = GeneralSettings::first();
         $coinbaseAcc = json_decode($deposit->gateway_currency()->parameter);
-        $url = 'https://api.commerce.coinbase.com/charges';
-        $array = [
-            'name' => Auth::user()->username,
-            'description' => "Pay to " . $basic->sitename,
-            'local_price' => [
-                'amount' => $deposit->final_amo,
-                'currency' => $deposit->method_currency
+        $url         = 'https://api.commerce.coinbase.com/charges';
+        $array       = [
+            'name'         => Auth::user()->username,
+            'description'  => "Pay to " . $basic->sitename,
+            'local_price'  => [
+                'amount'   => $deposit->final_amo,
+                'currency' => $deposit->method_currency,
             ],
-            'metadata' => [
-                'trx' => $deposit->trx
+            'metadata'     => [
+                'trx' => $deposit->trx,
             ],
             'pricing_type' => "fixed_price",
             'redirect_url' => route('payment'),
-            'cancel_url' => route('payment')
+            'cancel_url'   => route('payment'),
         ];
 
         $yourjson = json_encode($array);
-        $ch = curl_init();
-        $apiKey = $coinbaseAcc->api_key;
-        $header = array();
+        $ch       = curl_init();
+        $apiKey   = $coinbaseAcc->api_key;
+        $header   = array();
         $header[] = 'Content-Type: application/json';
         $header[] = 'X-CC-Api-Key: ' . "$apiKey";
         $header[] = 'X-CC-Version: 2018-03-22';
@@ -54,11 +53,11 @@ class ProcessController extends Controller
         $result = json_decode($result);
 
         if (@$result->error == '') {
-            $send['redirect'] = true;
+            $send['redirect']     = true;
             $send['redirect_url'] = $result->data->hosted_url;
         } else {
 
-            $send['error'] = true;
+            $send['error']   = true;
             $send['message'] = 'Some Problem Occured. Try Again';
         }
 
@@ -68,18 +67,27 @@ class ProcessController extends Controller
 
     public function ipn(Request $request)
     {
-        $postdata = file_get_contents("php://input");
-        Log::info($postdata);
-        $res = json_decode($postdata);
-        $data = Deposit::where('trx', $res->event->data->metadata->trx)->orderBy('id', 'DESC')->first();
-        $coinbaseAcc = json_decode($data->gateway_currency()->parameter);
-        $headers = apache_request_headers();
-        $sentSign = $headers['X-Cc-Webhook-Signature'];
-        $sig = hash_hmac('sha256', $postdata, $coinbaseAcc->secret);
-        if ($sentSign == $sig) {
-            if ($res->event->type == 'charge:confirmed' && $data->status == 0) {
-                PaymentController::userDataUpdate($data->trx);
+        try {
+            $postdata = file_get_contents("php://input");
+            // Log::info($postdata);
+            $res = json_decode($postdata);
+            if (isset($res->event->data->metadata->trx)) {
+                $data        = Deposit::where('trx', $res->event->data->metadata->trx)->orderBy('id', 'DESC')->first();
+                $coinbaseAcc = json_decode($data->gateway_currency()->parameter);
+                $headers     = apache_request_headers();
+                $sentSign    = $headers['X-Cc-Webhook-Signature'];
+                $sig         = hash_hmac('sha256', $postdata, $coinbaseAcc->secret);
+                if ($sentSign == $sig) {
+                    if ($res->event->type == 'charge:confirmed' && $data->status == 0) {
+                        PaymentController::userDataUpdate($data->trx);
+                    }
+                }
+            } else {
+                Log::info("don't have trx");
             }
+        } catch (\Exception $e) {
+            Log::info($postdata);
+            Log::info($e->getMessage());
         }
     }
 }
