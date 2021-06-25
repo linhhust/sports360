@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header custom-modal-header">
-                <h5 class="modal-title method-name  text-white" id="exampleModalLabel">Withdraw Via  Payoneer</h5>
+                <h5 class="modal-title method-name  text-white" id="exampleModalLabel">Withdraw</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -18,11 +18,11 @@
                     </div>
                     <div class="form-group group-radio">
                         <label class="radio-control label-form" for="check_btc">
-                            <input class="radio_class" id="check_btc" name="type" required="" type="radio" value="BTC" />
+                            <input class="radio_class" id="check_btc" name="type" required="" type="radio" value="BTC" disabled="" />
                             <span class="radio-label">BTC</span>
                        	</label>
                         <label class="radio-control label-form" for="check_eth">
-                            <input class="radio_class" id="check_eth" name="type" required="" type="radio" value="ETH" />
+                            <input class="radio_class" id="check_eth" name="type" required="" type="radio" value="ETH" disabled="" />
                             <span class="radio-label">ETH</span>
                         </label>
                         <label class="radio-control label-form" for="check_trx">

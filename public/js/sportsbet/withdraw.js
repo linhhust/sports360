@@ -8,6 +8,9 @@ $(document).ready(function() {
     if (btn){
         btn.onclick = function() {
             modal.style.display = "block";
+            $("input[name='address']").val('');
+            $("input[name='amount']").val('');
+            $("#check_trx").prop("checked", true);
         }
     }
     // When the user clicks on <span> (x), close the modal
@@ -22,37 +25,42 @@ $(document).ready(function() {
     }
     $('#withdraw').on('submit', function(e) {
         e.preventDefault(); // Now nothing will happen
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: '/withdraw',
-            method: "POST",
-            data: {
-                address: $('input[name="address"]').val(),
-                type: $('input[name="type"]').val(),
-                amount: $('input[name="amount"]').val(),
-            },
-            success: function(data) {
-                if (data.error) {
-                    $('#amount').parent().parent().find('.err-msg').remove();
-                    $('#amount').parent().after(`<span class="err-msg">${data.error}</span>`)
-                } else {
-                    balance = parseFloat($('.balance').text());
-                    amount = parseFloat($('input[name="amount"]').val())
-                    balance -= amount;
-                    $('.balance').text(balance.toFixed(2));
-                    notify('Request Withdraw Success', 'Success')
-                    $('#modalWithdraw').css('display', 'none');
+        if ($('input[name="type"]').val() == "TRX"){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
-            },
-            error: function(error, b, c) {
-                console.log(error)
-                notify("Error System", 'Error', 'danger')
-            }
-        });
+            });
+            $.ajax({
+                url: '/withdraw',
+                method: "POST",
+                data: {
+                    address: $('input[name="address"]').val(),
+                    type: $('input[name="type"]').val(),
+                    amount: $('input[name="amount"]').val(),
+                },
+                success: function(data) {
+                    if (data.error) {
+                        $('#amount').parent().parent().find('.err-msg').remove();
+                        $('#amount').parent().after(`<span class="err-msg">${data.error}</span>`)
+                    } else {
+                        balance = parseFloat($('.balance').text());
+                        amount = parseFloat($('input[name="amount"]').val())
+                        balance -= amount;
+                        $('.balance').text(balance.toFixed(2));
+                        notify('Request Withdraw Success', 'Success')
+                        $('#modalWithdraw').css('display', 'none');
+                        $("input[name='address']").val('');
+                        $("input[name='amount']").val('');
+                        $("#check_trx").prop("checked", true);
+                    }
+                },
+                error: function(error, b, c) {
+                    console.log(error)
+                    notify("Error System", 'Error', 'danger')
+                }
+            });
+        }
     });
     $('#amount').on('input', function(){
         amount = parseFloat($(this).val());

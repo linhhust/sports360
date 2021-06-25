@@ -14,7 +14,7 @@
                         <table class="table table-striped">
                             <thead >
                             <tr class="result-table-header">
-                                <th scope="col">#@lang('SL')</th>
+                                <th scope="col">#@lang('No')</th>
                                 <th scope="col">@lang('Event')</th>
                                 <th scope="col">@lang('Question')</th>
                                 <th scope="col">@lang('Threat')</th>
@@ -27,7 +27,7 @@
                             <tbody>
                             @forelse($logs as $k=>$data)
                                 <tr class="result-table-tr">
-                                    <td scope="row">{{++$k}}</td>
+                                    <td data-label="@lang('No')" scope="row">{{++$k}}</td>
                                     <td data-label="@lang('Event')">{{($data->match) ? str_limit($data->match->name,30) : '-' }}</td>
                                     <td data-label="@lang('Question')">{{($data->ques) ? $data->ques->question : '-'}}</td>
                                     <td data-label="@lang('Threat')">{{($data->betoption) ? $data->betoption->option_name : ''}} </td>
