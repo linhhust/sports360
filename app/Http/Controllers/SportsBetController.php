@@ -58,7 +58,7 @@ class SportsBetController extends Controller
         $type   = $request->type ?? 1;
         // $name   = str_replace('-', ' ', $name);
         $result = $this->getData(str_replace('-', ' ', $name), $type, $request->curent_zone);
-        Log::info($request->curent_zone);
+        // Log::info($request->curent_zone);
         if (view()->exists("sportsbet.sports." . strtolower($name))) {
             return view("sportsbet.sports." . strtolower($name), ['name' => $name, 'data' => $result, 'type' => $type, 'size' => $request->size]);
         } else {
@@ -163,7 +163,7 @@ class SportsBetController extends Controller
                 ]);
                 $total += $bet['amount'];
             }
-            Log::info($total . "   " . Auth::user()->balance);
+            // Log::info($total . "   " . Auth::user()->balance);
             if ($total <= Auth::user()->balance) {
                 Auth::user()->balance -= $total;
                 Auth::user()->save();

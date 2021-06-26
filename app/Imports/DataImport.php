@@ -5,16 +5,14 @@ namespace App\Imports;
 use App\BetOption;
 use App\BetQuestion;
 use App\Event;
+use App\Events\UpdateOption;
+use App\Events\UpdateScore;
 use App\Match;
 use App\Sport;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
-use Log;
-use App\Events\UpdateOption;
-use App\Events\UpdateMatch;
-use App\Events\UpdateScore;
 
 class DataImport implements ToCollection, WithHeadingRow
 {
@@ -47,40 +45,40 @@ class DataImport implements ToCollection, WithHeadingRow
                     }
                     if ($row['match']) {
                         $match = Match::where('name', $row['match'])->first();
-                        $end = false;
+                        $end   = false;
                         // Log::info($row['match'] . ': ' .$row['start_time']);
                         if (!$match) {
                             $match = Match::create([
                                 'event_id'   => $event->id,
                                 'name'       => $row['match'],
                                 'slug'       => str_slug($row['match']),
-                                'start_date' => str_replace('/', '-',$row['start_time']),
+                                'start_date' => str_replace('/', '-', $row['start_time']),
                                 'status'     => 1,
-                                'end_date'   => $row['end_time'] ? str_replace('/', '-',$row['end_time']) : '2100-12-31 23:59:59',
+                                'end_date'   => $row['end_time'] ? str_replace('/', '-', $row['end_time']) : '2100-12-31 23:59:59',
                                 'admin_id'   => 1,
                             ]);
-                        }else{
+                        } else {
                             if ($row['end_time']) {
-                                $match->end_date = str_replace('/', '-',$row['end_time']);
-                                $end = true;
+                                $match->end_date = str_replace('/', '-', $row['end_time']);
+                                $end             = true;
                             }
                             $is_update = false;
                             if ($row['score_1']) {
-                                $match->score1 = $row['score_1'];
-                                $is_update = true;
+                                $match->score1 = $row['score_1'] ?? 0;
+                                $is_update     = true;
                             }
                             if ($row['score_2']) {
-                                $match->score2 = $row['score_2'];
-                                $is_update = true;
+                                $match->score2 = $row['score_2'] ?? 0;
+                                $is_update     = true;
                             }
                             $match->save();
-                            if ($is_update){
+                            if ($is_update) {
                                 event(new UpdateScore($match));
                             }
                             // if ($end){
                             //     event(new UpdateMatch($match->id));
                             // }
-                            
+
                         }
 
                         switch ($row['sport']) {
@@ -101,7 +99,7 @@ class DataImport implements ToCollection, WithHeadingRow
                         foreach ($questions as $value) {
                             $question = BetQuestion::where('question', $value)->where('match_id', $match->id)->first();
                             if (!$question) {
-                                if (!$end){
+                                if (!$end) {
                                     $question = BetQuestion::create([
                                         'match_id' => $match->id,
                                         'question' => $value,
@@ -110,8 +108,8 @@ class DataImport implements ToCollection, WithHeadingRow
                                         'end_time' => '2100/12/31 23:59:59',
                                     ]);
                                 }
-                            }else{
-                                if ($end){
+                            } else {
+                                if ($end) {
                                     $question->end_time = $row['end_time'];
                                     $question->save();
                                 }
@@ -119,36 +117,33 @@ class DataImport implements ToCollection, WithHeadingRow
                             $arrQuestion[$value] = $question->id;
                         }
                         foreach ($questions as $value) {
-                            $key = Str::slug($value, '_');
-                            
-                            if ($row[$key]) {
-                                $option = BetOption::where('option_name', $row['team'])
+                            $key    = Str::slug($value, '_');
+                            $option = BetOption::where('option_name', $row['team'])
                                 ->where('match_id', $match->id)
                                 ->where('question_id', $arrQuestion[$value])
                                 ->first();
-                                if (!$option) {
-                                    $arr = [
-                                        'question_id' => $arrQuestion[$value],
-                                        'match_id'    => $match->id,
-                                        'option_name' => $row['team'],
-                                        'ratio1'      => 1,
-                                        'ratio2'      => $row[$key],
-                                        'text'        => $row[$key],
-                                        'admin_id'    => 1,
-                                    ];
-                                    if ($value == 'hcp' || $value == 'tot' || $value == '1st half hcp' || $value == '1st half tot') {
-                                        $arr['ratio2'] = $row[$key . "_2"];
-                                    }
-                                    $option = BetOption::create($arr);
-                                } else {
-                                    $option->text = $row[$key];
-                                    $option->ratio2 = $row[$key];
-                                    if ($value == 'hcp' || $value == 'tot' || $value == '1st half hcp' || $value == '1st half tot') {
-                                        $option->ratio2 = $row[$key . "_2"];
-                                    }
-                                    $option->save();
-                                    event(new UpdateOption($option));
+                            if ($option) {
+                                $option->text   = $row[$key] ? $row[$key] : '';
+                                $option->ratio2 = $row[$key] ? $row[$key] : 0;
+                                if ($value == 'hcp' || $value == 'tot' || $value == '1st half hcp' || $value == '1st half tot') {
+                                    $option->ratio2 = $row[$key . "_2"] ? $row[$key . "_2"] : 0;
                                 }
+                                $option->save();
+                                event(new UpdateOption($option));
+                            } else {
+                                $arr = [
+                                    'question_id' => $arrQuestion[$value],
+                                    'match_id'    => $match->id,
+                                    'option_name' => $row['team'],
+                                    'ratio1'      => 1,
+                                    'ratio2'      => $row[$key] ? $row[$key] : 0,
+                                    'text'        => $row[$key] ? $row[$key] : '',
+                                    'admin_id'    => 1,
+                                ];
+                                if ($value == 'hcp' || $value == 'tot' || $value == '1st half hcp' || $value == '1st half tot') {
+                                    $arr['ratio2'] = $row[$key . "_2"];
+                                }
+                                $option = BetOption::create($arr);
                             }
                         }
                     }

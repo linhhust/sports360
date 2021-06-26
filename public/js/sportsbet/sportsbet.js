@@ -1,5 +1,5 @@
 var elementSelect = `
-  <li class="">
+  <li class="wrapper_{question_id}_{option_id}">
       <div class="event" data-id="{id}">
           <div class="title">
               <a class="hover:u-color-piccolo" href="{url}">
@@ -138,20 +138,45 @@ var pusher = new Pusher('c6551a3f0e4ab646ff51', {
   encrypted: true,
   cluster: 'us3',
 });
-// var pusher = new Pusher('9d19381a054db6805cf1', {
-//   encrypted: true,
-//   cluster: 'ap1',
-// });
+var pusher = new Pusher('9d19381a054db6805cf1', {
+  encrypted: true,
+  cluster: 'ap1',
+});
 var channel_update_option = pusher.subscribe('update-option');
 channel_update_option.bind('App\\Events\\UpdateOption', function(data) {
-    if ($(`.option_${data.option.question_id}_${data.option.id}`).find('.eieSeJ').length > 0){
-        $(`.option_${data.option.question_id}_${data.option.id}`).find('.eieSeJ').text(data.option.text);
-    }
-    if ($(`.option_${data.option.question_id}_${data.option.id}`).find('.ilfAV').length > 0){
+    // console.log(data)
+    // if ($(`.option_${data.option.question_id}_${data.option.id}`).find('.eieSeJ').length > 0){
+    //     $(`.option_${data.option.question_id}_${data.option.id}`).find('.eieSeJ').text(data.option.text);
+    // }
+    if ($(`.option_${data.option.question_id}_${data.option.id}`).length > 0){
         ratio = parseFloat(data.option.ratio2)
-        ratio_old = parseFloat($(`.option_${data.option.question_id}_${data.option.id}`).find('.ilfAV').text());
-        if (ratio != ratio_old){
-            $(`.option_${data.option.question_id}_${data.option.id}`).find('.ilfAV').text(ratio.toFixed(2));
+        ratio_old = '';
+        if ($(`.option_${data.option.question_id}_${data.option.id}`).find('.ilfAV').length > 0)
+          ratio_old = parseFloat($(`.option_${data.option.question_id}_${data.option.id}`).find('.ilfAV').text());
+        if (ratio == 0){
+            $(`.option_${data.option.question_id}_${data.option.id}`).html(
+              `
+                <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gjAamX">
+                  <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="IconPadlock-sc-1wkm386-0 eJrPzX">
+                    <path d="M4.107 12.536L4 18.256c0 1.166.853 2.12 2.027 2.332 2.56.318 7.253.741 11.946 0C19.147 20.376 20 19.422 20 18.257l-.213-5.721c0-1.166-.96-2.013-2.134-2.225-2.56-.106-7.04-.424-11.413.106-1.173.106-2.027 1.06-2.133 2.119z" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round"></path>
+                    <path d="M16.267 10.31V7.345C16.267 5.014 14.24 3 11.893 3 9.547 3 7.52 4.907 7.52 7.344v2.967" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round"></path>
+                    <path d="M12 14v3.137" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                </div>
+              `);
+            if ($('.bets').find(`.wrapper_${data.option.question_id}_${data.option.id}`).length > 0 ) {
+              $('.bets').find(`.wrapper_${data.option.question_id}_${data.option.id}`).remove();
+              number = parseInt($('.betslip-tabs').find('.amount').text())
+              if (number == 1){
+                $('.betslip').remove();
+              }else{
+                $('.betslip-tabs').find('.amount').text(number - 1);
+                calculateTotal();
+              }
+            }
+        }else if (ratio != ratio_old){
+            // $(`.option_${data.option.question_id}_${data.option.id}`).find('.ilfAV').text(ratio.toFixed(2));
+            $(`.option_${data.option.question_id}_${data.option.id}`).html(data.view);
             if ($('.bets').find(`.option_${data.option.question_id}_${data.option.id}`).length > 0 ) {
                 if ($('.message').length == 0){
                   $('.bets').find(`.option_${data.option.question_id}_${data.option.id}`).text(ratio.toFixed(2));
@@ -244,14 +269,14 @@ function addEvent(){
     }else{
       $(this).addClass('selected');
       metaTags = $(this).parent().parent().find('meta');
-      element = elementSelect.replace('{title}', $(this).attr('data-info'))
-            .replace('{id}', $(this).attr('data-id'))
-            .replace('{url}','url')
-            .replace('{type}', type)
-            .replace('{team}', option)
-            .replace('{question_id}', $(this).attr('data-question'))
-            .replace('{option_id}', $(this).attr('data-id'))
-            .replace('{odds}', $(this).find('.ilfAV').length > 0 ? $(this).find('.ilfAV').text() : $(this).find('.iAtQcF').text());
+      element = elementSelect.replaceAll('{title}', $(this).attr('data-info'))
+            .replaceAll('{id}', $(this).attr('data-id'))
+            .replaceAll('{url}','url')
+            .replaceAll('{type}', type)
+            .replaceAll('{team}', option)
+            .replaceAll('{question_id}', $(this).attr('data-question'))
+            .replaceAll('{option_id}', $(this).attr('data-id'))
+            .replaceAll('{odds}', $(this).find('.ilfAV').length > 0 ? $(this).find('.ilfAV').text() : $(this).find('.iAtQcF').text());
       if ($('.betslip').length == 0){
         $('.modal-bet').html(betWrapper);
         if ($('input[name="is_login"]').val() == 1){

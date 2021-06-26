@@ -31,7 +31,7 @@
 					{{$question['data']['winner'][$option1]['ratio2']}}
                 </p>
 			</div> --}}
-				@if(isset($question['data']['winner'][$option1]))
+				@if(isset($question['data']['winner'][$option1]) && $question['data']['winner'][$option1]['ratio2'] > 0)
                     <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gTokSk option_{{$question['data']['winner'][$option1]['question_id']}}_{{$question['data']['winner'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="winner" data-id="{{$question['data']['winner'][$option1]['id']}}" data-question="{{$question['data']['winner'][$option1]['question_id']}}">
                         <p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['winner'][$option1]['ratio2']}}</p>
                     </div>
@@ -46,7 +46,7 @@
                 @endif
 		</li>
 		<li class="grid__Away-sc-165hszy-4 dNsKOD">
-				@if(isset($question['data']['winner'][$option2]))
+				@if(isset($question['data']['winner'][$option2]) && $question['data']['winner'][$option2]['ratio2'] > 0)
                     <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 gTokSk option_{{$question['data']['winner'][$option2]['question_id']}}_{{$question['data']['winner'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="winner" data-id="{{$question['data']['winner'][$option2]['id']}}" data-question="{{$question['data']['winner'][$option2]['question_id']}}">
                         <p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['winner'][$option2]['ratio2']}}</p>
                     </div>
@@ -100,7 +100,7 @@
 		</li>
 		<li class="grid__Market1X2-b23su8-1 cCASKJ">
 			<div class="market__MarketWrapper-sc-19a4lm9-0 cOzEQD">
-				@if(isset($question['data']['winner'][$option1]))
+				@if(isset($question['data']['winner'][$option1]) && $question['data']['winner'][$option1]['ratio2'] > 0)
                     <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 CbMtg option_{{$question['data']['winner'][$option1]['question_id']}}_{{$question['data']['winner'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="winner" data-id="{{$question['data']['winner'][$option1]['id']}}" data-question="{{$question['data']['winner'][$option1]['question_id']}}">
                         <p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['winner'][$option1]['ratio2']}}</p>
                     </div>
@@ -113,7 +113,7 @@
                     	</svg>
                     </div>
                 @endif
-				@if(isset($question['data']['winner'][$option2]))
+				@if(isset($question['data']['winner'][$option2]) && $question['data']['winner'][$option2]['ratio2'] > 0)
                     <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 CbMtg option_{{$question['data']['winner'][$option2]['question_id']}}_{{$question['data']['winner'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="winner" data-id="{{$question['data']['winner'][$option2]['id']}}" data-question="{{$question['data']['winner'][$option2]['question_id']}}">
                         <p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['winner'][$option2]['ratio2']}}</p>
                     </div>
@@ -130,7 +130,7 @@
 		</li>
 		<li class="grid__HCP-b23su8-2 dWfbIS">
 			<div class="market__MarketWrapper-sc-19a4lm9-0 cOzEQD">
-				@if(isset($question['data']['hcp'][$option1]))
+				@if(isset($question['data']['hcp'][$option1]) && $question['data']['hcp'][$option1]['ratio2'] > 0)
                     <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 CbMtg option_{{$question['data']['hcp'][$option1]['question_id']}}_{{$question['data']['hcp'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="{{$option1}}" data-type="hcp" data-id="{{$question['data']['hcp'][$option1]['id']}}" data-question="{{$question['data']['hcp'][$option1]['question_id']}}">
                         <p class="Selection__Odds-sc-1tx8nkd-0 eieSeJ">{{$question['data']['hcp'][$option1]['ratio1']}}</p>
                         <p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['hcp'][$option1]['ratio2']}}</p>
@@ -144,7 +144,7 @@
                     	</svg>
                     </div>
                 @endif
-				@if(isset($question['data']['hcp'][$option2]))
+				@if(isset($question['data']['hcp'][$option2]) && $question['data']['hcp'][$option2]['ratio2'] > 0)
                     <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 CbMtg option_{{$question['data']['hcp'][$option2]['question_id']}}_{{$question['data']['hcp'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="{{$option2}}" data-type="hcp" data-id="{{$question['data']['hcp'][$option2]['id']}}" data-question="{{$question['data']['hcp'][$option2]['question_id']}}">
                         <p class="Selection__Odds-sc-1tx8nkd-0 eieSeJ">{{$question['data']['hcp'][$option2]['ratio1']}}</p>
                         <p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['hcp'][$option2]['ratio2']}}</p>
@@ -162,7 +162,7 @@
 		</li>
 		<li class="grid__TOT-b23su8-3 iMvrrg">
 			<div class="market__MarketWrapper-sc-19a4lm9-0 cOzEQD">
-				@if(isset($question['data']['tot'][$option1]))
+				@if(isset($question['data']['tot'][$option1]) && $question['data']['tot'][$option1]['ratio2'] > 0)
                     <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 CbMtg option_{{$question['data']['tot'][$option1]['question_id']}}_{{$question['data']['tot'][$option1]['id']}}" data-info="{{$question['name']}}" data-option="" data-type="tot" data-id="{{$question['data']['tot'][$option1]['id']}}" data-question="{{$question['data']['tot'][$option1]['question_id']}}">
                         <p class="Selection__Odds-sc-1tx8nkd-0 eieSeJ">{{$question['data']['tot'][$option1]['ratio1']}}</p>
                         <p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['tot'][$option1]['ratio2']}}</p>
@@ -176,7 +176,7 @@
                     	</svg>
                     </div>
                 @endif
-				@if(isset($question['data']['tot'][$option2]))
+				@if(isset($question['data']['tot'][$option2]) && $question['data']['tot'][$option2]['ratio2'] > 0)
                     <div class="Selection__SelectionWrapper-sc-1tx8nkd-2 CbMtg option_{{$question['data']['tot'][$option2]['question_id']}}_{{$question['data']['tot'][$option2]['id']}}" data-info="{{$question['name']}}" data-option="" data-type="tot" data-id="{{$question['data']['tot'][$option2]['id']}}" data-question="{{$question['data']['tot'][$option2]['question_id']}}">
                         <p class="Selection__Odds-sc-1tx8nkd-0 eieSeJ">{{$question['data']['tot'][$option2]['ratio1']}}</p>
                         <p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">{{$question['data']['tot'][$option2]['ratio2']}}</p>
