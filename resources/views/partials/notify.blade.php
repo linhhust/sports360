@@ -1,9 +1,9 @@
-
-@if (session()->has('success'))
+{{-- {{json_encode(Session::all())}} --}}
+@if (Session::has('success'))
 <script>
   var content = {};
 
-  content.message = '{{__(session('success'))}}';
+  content.message = '{{Session::get('success')}}';
   content.title = 'Success';
   content.icon = 'fa fa-bell';
 
@@ -20,12 +20,11 @@
 </script>
 @endif
 
-
-@if (session()->has('warning'))
+@if (Session::has('warning'))
 <script>
   var content = {};
 
-  content.message = '{{__(session('warning'))}}';
+  content.message = '{{Session::get('warning')}}';
   content.title = 'Warning!';
   content.icon = 'fa fa-bell';
 
@@ -42,12 +41,11 @@
 </script>
 @endif
 
-
-@if (session()->has('danger'))
+@if (Session::has('danger'))
 <script>
   var content = {};
 
-  content.message = '{{__(session('danger'))}}';
+  content.message = '{{Session::get('danger')}}';
   content.title = 'Opps!';
   content.icon = 'fa fa-bell';
 
@@ -67,11 +65,11 @@
 
 
 
-@if (session()->has('info'))
+@if (Session::has('info'))
 <script>
   var content = {};
 
-  content.message = '{{__(session('info'))}}';
+  content.message = '{{Session::get('info')}}';
   content.title = 'Info!';
   content.icon = 'fa fa-bell';
 

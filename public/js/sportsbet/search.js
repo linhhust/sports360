@@ -16,18 +16,20 @@ $(document).ready(function() {
 });
 
 function getList(type) {
-    // console.log('search ' + type)
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    var current_date = new Date();
+    curent_zone = -current_date.getTimezoneOffset() * 60;
     $.ajax({
         url: `${window.location.pathname}/search`,
         method: "GET",
         data: {
             type,
-            size: $(window).width()
+            size: $(window).width(),
+            curent_zone: curent_zone 
         },
         success: function(data) {
             console.log(data)

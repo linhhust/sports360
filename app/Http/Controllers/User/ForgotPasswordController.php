@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Password;
 use App\User;
 use DB;
+use Illuminate\Support\Facades\Redirect;
 
 class ForgotPasswordController extends Controller
 {
@@ -59,8 +60,8 @@ class ForgotPasswordController extends Controller
             );
             send_email($to,  $name, $subject,$message);
 
-            session()->flash('success','Password Reset Link Send Your E-mail');
-            return back();
+            // session()->flash('success','Password Reset Link Send Your E-mail');
+            return redirect('/password/reset')->with('success', 'Password Reset Link Send Your E-mail');
         }
     }
 

@@ -142,9 +142,7 @@
 	.eckzt {
 	    display: block;
 	    position: relative;
-	    background-color: rgb(12, 207, 97);
 	    background-image: url(https://sports360.io/public/images/logo/banner.png);
-	    background-attachment: fixed;
 	    background-size: cover;
 	    background-position: center top;
 	    background-repeat: no-repeat;

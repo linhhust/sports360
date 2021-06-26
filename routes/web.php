@@ -324,5 +324,6 @@ Route::group(['prefix' => $_ENV['admin']], function () {
 Route::get('user-password/reset', 'User\ForgotPasswordController@showLinkRequestForm')->name('user.password.request');
 
 Route::post('user-password/email', 'User\ForgotPasswordController@sendResetLinkEmail')->name('user.password.email');
+// Route::post('user-password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('user.password.email');
 Route::get('user-password/reset/{token}', 'User\ResetPasswordController@showResetForm')->name('user.password.reset');
 Route::post('user-password/reset', 'User\ResetPasswordController@reset');

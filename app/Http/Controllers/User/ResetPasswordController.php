@@ -52,8 +52,7 @@ class ResetPasswordController extends Controller
         }
         $user->password = bcrypt($request->password);
         $user->save();
-
-
+        $tk->delete();
         session()->flash('success','Successfully Password Reset.');
 
         return redirect()->route('login');
