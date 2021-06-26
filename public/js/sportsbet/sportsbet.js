@@ -379,9 +379,9 @@ function clickButtonBet(){
   }else{
     if ($('.pt-disabled').length == 0){
       if (calculateTotal()){
-        data = [];
+        bets = [];
         $('.event').each(function(){
-          data.push({
+          bets.push({
             id: $(this).attr('data-id'),
             amount: $(this).find('input').val(),
             odds: $(this).find('.target').find('.u-color-piccolo').text(),
@@ -396,7 +396,7 @@ function clickButtonBet(){
               url: '/sports/bet',
               method: "POST",
               data: {
-                bets: data
+                bets: bets
               },
               success: function(data) {
                   if (data.error){
@@ -414,6 +414,7 @@ function clickButtonBet(){
                     $('.balance').text(balance.toFixed(2));
                     notify('Bet Success', 'Success')
                     $('.betslip').remove();
+                    $('.hgqPbW').text(parseInt($('.hgqPbW').text()) + bets.length);
                   }
               },
               error: function(error, b, c) {
