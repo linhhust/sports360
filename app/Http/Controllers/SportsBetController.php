@@ -20,7 +20,7 @@ class SportsBetController extends Controller
         $sports = Sport::get();
         $result = [];
         foreach ($sports as $sport) {
-            $data = $this->getData($sport->name, 2);
+            $data = $this->getData($sport->name, 2, '');
             if (count($data) > 0) {
                 $result[] = [
                     'name' => $sport->name,
@@ -57,15 +57,15 @@ class SportsBetController extends Controller
     {
         $type   = $request->type ?? 1;
         // $name   = str_replace('-', ' ', $name);
-        $result = $this->getData(str_replace('-', ' ', $name), $type);
-        // Log::info("sportsbet.sports." . strtolower($name));
+        $result = $this->getData(str_replace('-', ' ', $name), $type, $request->curent_zone);
+        Log::info($request->curent_zone);
         if (view()->exists("sportsbet.sports." . strtolower($name))) {
             return view("sportsbet.sports." . strtolower($name), ['name' => $name, 'data' => $result, 'type' => $type, 'size' => $request->size]);
         } else {
             return '';
         }
     }
-    private function getData($sportName = '', $type = 1)
+    private function getData($sportName = '', $type = 1, $curent_zone)
     {
         $query = Event::join('sports', 'sports.id', '=', 'events.sport_id')
             ->where('sports.name', ucwords($sportName));
@@ -126,7 +126,7 @@ class SportsBetController extends Controller
                         'name'    => $match->name,
                         'options' => $arrName,
                         'data'    => $arrQuestion,
-                        'time'    => $match->start_date,
+                        'time'    => getLocalTime($match->start_date, $curent_zone),
                         'score1'  => $match->score1,
                         'score2'  => $match->score2,
                     ];

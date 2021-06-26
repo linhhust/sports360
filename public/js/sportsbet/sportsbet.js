@@ -452,3 +452,18 @@ $('.my-bet').click(function(){
   window.location.href = '/mybet';
 });
 
+function convertDateTime(strDate) {
+    strDate = strDate + 'Z';
+    date = new Date(strDate);
+    result = date.getFullYear() + '-' 
+    result += (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1): (date.getMonth() + 1)
+    result += '-' 
+    result += date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
+    result += ' '
+    result += date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
+    result += ":"
+    result += date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+    result += ":"
+    result += date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()
+    return result;
+}

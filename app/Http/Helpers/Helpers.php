@@ -500,9 +500,8 @@ function inputTitle($text)
 
 function getLocalTime($time, $time_zone)
 {
-    if (Session::has('current_time_zone')) {
-        $utc = strtotime($time) - date('Z');
-        $utc = strtotime($time) - date('Z'); // Convert the time zone to GMT 0. If the server time is what ever no problem.
+    if ($time_zone != "") {
+        $utc = strtotime($time);
 
         $time = $utc + $time_zone; // Convert the time to local time
         $time = date("Y-m-d H:i:s", $time);

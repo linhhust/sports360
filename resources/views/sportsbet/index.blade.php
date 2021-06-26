@@ -175,3 +175,6 @@
 	@endforeach
 </div>
 @stop
+@section('js')
+	<script src="{{asset('public/js/sportsbet/feature.js')}}"></script>
+@stop

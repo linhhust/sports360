@@ -32,8 +32,6 @@ function getList(type) {
             curent_zone: curent_zone 
         },
         success: function(data) {
-            console.log(data)
-            console.log($('#content'))
             $('#content').html(data);
             // if ($(window).width() < 600) {
             //     $('.ijNPnK').remove();
