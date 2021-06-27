@@ -13,6 +13,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Illuminate\Support\Facades\Auth;
 
 class DataImport implements ToCollection, WithHeadingRow
 {
@@ -55,7 +56,7 @@ class DataImport implements ToCollection, WithHeadingRow
                                 'start_date' => str_replace('/', '-', $row['start_time']),
                                 'status'     => 1,
                                 'end_date'   => $row['end_time'] ? str_replace('/', '-', $row['end_time']) : '2100-12-31 23:59:59',
-                                'admin_id'   => 1,
+                                'admin_id'   => Auth::guard('admin')->id(),
                             ]);
                         } else {
                             if ($row['end_time']) {
@@ -71,6 +72,7 @@ class DataImport implements ToCollection, WithHeadingRow
                                 $match->score2 = $row['score_2'] ?? 0;
                                 $is_update     = true;
                             }
+                            $match->admin_id = Auth::guard('admin')->id();
                             $match->save();
                             if ($is_update) {
                                 event(new UpdateScore($match));
@@ -104,12 +106,13 @@ class DataImport implements ToCollection, WithHeadingRow
                                         'match_id' => $match->id,
                                         'question' => $value,
                                         'limit'    => 100,
-                                        'admin_id' => 1,
+                                        'admin_id' => Auth::guard('admin')->id(),
                                         'end_time' => '2100/12/31 23:59:59',
                                     ]);
                                 }
                             } else {
                                 if ($end) {
+                                    $question->admin_id = Auth::guard('admin')->id();
                                     $question->end_time = $row['end_time'];
                                     $question->save();
                                 }
@@ -128,6 +131,7 @@ class DataImport implements ToCollection, WithHeadingRow
                                 if ($value == 'hcp' || $value == 'tot' || $value == '1st half hcp' || $value == '1st half tot') {
                                     $option->ratio2 = $row[$key . "_2"] ? $row[$key . "_2"] : 0;
                                 }
+                                $option->admin_id = Auth::guard('admin')->id();
                                 $option->save();
                                 event(new UpdateOption($option));
                             } else {
@@ -138,7 +142,7 @@ class DataImport implements ToCollection, WithHeadingRow
                                     'ratio1'      => 1,
                                     'ratio2'      => $row[$key] ? $row[$key] : 0,
                                     'text'        => $row[$key] ? $row[$key] : '',
-                                    'admin_id'    => 1,
+                                    'admin_id'    => Auth::guard('admin')->id(),
                                 ];
                                 if ($value == 'hcp' || $value == 'tot' || $value == '1st half hcp' || $value == '1st half tot') {
                                     $arr['ratio2'] = $row[$key . "_2"];

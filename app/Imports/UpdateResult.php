@@ -47,6 +47,7 @@ class UpdateResult implements ToCollection, WithHeadingRow
                             continue;
                         }
                         if ($row['end_time']) {
+                            $match->admin_id = Auth::guard('admin')->id();
                             $match->end_date = $row['end_time'];
                             $match->save();
                         }
@@ -123,9 +124,9 @@ class UpdateResult implements ToCollection, WithHeadingRow
             ]);
         }
         foreach ($losser as $dd) {
-            $user       = User::find($dd->user_id);
-            $dd->status = -1;
-            // $dd->admin_id = Auth::guard('admin')->id();
+            $user         = User::find($dd->user_id);
+            $dd->status   = -1;
+            $dd->admin_id = Auth::guard('admin')->id();
             $dd->update();
         }
 

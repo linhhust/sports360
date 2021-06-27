@@ -99,10 +99,6 @@
     </div>
 </body>
 <script src="{{asset('public/admin/js/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
-<script type="text/javascript">
-    $('.btn-back').click(function(){
-        window.history.back()
-    });
-</script>
+<script src="{{asset('public/js/sportsbet/auth.js')}}"></script>
 @include('partials.notify')
 </html>

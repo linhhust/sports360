@@ -33,18 +33,22 @@
                 </a>
             </li>
         @endif
+        @if(in_array('25',$access))
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.import')}}">
                     <span class="menu-title">Import Data</span>
                     <i class="mdi mdi-arrow-up-bold menu-icon"></i>
                 </a>
             </li>
+        @endif
+        @if(in_array('26',$access))
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.upresult')}}">
                     <span class="menu-title">Update Result</span>
                     <i class="mdi mdi-arrow-up-bold menu-icon"></i>
                 </a>
             </li>
+        @endif
 
         @if(in_array('2',$access))
             <li class="nav-item">

@@ -22,7 +22,7 @@
             <div class="layout__IdLayout-h90yrz-0 fgBaNW">
                 <div class="layout__IdLayoutBody-h90yrz-2 cxzNhQ">
                     <div class="body__IdBody-sc-1kb3j31-0 iwdBQt">
-                        <div class="body__IdBodyItem-sc-1kb3j31-1 dEPATL">
+                        <div class="body__IdBodyItem-sc-1kb3j31-1 dEPATL btn-back">
                             <button class="button__IconButton-sc-1357fco-0 bBovPm">
                                 <svg width="1em" height="1em" viewBox="0 0 20 8" xmlns="http://www.w3.org/2000/svg" class="IconArrowLeft-ii6pzc-0 fFMeqz">
                                     <path d="M5.08 8V4.8H20V3.2H5.08V0L0 4z" fill="currentColor" fill-rule="evenodd"></path>
@@ -116,11 +116,7 @@
             </div>
 </body>
 
-<script type="text/javascript">
-    $('.btn-back').click(function(){
-        window.history.back()
-    });
-</script>
+<script src="{{asset('public/js/sportsbet/auth.js')}}"></script>
 </html>
 {{-- <script src="{{asset('public/js/sportsbet/sportsbet.js')}}"></script> --}}
 @yield('js')

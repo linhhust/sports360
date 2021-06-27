@@ -139,6 +139,16 @@
                                                             <div class="card-body">
                                                                 <div class="row mt-2">
                                                                     <div class="col-md-6"><label><input type="checkbox"
+                                                                                                        value="25"
+                                                                                                        name="access[]"
+                                                                                                        @if(in_array('25',json_decode($mac->access))) checked @endif>
+                                                                            Import Data</label></div>
+                                                                    <div class="col-md-6"><label><input type="checkbox"
+                                                                                                        value="26"
+                                                                                                        name="access[]"
+                                                                                                        @if(in_array('26',json_decode($mac->access))) checked @endif>
+                                                                            Update Result</label></div>
+                                                                    <div class="col-md-6"><label><input type="checkbox"
                                                                                                         value="1"
                                                                                                         name="access[]"
                                                                                                         @if(in_array('1',json_decode($mac->access))) checked @endif>
