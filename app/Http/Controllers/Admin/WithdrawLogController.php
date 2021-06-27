@@ -53,13 +53,13 @@ class WithdrawLogController extends Controller
             $data->save();
 
             $user = User::find($data['user_id']);
-            $user->balance = round(($user->balance + $data->net_amount),2);
+            $user->balance = round(($user->balance + $data->amount),2);
             $user->save();
 
             $tr = getTrx();
             Trx::create([
                 'user_id' => $user->id,
-                'amount' => $data->net_amount,
+                'amount' => $data->amount,
                 'main_amo' => $user->balance,
                 'charge' => 0,
                 'type' => '+',
@@ -68,7 +68,7 @@ class WithdrawLogController extends Controller
             ]);
 
 
-            $msg =  "Your withdraw amount " . number_format($data->net_amount,2). ' '.$basic->currency . " refund  successfully. ";
+            $msg =  "Your withdraw amount " . number_format($data->amount,2). ' '.$basic->currency . " refund  successfully. ";
             $msg .=  ' Your main balance ' .number_format($user->balance,2). ' '.$basic->currency;
             $msg .= "\n". date('d M Y  h:i A');
             notify($user,'Withdraw Amount Refunded', $msg);

@@ -36,7 +36,7 @@ function send_email($to, $name, $subject, $message)
             $mm  = str_replace("[[name]]", $name, $template);
             $msg = str_replace("[[message]]", $message, $mm);
             Mail::send('sportsbet.mail', ['body' => $msg], function ($message) use ($to, $subject) {
-                $message->from('No-reply@bet500.org', 'Sports360');
+                $message->from($temp->esender, 'Sports360');
                 $message->to($to);
                 $message->subject($subject);
             });
@@ -99,20 +99,20 @@ function send_sms($to, $message)
     $gnl    = GeneralSettings::first();
     $gnlSMS = ($gnl->sms_from != null) ? $gnl->sms_from : '9991231234';
 
-    if ($gnl->sms_notification == 1) {
-        $sendtext = urlencode($message . "\n\nRegards,\n" . $gnl->sitename);
-        $sid      = $gnl->sid; // Your Account SID from www.twilio.com/console
-        $token    = $gnl->api_token; // Your Auth Token from www.twilio.com/console
-        $client   = new Twilio\Rest\Client($sid, $token);
-        $message  = $client->messages->create(
-            preg_replace('/\D+/', '', $to), // Text this number
-            [
-                'from' => preg_replace('/\D+/', '', $gnlSMS), // From a valid Twilio number
-                'body' => $sendtext,
-            ]
-        );
+    // if ($gnl->sms_notification == 1) {
+    //     $sendtext = urlencode($message . "\n\nRegards,\n" . $gnl->sitename);
+    //     $sid      = $gnl->sid; // Your Account SID from www.twilio.com/console
+    //     $token    = $gnl->api_token; // Your Auth Token from www.twilio.com/console
+    //     $client   = new Twilio\Rest\Client($sid, $token);
+    //     $message  = $client->messages->create(
+    //         preg_replace('/\D+/', '', $to), // Text this number
+    //         [
+    //             'from' => preg_replace('/\D+/', '', $gnlSMS), // From a valid Twilio number
+    //             'body' => $sendtext,
+    //         ]
+    //     );
 
-    }
+    // }
 }
 
 function send_sms_verification($to, $message)
@@ -121,19 +121,19 @@ function send_sms_verification($to, $message)
     $gnl    = GeneralSettings::first();
     $gnlSMS = ($gnl->sms_from != null) ? $gnl->sms_from : '9991231234';
 
-    if ($gnl->sms_verification == 1) {
-        $sendtext = urlencode($message . "\n\nRegards,\n" . $gnl->sitename);
-        $sid      = $gnl->sid; // Your Account SID from www.twilio.com/console
-        $token    = $gnl->api_token; // Your Auth Token from www.twilio.com/console
-        $client   = new Twilio\Rest\Client($sid, $token);
-        $message  = $client->messages->create(
-            preg_replace('/\D+/', '', $to), // Text this number
-            [
-                'from' => preg_replace('/\D+/', '', $gnlSMS), // From a valid Twilio number
-                'body' => $sendtext,
-            ]
-        );
-    }
+    // if ($gnl->sms_verification == 1) {
+    //     $sendtext = urlencode($message . "\n\nRegards,\n" . $gnl->sitename);
+    //     $sid      = $gnl->sid; // Your Account SID from www.twilio.com/console
+    //     $token    = $gnl->api_token; // Your Auth Token from www.twilio.com/console
+    //     $client   = new Twilio\Rest\Client($sid, $token);
+    //     $message  = $client->messages->create(
+    //         preg_replace('/\D+/', '', $to), // Text this number
+    //         [
+    //             'from' => preg_replace('/\D+/', '', $gnlSMS), // From a valid Twilio number
+    //             'body' => $sendtext,
+    //         ]
+    //     );
+    // }
 }
 
 function notify($user, $subject = null, $message)

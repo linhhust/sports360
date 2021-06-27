@@ -25,7 +25,7 @@ $(document).ready(function() {
     }
     $('#withdraw').on('submit', function(e) {
         e.preventDefault(); // Now nothing will happen
-        if ($('input[name="type"]').val() == "TRX"){
+        if ($("input:radio[name ='type']:checked").val() == "TRX"){
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -36,7 +36,7 @@ $(document).ready(function() {
                 method: "POST",
                 data: {
                     address: $('input[name="address"]').val(),
-                    type: $('input[name="type"]').val(),
+                    type: $("input:radio[name ='type']:checked").val(),
                     amount: $('input[name="amount"]').val(),
                 },
                 success: function(data) {

@@ -80,8 +80,6 @@ class ProcessController extends Controller
                         PaymentController::userDataUpdate($data->trx);
                     }
                 }
-            } else {
-                Log::info("don't have trx");
             }
         } catch (\Exception $e) {
             Log::info($postdata);
