@@ -480,6 +480,7 @@ $('.my-bet').click(function(){
 
 function convertDateTime(strDate) {
     strDate = strDate + 'Z';
+    strDate = strDate.replace(' ', 'T')
     date = new Date(strDate);
     result = date.getFullYear() + '-' 
     result += (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1): (date.getMonth() + 1)

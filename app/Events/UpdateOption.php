@@ -9,6 +9,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Log;
 
 class UpdateOption implements ShouldBroadcast
 {
@@ -21,6 +22,7 @@ class UpdateOption implements ShouldBroadcast
      */
     public function __construct($option)
     {
+        Log::info(json_encode($option));
         $this->option = $option;
         $question     = BetQuestion::where('id', $option->question_id)->first();
         $match        = Match::where('id', $option->match_id)->first();
@@ -87,6 +89,7 @@ class UpdateOption implements ShouldBroadcast
         return "<div class='Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS' data-info='" . $arrData['match_name']. "' data-option='".$arrData['option_name']."' data-type='". ucwords($arrData['type']) ."' data-id='".$arrData['option_id']."' data-question='".$arrData['question_id']."'><p class='Selection__Odds-sc-1tx8nkd-0 ilfAV'>".number_format($arrData['ratio'],2) ."</p></div>";
     }
     private function getItem_2($arrData = []){
+        Log::info($arrData['ratio']);
         return '<div class="Selection__SelectionWrapper-sc-1tx8nkd-2 bGbaJS" data-info="'.$arrData['match_name'].'" data-option="'.$arrData['option_name'].'" data-type="'.ucwords($arrData['type']).'" data-id="'.$arrData['option_id'].'" data-question="'.$arrData['question_id'].'"><p class="Selection__Name-sc-1tx8nkd-1 eieSeJ">'.$arrData['text'].'</p><p class="Selection__Odds-sc-1tx8nkd-0 ilfAV">'.number_format($arrData['ratio'],2).'</p></div>';
     }
 }

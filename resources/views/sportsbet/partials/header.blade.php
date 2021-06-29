@@ -66,7 +66,7 @@
 			    <span>
 			        <button class="button__Button-sc-1kryk61-2 user-info__HeaderUserInfo-sc-1y2nmky-0 kjOCjQ">
 			            <span class="button__ButtonText-sc-1kryk61-0 user-info__HeaderUserInfoText-sc-1y2nmky-1 sZvnU">
-			                <span class="user-info__HeaderUserInfoName-sc-1y2nmky-2 bhiGxb user-name">annv</span>
+			                <span class="user-info__HeaderUserInfoName-sc-1y2nmky-2 bhiGxb user-name">{{Auth::user()->username}}</span>
 			                <span dir="ltr" class="user-info__HeaderUserInfoBalance-sc-1y2nmky-3 RguHV">
 			                    <span class="deposit__DepositSign-sc-1ca1un2-0 hGtOUz">+&nbsp;</span>
 			                    <span class="balance">{{Auth::user()->balance}}</span>

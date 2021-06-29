@@ -101,7 +101,7 @@ class DataImport implements ToCollection, WithHeadingRow
                         foreach ($questions as $value) {
                             $question = BetQuestion::where('question', $value)->where('match_id', $match->id)->first();
                             if (!$question) {
-                                if (!$end) {
+                                // if (!$end) {
                                     $question = BetQuestion::create([
                                         'match_id' => $match->id,
                                         'question' => $value,
@@ -109,13 +109,13 @@ class DataImport implements ToCollection, WithHeadingRow
                                         'admin_id' => Auth::guard('admin')->id(),
                                         'end_time' => '2100/12/31 23:59:59',
                                     ]);
-                                }
+                                // }
                             } else {
-                                if ($end) {
+                                // if ($end) {
                                     $question->admin_id = Auth::guard('admin')->id();
                                     $question->end_time = $row['end_time'];
                                     $question->save();
-                                }
+                                // }
                             }
                             $arrQuestion[$value] = $question->id;
                         }

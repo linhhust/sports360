@@ -9,14 +9,13 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
     <!-- favicon -->
     <link rel="shortcut icon" href="{{asset('public/images/logo/favicon.png')}}" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
     <link rel="stylesheet" href="{{ asset('public/css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/sport.css') }}">
     <link rel="stylesheet" href="{{asset('public/css/withdraw.css')}}">
     {{-- <link rel="stylesheet" href="assets/vendor/animate.css/animate.min.css"> --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+    <script src="{{asset('public/js/jquery.min.js')}}"></script>
+    <script src="{{asset('public/js/pusher.min.js')}}"></script>
 </head>
 <body>
 	<div id="root">

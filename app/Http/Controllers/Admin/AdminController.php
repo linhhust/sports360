@@ -250,14 +250,15 @@ class AdminController extends Controller
 
     public function saveData(Request $request)
     {
-        try{
+        // try{
             Excel::import(new DataImport, $request->file);
             session()->flash('success', 'Import Data Successfully !!');
             return back();
-        }catch(\Exception $e){
-            session()->flash('danger', $e->getMessage());
-            return back();
-        }
+        // }catch(\Exception $e){
+        //     session()->flash('danger', $e->getMessage());
+        //     Log::info($e->getMessage());
+        //     return back();
+        // }
     }
     public function viewUpdateResult()
     {

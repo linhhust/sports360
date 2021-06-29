@@ -14,7 +14,7 @@
 						<p class="summary__SummaryCaption-b40yh6-1 HMZTp">{{count($event['data'])}}</p>
 					</div>
 				</div>
-				@if (isset($size) && $size < 600)
+				{{-- @if (isset($size) && $size < 600)
 					<ul class="grid__EventListHeader-ljbzft-1 jaFLCg">
 						<li class="gridHeader__CompetitorGap-ixy1fi-0 bfIAFC"></li>
 						<li class="gridHeader__Home-ixy1fi-1 hXokRj">
@@ -25,7 +25,7 @@
 						</li>
 						<li class="gridHeader__EventCountGap-ixy1fi-3 fOeRbP"></li>
 					</ul>
-				@else
+				@else --}}
 					<ul class="grid__EventListHeader-ljbzft-1 bXwSvB">
 						<li class="gridHeader__CompetitorGap-sc-1pampme-0 koDody"></li>
 						<li class="gridHeader__TitleWinner-sc-1pampme-1 eYDWsx">
@@ -39,7 +39,7 @@
 						</li>
 						<li class="gridHeader__EventCountGap-sc-1pampme-4 iNCxHO"></li>
 					</ul>
-				@endif
+				{{-- @endif --}}
 				@php
                     foreach($event['data'] as $question)
                     {
